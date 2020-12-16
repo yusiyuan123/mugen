@@ -24,4 +24,4 @@ The value of Var(59) controls the strength of the char, ranging from 0 to 6:
 0：AI is off
 1-4：Like a boss in normal FTG.
 5：Stronger than the boss in normal FTG.
-6：Extremely strong. Stronger than Elque (made by Yuki) but weaker than Rugal2nd (Palno 12, made by fxm508).
+6：Extremely strong. Stronger than Elque (made by Yuki) but weaker than Rugal2nd (Palno 11, made by fxm508).
