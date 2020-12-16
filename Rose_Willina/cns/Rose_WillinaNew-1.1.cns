@@ -1,0 +1,10 @@
+[statedef 886656]
+Type = A
+Physics = N
+Sprpriority = 1
+
+
+[state 233]
+Type = null
+Trigger1 = 1
+;------------------------------------------------------------------

@@ -1,0 +1,44 @@
+[Info]
+name = "Rose_Willina" 
+displayname = "Rose_Willina"
+mugenversion = 1.1
+author = "Ysy";啊啊啊的叫
+;draw by "樱逝恋殇"
+Pal.Defaults = 1,2
+localcoord =425,240
+
+
+;Files for the player
+ [Palette Keymap] 
+ x = 4 
+ y = 5 
+ z = 6 
+ a = 1 
+ b = 2 
+ c = 3 
+[Palette Keymap] 
+ x = 4 
+ y = 5 
+ z = 6 
+ a = 1 
+ b = 2 
+ c = 3
+ 
+[files]
+cmd     = Rose_Willina.cmd
+cns     = cns/Rose_Willina-1.1.cns
+st      = cns/Rose_Willina-1.1.cns
+st2     = cns/Rose_Willina2-1.1.cns
+st3     = cns/Rose_Willina3-1.1.cns
+st4     = cns/Rose_WillinaNew-1.1.cns
+stcommon = common1.cns 
+sprite  = Rose_Willina.sff
+anim    = Rose_Willina.air
+sound   = Rose_Willina.snd
+pal1    = act\2.act
+pal2    = act\1.act
+pal3    = act\2.act
+pal4    = act\1.act
+pal5    = act\2.act
+pal6    = act\1.act
+

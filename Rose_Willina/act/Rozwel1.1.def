@@ -1,0 +1,41 @@
+; ここにキャラ情報を書いてください
+[Info]
+name = "Rozwel"        ;キャラの名前
+displayname = "Rozwel" ;表示されるキャラの名前
+versiondate = 11,22,2000    ;キャラの更新情報
+mugenversion = 1.1; = 1.0; = 11,22,2000   ;キャラが動くmugenのバージョン
+author = "elecbyte"         ;キャラの製作者名
+Pal.Defaults = 1,2;only two  = 1,2,3,4; = 1      ;敵としてでるキャラのパレット
+
+; Files for the player
+;localcoord = 426.66,320.25 
+ [Palette Keymap] 
+ x = 4 
+ y = 5 
+ z = 6 
+ a = 1 
+ b = 2 
+ c = 3 
+   [Palette Keymap] 
+ x = 4 
+ y = 5 
+ z = 6 
+ a = 1 
+ b = 2 
+ c = 3 
+  [files]
+cmd     = cns/Oswald_XI.cmd   ;キャラのコマンド
+cns     = cns/Oswald_XI -1.1.cns   ;キャラのプログラム
+st      = cns/Oswald_XI -1.1.cns  ;基本動作、必殺技、特殊ゲージ、-2、-3
+st2     = cns/Oswald_XI2_1.1.cns  ;超必殺技
+st3     = cns/-3 -1.1version.cns
+stcommon = common1.cns 
+sprite  = Rozwel-KOFM.sff   ;キャラの絵
+anim    = Oswald_XI.air   ;キャラの動き
+sound   = Jakigan.snd   ;キャラの音
+pal1    = act/Rozwel-01.act
+pal2    = act/Rozwel-02.act
+pal3    = act/Rozwel-03.act
+pal4    = act/Rozwel-04.act
+pal5    = act/Rozwel-05.ACT
+pal6    = act/Rozwel-06.ACT
