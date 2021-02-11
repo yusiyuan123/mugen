@@ -8076,11 +8076,11 @@ velset = 0,0
 sprpriority = 1
 ctrl = 0
 
-[State a]
-Type = changeanim
-Trigger1 = time = 0
-;Trigger1 = var(5) = 1
-value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1512,1511)
+[state a]
+type = changeanim
+trigger1 = time = 0
+;trigger1 = var(5) = 1
+value = 1511
 
 [State 0, ChangeState]
 type = ChangeState
