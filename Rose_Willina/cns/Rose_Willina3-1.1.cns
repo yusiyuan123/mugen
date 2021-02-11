@@ -3107,6 +3107,7 @@ TriggerAll = !IsHelper
 TriggerAll = roundstate = 2
 TriggerAll = (Var(41)<=100&&power>= 4000) 
 TriggerAll = StateType != L
+TriggerAll = StateType!=A
 TriggerAll = EnemyNear(floor(fvar(37))),Life<Floor(EnemyNear(floor(fvar(37))),LifeMax/3)
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H 
 Trigger1 = ((stateno = [1000,1350]) && movehit)
@@ -3132,6 +3133,7 @@ TriggerAll = !IsHelper
 TriggerAll = roundstate = 2
 TriggerAll = (Var(41)>0&&Var(41)<=100&&Power>=2000&&Power<3000)||Power=[3000,4000)
 TriggerAll = StateType != L
+TriggerAll = StateType!=A
 TriggerAll = EnemyNear(floor(fvar(37))),Life<Floor(EnemyNear(floor(fvar(37))),LifeMax/3)
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H 
 Trigger1 = ((stateno = [1000,1350]) && movehit)
