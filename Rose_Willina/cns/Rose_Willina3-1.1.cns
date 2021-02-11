@@ -4788,7 +4788,6 @@ type = ChangeState
 TriggerAll = roundstate = 2
 TriggerAll = !IsHelper
 TriggerAll = var(59)
-TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x-pos x)=[75,132]
 TriggerAll = statetype != A
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 TriggerAll = EnemyNear(floor(fvar(37))),statetype = C || EnemyNear(floor(fvar(37))),statetype = A

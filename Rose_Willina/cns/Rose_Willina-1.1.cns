@@ -8084,9 +8084,7 @@ value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1512,1511)
 
 [State 0, ChangeState]
 type = ChangeState
-TriggerAll =  animelem = 2,>=0
-TriggerAll = Enemynear(Floor(fvar(37))),Stateno = 1751
-trigger1 = Var(5)=1
+Trigger1 =  animelem = 2,>=0
 value = 610 
 ;anim =
 ;ignorehitpause = 
@@ -8175,7 +8173,7 @@ value = 1
 ;---------------------[立ちステートに戻る]
 
 [State 0, ChangeState]
-Type = ChangeState
+Type =null;ChangeState
 TriggerAll =  animelem = 2,>=0
 TriggerAll = P2StateType!=A
 TriggerAll = Enemynear(Floor(fvar(37))),Stateno = 1751
