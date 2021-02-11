@@ -5366,10 +5366,19 @@ value = SCA
 
 [State 0, SelfState]
 Type = SelfState
+TriggerAll = Alive
 Trigger1 = AnimTime = 0
 value = 5120
 ;anim =
-ctrl = 1
+;ignorehitpause = 0
+;persistent = 1
+
+[State 0, SelfState]
+Type = SelfState
+TriggerAll = !Alive
+Trigger1 = AnimTime = 0
+value = 5150
+;anim =
 ;ignorehitpause = 0
 ;persistent = 1
 
