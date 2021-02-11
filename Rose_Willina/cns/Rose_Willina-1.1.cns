@@ -7904,8 +7904,8 @@ Ctrl = 1
 ;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ; K
 [Statedef 1500]
-Type    = S
-moveType= A
+type    = S
+movetype= A
 physics = N
 juggle  = 0
 poweradd= 61
@@ -7915,11 +7915,41 @@ sprpriority = 1
 ctrl = 0
 
 ;---------------------[追加攻撃]
-[State a];初期化
-Type = varset
-Trigger1 = time = 0
+[state a];初期化
+type = varset
+trigger1 = time = 0
 v = 5
 value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
 
 [state a]
 type = varset
@@ -7928,96 +7958,186 @@ Trigger1 = time = 0
 v = 5
 value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
 
-[State Helper]
-Type = Helper
-TriggerAll = !NumHelper(4007)
-TriggerAll = Var(59)>5
-Trigger1 = Time = 0
-id = 4007
-name = "H_helper"
-pos = 0,0
-posType = p1
-Stateno = 4007
-helperType = Player
-keyctrl = 0
-ignorehitpause = 1
-
-[State a]
-Type = varset
-TriggerAll=var(59)=0
-TriggerAll = time = 0
-Trigger1  = command = "a"|| (!command = "a"&&!command="b")
-v = 5
-value = 0
-
-[State a]
-Type = varset
-TriggerAll=var(59)=0
-Triggerall = time = 0
-Trigger1 = command = "b"
-v = 5
-value = 1
-
-[State a]
-Type = varset
-TriggerAll=var(59)
-Trigger1 = time = 0
-v = 5
-value = 0
-
 
 ;---------------------[ヘルパー]
-[State a];
-Type = Helper
-Trigger1 = animelem =7
+[state a];
+type = Helper
+trigger1 = animelem = 7
 id = 1500
 name = "ka-do"
 sprpriority = 2
 pos = 0,0
-posType = p1
-Stateno = 1505
-helperType = Normal
+postype = p1
+stateno = 1505
+helpertype = Normal
 keyctrl = 0 
 ownpal = 1
 
-[State a];???
-Type = nothitby
-Trigger1 = 1
+[state a];???
+type = nothitby
+trigger1 = 1
 value = SCA
 value2 = SCA
 
 ;---------------------[当身判定]
 [State 1700, 0];
-Type = ReversalDef
+type = ReversalDef
 TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
-Trigger1 = animelem =5,>=0
+trigger1 = animelem = 6,>=0
 reversal.attr = SCA, AA,AP,AT
 hitflag = MAFD
 priority = 6, Miss
-pausetime = 5,6
+pausetime = 5,25
 sparkno = s7002
 hitsound = S410,0
 p2facing = 1
-p1Stateno = 1510
+p1stateno = 1510
 P2Stateno = 1751
 
 ;---------------------[立ちステートに戻る]
-[State a]
-Type = changeState
-Trigger1 = animtime = 0
+[state a]
+type = changestate
+trigger1 = animtime = 0
 value = 0
 ctrl = 1
 
 
+
+;---------------------------------------------------------------------------
+; K?当身成功
+[Statedef 1510]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 0
+velset = 0,0
+anim = 1512
+sprpriority = 1
+ctrl = 0
+
+[state a]
+type = changeanim
+trigger1 = time = 0
+;trigger1 = var(5) = 1
+value = 1511
+
+;---------------------[効果音]
+[State 210, 1];
+type = PlaySnd
+trigger1 = time = 0
+value = 1500, 0
+
+;---------------------[エフェクト]
+[State 00];背景の暗転
+type = BGPalfx
+trigger1 = time = 0
+time = 23
+mul = 0,0,0
+under = 2
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = time = 0
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = normal
+keyctrl = 0 
+ownpal = 1
+
+[State 0, NotHitBy]
+type = NotHitBy
+TriggerAll = Anim = 1511
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+;value2 = S,NA
+time = 1
+ignorehitpause = 1 
+;persistent = 
+
+
+;---------------------[移動]
+[state a]
+type = turn
+trigger1 = animelem = 2
+
+[state a]
+type = posset
+trigger1 = animelem = 2
+x = enemy,pos x
+
+[state a]
+type = posadd
+trigger1 = animelem = 2
+x = -30
+
+[state a]
+type = posadd
+trigger1 = animelem = 2
+trigger1 = anim  =1511
+y = -90
+
+[state a]
+type = statetypeset
+trigger1 = animelem = 2
+trigger1 = anim = 1511
+value = A
+
+[state a]
+type = veladd
+trigger1 = animelem = 2,>=0
+trigger1 = anim = 1511
+y = 0.36
+
+[state a]
+type = ctrlset
+trigger1 = animelem = 2,>=0
+trigger1 = anim = 1511
+value = 1
+
+
+
+;---------------------[立ちステートに戻る]
+
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll =  animelem = 2,>=0
+TriggerAll = P2StateType!=A
+TriggerAll = Enemynear(Floor(fvar(37))),Stateno = 1751||Ctrl
+trigger1 = Var(5)=1
+value = 610 
+;anim =
+;ignorehitpause = 
+;persistent = 
+
+[state a]
+type = changestate
+trigger1 = animtime = 0
+trigger1 = var(5) = 0
+value = 0
+ctrl = 1
+
+[state a]
+type = changestate
+trigger1 = vel y >0 && pos y >=0
+trigger1 = var(5) = 1||anim = 1511
+value = 52
+
+
 ;----------------------------------------------------------------------------------------------
-[Statedef 4007]
-Type = A
+[statedef 4007]
+type = A
 physics = N
 anim = 1501
 
 [State 0, BindToRoot]
-Type = BindToRoot
-Trigger1 = 1
+type = BindToRoot
+trigger1 = 1
 time = 1
 ;facing = 0
 pos = 0,0
@@ -8027,13 +8147,13 @@ ignorehitpause = 1
 
 
 [State 6010, 2]
-Type = PlayerPush
-Trigger1 = 1
+type = PlayerPush
+trigger1 = 1
 value = 0
 
 [State 0, AssertSpecial]
-Type = AssertSpecial
-Trigger1 = 1
+type = AssertSpecial
+trigger1 = 1
 flag = noshadow
 flag2 = invisible
 ;flag3 = roundnotover
@@ -8059,142 +8179,11 @@ flag2 = invisible
 
 
 [State 0, DestroySelf]
-Type = DestroySelf
+type = DestroySelf
 Trigger1 = Root,Stateno != 1500
 ;ignorehitpause = 
 ;persistent = 
 
-;---------------------------------------------------------------------------
-; K?当身成功
-[Statedef 1510]
-Type    = S
-moveType= A
-physics = N
-juggle  = 0
-poweradd= 0
-velset = 0,0
-sprpriority = 1
-ctrl = 0
-
-[state a]
-type = changeanim
-trigger1 = time = 0
-;trigger1 = var(5) = 1
-value = 1511
-
-[State 0, ChangeState]
-type = ChangeState
-Trigger1 =  animelem = 2,>=0
-value = 610 
-;anim =
-;ignorehitpause = 
-;persistent = 
-
-
-;---------------------[効果音]
-[State 210, 1];
-Type = PlaySnd
-Trigger1 = time = 0
-value = 1500, 0
-
-;---------------------[エフェクト]
-[State 00];背景の暗転
-Type = BGPalfx
-Trigger1 = time = 0
-time = 23
-mul = 0,0,0
-under = 2
-
-;---------------------[ヘルパー]
-[State a];
-Type = Helper
-Trigger1 = time = 0
-id = 1500
-name = "ka-do"
-sprpriority = 2
-pos = 0,0
-posType = p1
-Stateno = 1505
-helperType = normal
-keyctrl = 0 
-ownpal = 1
-
-[State 0, NotHitBy]
-Type = NotHitBy
-TriggerAll = Anim = 1511
-Trigger1 = 1
-value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
-;value2 = S,NA
-time = 1
-ignorehitpause = 1 
-;persistent = 
-
-;---------------------[移動]
-[State a]
-Type = turn
-Trigger1 = animelem = 2
-
-[State a]
-Type = posset
-Trigger1 = animelem = 2
-x = enemy,pos x
-
-[State a]
-Type = posadd
-Trigger1 = animelem = 2
-x = -30
-
-[State a]
-Type = posadd
-Trigger1 = animelem = 2
-Trigger1 = anim  =1511
-y = -90
-
-[State a]
-Type = StateTypeset
-Trigger1 = animelem = 2
-Trigger1 = anim = 1511
-value = A
-
-[State a]
-Type = veladd
-Trigger1 = animelem = 2,>=0
-Trigger1 = anim = 1511
-y = 0.36
-
-[State a]
-Type = ctrlset
-Trigger1 = animelem = 2,>=0
-Trigger1 = anim = 1511
-value = 1
-
-
-
-;---------------------[立ちステートに戻る]
-
-[State 0, ChangeState]
-Type =null;ChangeState
-TriggerAll =  animelem = 2,>=0
-TriggerAll = P2StateType!=A
-TriggerAll = Enemynear(Floor(fvar(37))),Stateno = 1751
-Trigger1 = Var(5)=1
-value = 610 
-;anim =
-;ignorehitpause = 
-;persistent = 
-
-[State a]
-Type = changeState
-Trigger1 = animtime = 0
-Trigger1 = var(5) = 0
-value = 0
-ctrl = 1
-
-[State a]
-Type = changeState
-Trigger1 = vel y >0 && pos y >=0
-Trigger1 = var(5) = 1||anim = 1511
-value = 52
 
 ;---------------------------------------------------------------------------
 ;(HELPER)カード
