@@ -8175,7 +8175,7 @@ value = 1
 ;---------------------[立ちステートに戻る]
 
 [State 0, ChangeState]
-Type =null; ChangeState
+Type = ChangeState
 TriggerAll =  animelem = 2,>=0
 TriggerAll = P2StateType!=A
 TriggerAll = Enemynear(Floor(fvar(37))),Stateno = 1751
