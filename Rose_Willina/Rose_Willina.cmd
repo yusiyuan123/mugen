@@ -213,7 +213,15 @@ name = "JOKER"
 command = ~D,DF,F,D,DF,F,c
 time = 30
 
+[Command]
+name = "ºì¾ÆÔáÎè"
+command = ~DF,DB,z
+time = 30
 
+[Command]
+name = "ÓÀÃßÀÖÕÂ"
+command = ~DF,DB,c
+time = 30
 
 [Command]
 name = "SHDC"
@@ -287,6 +295,12 @@ name = "Š¥¹¥Ú©`¥É"
 command = ~D,DB,B, y
 
 
+
+[Command]
+name = "xxxa"
+command = ~D,DB,B,D,DF,F ,b
+time = 35
+
 [Command]
 name = "²ÐÏñ¡¤Ì¤Ç°Õ¶"
 command = ~B,D,F, x
@@ -323,10 +337,11 @@ name = "ÄæÏòÅÆ"
 command = ~D,DB,B, c
 
 
+
 [Command]
 name = "63214Super"
 command = ~D,DB,B,D,DB,B, c
-
+time = 35
 
 [Command]
 name = "K"
@@ -554,6 +569,40 @@ time = 1
 ;---------------------------------------------------------------------------
 ;---------------------------------------------------------------------------
 ;---------------------------------------------------------------------------
+[State -1, Strong Kung Fu Palm]
+Type = ChangeState
+value = 4000
+TriggerAll=var(59)=0
+TriggerAll = command = "ºì¾ÆÔáÎè"
+TriggerAll = power >= 3000||Var(41)>0 && power >= 2000
+TriggerAll = stateType != A
+Trigger1 = ((stateno = [200,460]) && movecontact)
+Trigger2 = ctrl
+Trigger3= stateno = 251 && animelem = 8,>=0 && animelem = 11,<=0
+Trigger4 = ((stateno = [1000,1350]) && movecontact)
+Trigger5 = stateno = 1403
+Trigger5 = time>= 20
+Trigger6 = (Stateno = [1700,1750])&&MoveContact
+
+
+
+
+
+[State -1, Strong Kung Fu Palm]
+Type = ChangeState
+value = 3000
+TriggerAll=var(59)=0
+TriggerAll = command = "ÓÀÃßÀÖÕÂ"
+TriggerAll = power >= 2000||Var(41)>0 && power >= 1000
+TriggerAll = stateType != A
+Trigger1 = ((stateno = [200,460]) && movecontact)
+Trigger2 = ctrl
+Trigger3= stateno = 251 && animelem = 8,>=0 && animelem = 11,<=0
+Trigger4 = ((stateno = [1000,1350]) && movecontact)
+Trigger5 = stateno = 1403
+Trigger5 = time>= 20
+Trigger6 = (Stateno = [1700,1750])&&MoveContact
+
 ;???•€???
 [State -1, a]
 Type = ChangeState
@@ -608,10 +657,28 @@ Trigger4 = ((stateno = [1000,1350]) && movecontact)
 Trigger5 = stateno = 1403
 Trigger5 = time>= 20
 
-
+;SHDC
+[State -1, Strong Kung Fu Palm]
+Type = ChangeState
+value = 2600
+TriggerAll=var(59)=0
+TriggerAll = command = "xxxa"
+TriggerAll = power >= 2000||Var(41)>0
+TriggerAll = stateType != A
+Trigger1 = ((stateno = [200,460]) && movecontact)
+Trigger2 = ctrl
+Trigger3= stateno = 251 && animelem = 8,>=0 && animelem = 11,<=0
+Trigger4 = ((stateno = [1000,1350]) && movecontact)
+Trigger5 = stateno = 1403
+Trigger5 = time>= 20
+Trigger6 = (Stateno = [1700,1750])&&MoveContact
+Trigger7 = Stateno = 2000 && MoveContact
+Trigger8 = ((stateno = 2107) && movehit)
+Trigger9 = ((stateno = 2417) && movehit)
 
 ;---------------------------------------------------------------------------
 ;SHDC
+
 [State -1, Strong Kung Fu Palm]
 Type = ChangeState
 value = 2100

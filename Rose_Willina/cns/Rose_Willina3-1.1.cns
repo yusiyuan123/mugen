@@ -1,19 +1,19 @@
-;ÎÒÒÔÇ°¶¼Ğ´ÁËÉ¶??????
+;æˆ‘ä»¥å‰éƒ½å†™äº†å•¥??????
 
 [Statedef -3]
 ;----------------------------------------------------------
-;AIÎª4¼¶(°üÀ¨4¼¶)ÒÔÏÂÉÙÁ¿¿ÕÕğ³öÕĞ
+;AIä¸º4çº§(åŒ…æ‹¬4çº§)ä»¥ä¸‹å°‘é‡ç©ºéœ‡å‡ºæ‹›
 [State 0, VarSet]
 type = VarSet
 Trigger1 = 1
 v = 55   
-value = 0  ;1Îª¿ª 
+value = 0  ;1ä¸ºå¼€ 
 ignorehitpause = 1
 ;persistent = .
 
-[State 0, µ¯Ä»¶Ô²ß,AIÎª5¼¶ÒÔÉÏÓĞĞ§(°üÀ¨5¼¶)]
+[State 0, å¼¹å¹•å¯¹ç­–,AIä¸º5çº§ä»¥ä¸Šæœ‰æ•ˆ(åŒ…æ‹¬5çº§)]
 type = VarSet
-trigger1 = 1      ;1Îª¿ª,0Îª¹Ø±Õ
+trigger1 = 1      ;1ä¸ºå¼€,0ä¸ºå…³é—­
 v = 57    ;fv = 10
 value = Var(57)|128
 ignorehitpause = 1
@@ -79,11 +79,11 @@ Trigger51 = Command = "AI50"
 Trigger52 = NumHelper(80000)
 Trigger53 = Helper(80000),var(59)
 Trigger54 = !IsHelper
-var(59) = 6 ;    ;AI Level;Range 1 - 6 ,Assigned to 0 is off          
+var(59) = 5 ;    ;AI Level;Range 1 - 6 ,Assigned to 0 is off          
 IgNoreHitPause = 1
 
 
-;ÊÜ»÷ÓïÒô
+;å—å‡»è¯­éŸ³
 [State -3]
 type = PlaySnd
 triggerall = Alive && (Random < 800)
@@ -118,7 +118,7 @@ trigger1 = stateno = 5100
 value = 10,6
 
 
-[State -3, »­Ãæ¶Ë—Ê³ö¥Ø¥ë¥Ñ©`]
+[State -3, ç”»é¢ç«¯æ¤œå‡ºãƒ˜ãƒ«ãƒ‘ãƒ¼]
 Type = Helper
 Trigger1 =!NumHelper(85000+ID)
 Trigger1 =!IsHelper
@@ -133,7 +133,7 @@ IgnoreHitPause = 1
 KeyCtrl = 0
 Ownpal = 1
 
-[State -3, »­Ãæ¶Ë—Ê³ö¥Ø¥ë¥Ñ©`]
+[State -3, ç”»é¢ç«¯æ¤œå‡ºãƒ˜ãƒ«ãƒ‘ãƒ¼]
 Type = Helper
 Trigger1 =!NumHelper(86000+ID)
 Trigger1 =!IsHelper
@@ -148,7 +148,7 @@ IgnoreHitPause = 1
 KeyCtrl = 0
 Ownpal = 1
 
-[State -3, év‚SŸo¤¤¥¹¥Æ©`¥È¤ËĞĞ¤«¤Ê¤¤¤è¤¦¤Ë]
+[State -3, é–¢ä¿‚ç„¡ã„ã‚¹ãƒ†ãƒ¼ãƒˆã«è¡Œã‹ãªã„ã‚ˆã†ã«]
 Type = ChangeState
 Trigger1 = IsHelper
 Trigger1 = IsHelper(85000+Root,ID)
@@ -157,7 +157,7 @@ Value = 85000
 
 
 
-[State -3, év‚SŸo¤¤¥¹¥Æ©`¥È¤ËĞĞ¤«¤Ê¤¤¤è¤¦¤Ë]
+[State -3, é–¢ä¿‚ç„¡ã„ã‚¹ãƒ†ãƒ¼ãƒˆã«è¡Œã‹ãªã„ã‚ˆã†ã«]
 Type = ChangeState
 Trigger1 = IsHelper
 Trigger1 = IsHelper(86000+Root,ID)
@@ -167,28 +167,28 @@ Value = 86000
 
 
 
-[State -3, ¥¹¥Æ©`¥¸Ç°·½¶Ë¤Ş¤Ç¤Î¾àëx]
+[State -3, ã‚¹ãƒ†ãƒ¼ã‚¸å‰æ–¹ç«¯ã¾ã§ã®è·é›¢]
 Type = VarSet
 Trigger1 =(NumHelper(85000+ID) && NumHelper(86000+ID))
 Trigger1 = TeamSide = 1
 var(52) = floor(Abs(Cond(Facing = 1,Helper(85000+ID),RootDist X,Helper(86000+ID),RootDist X)))
 IgnoreHitPause = 1
 
-[State -3, ¥¹¥Æ©`¥¸Ç°·½¶Ë¤Ş¤Ç¤Î¾àëx]
+[State -3, ã‚¹ãƒ†ãƒ¼ã‚¸å‰æ–¹ç«¯ã¾ã§ã®è·é›¢]
 Type = VarSet
 Trigger1 =(NumHelper(85000+ID) && NumHelper(86000+ID))
 Trigger1 = TeamSide = 2
 var(52) = floor(Abs(Cond(Facing = 1,Helper(86000+ID),RootDist X,Helper(85000+ID),RootDist X)))
 IgnoreHitPause = 1
 
-[State -3, ¥¹¥Æ©`¥¸áá·½¶Ë¤Ş¤Ç¤Î¾àëx]
+[State -3, ã‚¹ãƒ†ãƒ¼ã‚¸å¾Œæ–¹ç«¯ã¾ã§ã®è·é›¢]
 Type = VarSet
 Trigger1 =(NumHelper(85000+ID) && NumHelper(86000+ID))
 Trigger1 = TeamSide = 1
 var(53) = floor(Abs(Cond(Facing = 1,Helper(86000+ID),RootDist X,Helper(85000+ID),RootDist X)))
 IgnoreHitPause = 1
 
-[State -3, ¥¹¥Æ©`¥¸áá·½¶Ë¤Ş¤Ç¤Î¾àëx]
+[State -3, ã‚¹ãƒ†ãƒ¼ã‚¸å¾Œæ–¹ç«¯ã¾ã§ã®è·é›¢]
 Type = VarSet
 Trigger1 =(NumHelper(85000+ID) && NumHelper(86000+ID))
 Trigger1 = TeamSide = 2
@@ -197,7 +197,7 @@ IgnoreHitPause = 1
 
 
 
-[State 0, Õı¶ÔµĞÈËÅĞ¶Ï]
+[State 0, æ­£å¯¹æ•Œäººåˆ¤æ–­]
 type = VarSet
 Trigger1 =floor(Facing*(EnemyNear(floor(fvar(37))),pos x-pos x))>0
 v = 42    ;fv = 10
@@ -205,7 +205,7 @@ value = 1
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ±³¶ÔµĞÈËÅĞ¶Ï]
+[State 0, èƒŒå¯¹æ•Œäººåˆ¤æ–­]
 type = VarSet
 Trigger1 =floor(Facing*(EnemyNear(floor(fvar(37))),pos x-pos x))<0
 v = 42    ;fv = 10
@@ -242,7 +242,7 @@ Trigger1= StateNo!= 80000
 value = 80000
 
 
-[State -3, ïw¤ÓµÀ¾ß´_ÕJ¥Ø¥ë¥Ñ©`]
+[State -3, é£›ã³é“å…·ç¢ºèªãƒ˜ãƒ«ãƒ‘ãƒ¼]
 Type = Helper
 TriggerAll = var(59)
 Trigger1 =!NumHelper(83000)
@@ -265,7 +265,7 @@ value = 83000
 
 
 
-[State -3, ïw¤ÓµÀ¾ß´_ÕJ¥Ø¥ë¥Ñ©`]
+[State -3, é£›ã³é“å…·ç¢ºèªãƒ˜ãƒ«ãƒ‘ãƒ¼]
 Type = Helper
 TriggerAll = var(59)
 Trigger1 =!NumHelper(88000)
@@ -290,13 +290,13 @@ value = 88000
 
 
 
-[State -3, ïw¤ÓµÀ¾ß´_ÕJ¥Ø¥ë¥Ñ©`]
+[State -3, é£›ã³é“å…·ç¢ºèªãƒ˜ãƒ«ãƒ‘ãƒ¼]
 Type = Helper
 TriggerAll = var(59)
 Trigger1 =!NumHelper(87000)
 Trigger1 =!IsHelper
 HelperType = Normal
-Name = "ÆğÉíÊ±¼ä¼ÇÂ¼"
+Name = "èµ·èº«æ—¶é—´è®°å½•"
 StateNo = 87000
 ID = 87000
 Pos = 9999,9999
@@ -312,7 +312,7 @@ Trigger1= StateNo!= 87000
 value = 87000
 
 
-[State -3, ïw¤ÓµÀ¾ß´_ÕJ¥Ø¥ë¥Ñ©`]
+[State -3, é£›ã³é“å…·ç¢ºèªãƒ˜ãƒ«ãƒ‘ãƒ¼]
 Type = Helper
 TriggerAll = var(59)
 Trigger1 =!NumHelper(84000)
@@ -354,11 +354,11 @@ ignorehitpause = 1
 ;persistent = 
 
 [State -3]
-type = varset;¼ÇÂ¼ÊÇ·ñr2£¬ÏêÇé²é×Öµä
+type = varset;è®°å½•æ˜¯å¦r2ï¼Œè¯¦æƒ…æŸ¥å­—å…¸
 Trigger1 = RoundState != 2
 var(25) = 0
 
-[State -3];¼ÇÂ¼ÓÎÏ·Ê±¼ä
+[State -3];è®°å½•æ¸¸æˆæ—¶é—´
 type = varset
 TriggerAll = !var(25)
 Trigger1 = Ctrl
@@ -366,7 +366,7 @@ var(25) = GameTime
 persistent = 0
 
 [State -3]
-type = varset;r2Ê±£¬¼ÇÂ¼×î½üµĞÈË0µÄHelperºÅ»¹ÊÇÁ¿£¨²»Çå³ş£©
+type = varset;r2æ—¶ï¼Œè®°å½•æœ€è¿‘æ•Œäºº0çš„Helperå·è¿˜æ˜¯é‡ï¼ˆä¸æ¸…æ¥šï¼‰
 TriggerAll = RoundState = 2
 Trigger1 = GameTime = var(25)
 Trigger2 = (GameTime - var(25))%200 = 1
@@ -374,7 +374,7 @@ Trigger2 = P2MoveType != A
 var(54) = Enemy(0),NumHelper
 ignorehitpause = 1
 
-[State -3];×ÜÌåÀ´Ëµ¼ì²âµĞÈËHelper£¬Ò»°ã·ÀÖ¹Helper¹¥»÷ÓÃµ½
+[State -3];æ€»ä½“æ¥è¯´æ£€æµ‹æ•ŒäººHelperï¼Œä¸€èˆ¬é˜²æ­¢Helperæ”»å‡»ç”¨åˆ°
 type = varset;
 TriggerAll = NumEnemy = 2
 Trigger1 = GameTime = var(25)
@@ -383,23 +383,23 @@ Trigger2 = P2MoveType != A
 var(27) = Enemy(1),NumHelper
 ignorehitpause = 1
 
-[State -3];×ÜÌåÀ´Ëµ¼ì²âµĞÈËHelper£¬Ò»°ã·ÀÖ¹Helper¹¥»÷ÓÃµ½
+[State -3];æ€»ä½“æ¥è¯´æ£€æµ‹æ•ŒäººHelperï¼Œä¸€èˆ¬é˜²æ­¢Helperæ”»å‡»ç”¨åˆ°
 type = varset
-TriggerAll = Enemy(0),NumHelper - var(54) > 0;µĞÈË0µÄHelper-var(54)¼ÇÂ¼µÄÈôÊÇ>0
-Trigger1 = NumEnemy = 1;¼ì²âµĞÈËÊıÁ¿µÈÓÚ1
-Trigger2 = NumEnemy = 2;²»·ûºÏÌõ¼ş1Ôò¼ì²âµĞÈËÊıÁ¿µÈÓÚ2
+TriggerAll = Enemy(0),NumHelper - var(54) > 0;æ•Œäºº0çš„Helper-var(54)è®°å½•çš„è‹¥æ˜¯>0
+Trigger1 = NumEnemy = 1;æ£€æµ‹æ•Œäººæ•°é‡ç­‰äº1
+Trigger2 = NumEnemy = 2;ä¸ç¬¦åˆæ¡ä»¶1åˆ™æ£€æµ‹æ•Œäººæ•°é‡ç­‰äº2
 Trigger2 = Enemy(1),NumHelper - var(27) > 0;
-var(28) = 1;(Ôòvar(28)±ê¼ÇÎª1)
+var(28) = 1;(åˆ™var(28)æ ‡è®°ä¸º1)
 ignorehitpause = 1
 
 [State -3]
-type = varset;Í¬ÉÏ
+type = varset;åŒä¸Š
 Trigger1 = NumEnemy = 1
 Trigger1 = Enemy(0),NumHelper - var(54) <= 0
 Trigger2 = NumEnemy = 2
 Trigger2 = Enemy(0),NumHelper - var(54) <= 0
 Trigger2 = Enemy(1),NumHelper - var(27) <= 0
-var(28) = 0;(Ôòvar(28)±ê¼ÇÎª0)
+var(28) = 0;(åˆ™var(28)æ ‡è®°ä¸º0)
 ignorehitpause = 1
 
 
@@ -423,7 +423,7 @@ Trigger1 = StateNo!= 82000
 value = 82000
 
 
-[State -3, ïw¤ÓµÀ¾ß´_ÕJ¥Ø¥ë¥Ñ©`]
+[State -3, é£›ã³é“å…·ç¢ºèªãƒ˜ãƒ«ãƒ‘ãƒ¼]
 Type = Helper
 TriggerAll = var(59)
 Trigger1 =!NumHelper(32000)
@@ -438,7 +438,7 @@ Persistent = 0
 PauseMoveTime = 2147483647
 SuperMoveTime = 2147483647
 
-[State -3, ïw¤ÓµÀ¾ß´_ÕJ¥Ø¥ë¥Ñ©`]
+[State -3, é£›ã³é“å…·ç¢ºèªãƒ˜ãƒ«ãƒ‘ãƒ¼]
 Type = Helper
 TriggerAll = var(59)
 Trigger1 =!NumHelper(32500)
@@ -453,7 +453,7 @@ Persistent = 0
 PauseMoveTime = 2147483647
 SuperMoveTime = 2147483647
 
-[State -3, ïw¤ÓµÀ¾ß´_ÕJ¥Ø¥ë¥Ñ©`]
+[State -3, é£›ã³é“å…·ç¢ºèªãƒ˜ãƒ«ãƒ‘ãƒ¼]
 Type = Helper
 TriggerAll = var(59)
 Trigger1 =!NumHelper(32501)
@@ -468,7 +468,7 @@ Persistent = 0
 PauseMoveTime = 2147483647
 SuperMoveTime = 2147483647
 
-[State -3, ¥¬©`¥É¥Á¥§¥Ã¥¯¥Ø¥ë¥Ñ©`]
+[State -3, ã‚¬ãƒ¼ãƒ‰ãƒã‚§ãƒƒã‚¯ãƒ˜ãƒ«ãƒ‘ãƒ¼]
 Type = Helper
 TriggerAll = var(59)
 TriggerAll = RoundState = 2
@@ -487,7 +487,7 @@ IgnoreHitPause = 1
 PauseMoveTime = 2147483647
 SuperMoveTime = 2147483647
 
-[State -3, év‚SŸo¤¤¥¹¥Æ©`¥È¤ËĞĞ¤«¤Ê¤¤¤è¤¦¤Ë]
+[State -3, é–¢ä¿‚ç„¡ã„ã‚¹ãƒ†ãƒ¼ãƒˆã«è¡Œã‹ãªã„ã‚ˆã†ã«]
 Type = ChangeState
 Trigger1 = IsHelper
 Trigger1 = IsHelper(31000+Root,ID)
@@ -495,13 +495,13 @@ Trigger1 = StateNo != 31000
 Value = 31000
 
 
-[State -3, év‚SŸo¤¤¥¹¥Æ©`¥È¤ËĞĞ¤«¤Ê¤¤¤è¤¦¤Ë]
+[State -3, é–¢ä¿‚ç„¡ã„ã‚¹ãƒ†ãƒ¼ãƒˆã«è¡Œã‹ãªã„ã‚ˆã†ã«]
 Type = SelfState
 Trigger1 = IsHelper(32000)
 Trigger1 = StateNo != 32000
 Value = 32000
 
-[State -3, év‚SŸo¤¤¥¹¥Æ©`¥È¤ËĞĞ¤«¤Ê¤¤¤è¤¦¤Ë]
+[State -3, é–¢ä¿‚ç„¡ã„ã‚¹ãƒ†ãƒ¼ãƒˆã«è¡Œã‹ãªã„ã‚ˆã†ã«]
 Type = SelfState
 Trigger1 = IsHelper(32500) || IsHelper(32501)
 Trigger1 = StateNo != 32500
@@ -509,34 +509,34 @@ Value = 32500
 
 
 ;================================================================================================
-;ÖØÁ¦¼ÓËÙ¶È¼ÇÂ¼
+;é‡åŠ›åŠ é€Ÿåº¦è®°å½•
 
 
 [state -3, yaccel]
-type = varset;¼ÇÂ¼·ÇÊÜ»÷ÖØÁ¦¼ÓËÙ¶È£¨×î½üÖ®µĞÈË£©
+type = varset;è®°å½•éå—å‡»é‡åŠ›åŠ é€Ÿåº¦ï¼ˆæœ€è¿‘ä¹‹æ•Œäººï¼‰
 Trigger1 = fvar(30) != EnemyNear(floor(fvar(37))),const(movement.yaccel)
 Trigger1 = EnemyNear(floor(fvar(37))),StateNo != [5000,5210]
 Trigger1 = EnemyNear(floor(fvar(37))),Vel Y != 0
-FV = 30      ;µĞÈË²»ÔÚ¹«¹²×´Ì¬Ê±µÄÖØÁ¦¼ÓËÙ¶È¼ÇÂ¼£¬ÅäºÏyËÙ¶ÈµÄÏà¼Ó»á¶ÔaiÔ¤ÅĞ¸ü¾«È·
+FV = 30      ;æ•Œäººä¸åœ¨å…¬å…±çŠ¶æ€æ—¶çš„é‡åŠ›åŠ é€Ÿåº¦è®°å½•ï¼Œé…åˆyé€Ÿåº¦çš„ç›¸åŠ ä¼šå¯¹aié¢„åˆ¤æ›´ç²¾ç¡®
 value = EnemyNear(floor(fvar(37))),const(movement.yaccel)
 ignorehitpause = 1
 
 
 [state -3, yaccel]
-type = varset;¼ÇÂ¼ÊÜ»÷ÖØÁ¦¼ÓËÙ¶È£¨×î½üÖ®µĞÈË£©
+type = varset;è®°å½•å—å‡»é‡åŠ›åŠ é€Ÿåº¦ï¼ˆæœ€è¿‘ä¹‹æ•Œäººï¼‰
 Trigger1 = fvar(30) != EnemyNear(floor(fvar(37))),GetHitVar(yaccel)
 Trigger1 = EnemyNear(floor(fvar(37))),StateNo = [5000,5210]
-FV = 30 ; ¹«¹²ÊÜ»÷×´Ì¬ÖØÁ¦¼ÓËÙ¶È¼ÇÂ¼
+FV = 30 ; å…¬å…±å—å‡»çŠ¶æ€é‡åŠ›åŠ é€Ÿåº¦è®°å½•
 value = EnemyNear(floor(fvar(37))),GetHitVar(yaccel)
 ignorehitpause = 1
 
 
 [state -3, yaccel]
-type = varset;´ËstateÓÃÓÚ½«×î½üÖ®µĞ yËÙ¶ÈÎªÁãÊ±µÄ ÖØÁ¦¼ÓËÙ¶È²ÎÊıÒÔÁãÖµ¸³¸øfvar(30) written by Eagrose
+type = varset;æ­¤stateç”¨äºå°†æœ€è¿‘ä¹‹æ•Œ yé€Ÿåº¦ä¸ºé›¶æ—¶çš„ é‡åŠ›åŠ é€Ÿåº¦å‚æ•°ä»¥é›¶å€¼èµ‹ç»™fvar(30) written by Eagrose
 Trigger1 = fvar(30) != 0
 Trigger1 = EnemyNear(floor(fvar(37))),Vel Y = 0
 FV = 30
-value = 0   ;yÖáÎŞËÙ¶ÈÊ±¼´ËÙ¶ÈÎª0£¬ÖØĞÂ¸³ÖµÎª0
+value = 0   ;yè½´æ— é€Ÿåº¦æ—¶å³é€Ÿåº¦ä¸º0ï¼Œé‡æ–°èµ‹å€¼ä¸º0
 ignorehitpause = 1
 
 
@@ -556,21 +556,21 @@ fvar(37) = Cond(EnemyNear(0),Alive,0,1)
 ignorehitpause = 1
 
 ;================================================================================================
-;ÊÜ»÷½©Ö±Ê£ÓàÊ±¼ä»ñÈ¡
+;å—å‡»åƒµç›´å‰©ä½™æ—¶é—´è·å–
 ;fvar(31) HitShake Remaining Time Calculate for precise Air Combo
-;´ËstateÓÃÓÚ½«×î½üÖ®µĞÊÜ»÷Ê±µÄÊÜ»÷½©Ö±Ê£ÓàÊ±¼ä²ÎÊıÊ±¿Ì¶ÁÈ¡¸øfvar(31)
-;·ÀÖ¹Ô¤ÅĞÊ§Îó
+;æ­¤stateç”¨äºå°†æœ€è¿‘ä¹‹æ•Œå—å‡»æ—¶çš„å—å‡»åƒµç›´å‰©ä½™æ—¶é—´å‚æ•°æ—¶åˆ»è¯»å–ç»™fvar(31)
+;é˜²æ­¢é¢„åˆ¤å¤±è¯¯
 ;written by Eagrose
 ;================================================================================================
-[state -3, HitShake Remaining Time Calculate];ÊÜ»÷ ¶ÁÈ¡ÊÜ»÷²ÎÊıGetHitVar(hitshaketime)
+[state -3, HitShake Remaining Time Calculate];å—å‡» è¯»å–å—å‡»å‚æ•°GetHitVar(hitshaketime)
 type = varset
 Triggerall = EnemyNear(floor(fvar(37))),movetype = H
 Trigger1 = fvar(31) != EnemyNear(floor(fvar(37))),GetHitVar(hitshaketime)
 FV = 31
-value = EnemyNear(floor(fvar(37))),GetHitVar(hitshaketime) ;(´ò“Äµ±¤Æ¤¿•r¤Îhitshaketime‚)
+value = EnemyNear(floor(fvar(37))),GetHitVar(hitshaketime) ;(æ‰“æ’ƒå½“ã¦ãŸæ™‚ã®hitshaketimeå€¤)
 ignorehitpause = 1
 
-[state -3, HitShake Remaining Time Calculate];·ÇÊÜ»÷ÖØÖÃ
+[state -3, HitShake Remaining Time Calculate];éå—å‡»é‡ç½®
 type = varset
 Triggerall = EnemyNear(floor(fvar(37))),movetype != H
 Trigger1 = fvar(31) != 0
@@ -579,58 +579,58 @@ value = 0
 ignorehitpause = 1
 
 ;================================================================================================
-;±ê×¼ÊÜ»÷¶¯»­ Ô­µãY×ø±ê Æ«ÒÆĞŞÕı
-;¼õÉÙÒò×ø±êÔ­µãÓëÈËÎïÊÜ»÷¿òÆ«ÀëÔì³ÉµÄ¿ÕÖĞÁ¬¶ÎÊ§Îó
+;æ ‡å‡†å—å‡»åŠ¨ç”» åŸç‚¹Yåæ ‡ åç§»ä¿®æ­£
+;å‡å°‘å› åæ ‡åŸç‚¹ä¸äººç‰©å—å‡»æ¡†åç¦»é€ æˆçš„ç©ºä¸­è¿æ®µå¤±è¯¯
 ;fvar(32) Enemy Standard GetHitAnim Coordinate-Origin Calculate for precise Air Combo
-;´ËstateÓÃÓÚ¸ù¾İ×î½üÖ®µĞÊÜ»÷Ê±µÄÏµÍ³Ä¬ÈÏ¶¯»­ºÅ£¬¶Ô¶¯»­Ô­µãY×ø±ê½øĞĞÆ«ÒÆĞŞÕı£¬²¢´æ´¢ÓÚfvar(32)
+;æ­¤stateç”¨äºæ ¹æ®æœ€è¿‘ä¹‹æ•Œå—å‡»æ—¶çš„ç³»ç»Ÿé»˜è®¤åŠ¨ç”»å·ï¼Œå¯¹åŠ¨ç”»åŸç‚¹Yåæ ‡è¿›è¡Œåç§»ä¿®æ­£ï¼Œå¹¶å­˜å‚¨äºfvar(32)
 ;written by Eagrose
 ;================================================================================================
-[state -3, Standing GetHitAnim Origin];Õ¾Á¢ÊÜ»÷  Ô­µã:½Å  ¶Ô²ß:ÂÔÉÏÆ«ÒÆ(°ëÉí¸ßµÄ1/8)
+[state -3, Standing GetHitAnim Origin];ç«™ç«‹å—å‡»  åŸç‚¹:è„š  å¯¹ç­–:ç•¥ä¸Šåç§»(åŠèº«é«˜çš„1/8)
 type = varset
 Triggerall = EnemyNear(floor(Fvar(37))),movetype = H
 Triggerall = EnemyNear(floor(Fvar(37))),statetype = A
 Trigger1 = EnemyNear(floor(Fvar(37))),StateNo = [5000,5019]
-Trigger1 = fvar(32) != EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/8.0 ;Size.mid.pos.Y±¾Éí¸ºÖµ
+Trigger1 = fvar(32) != EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/8.0 ;Size.mid.pos.Yæœ¬èº«è´Ÿå€¼
 FV = 32
 value = EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/8.0
 ignorehitpause = 1
 
-[state -3, Crouching GetHitAnim Origin];ÏÂ¶×ÊÜ»÷  Ô­µã:½Å  ¶Ô²ß:ÂÔÉÏÆ«ÒÆ(°ëÉí¸ßµÄ1/8)
+[state -3, Crouching GetHitAnim Origin];ä¸‹è¹²å—å‡»  åŸç‚¹:è„š  å¯¹ç­–:ç•¥ä¸Šåç§»(åŠèº«é«˜çš„1/8)
 type = varset
 Triggerall = EnemyNear(floor(Fvar(37))),movetype = H
 Triggerall = EnemyNear(floor(Fvar(37))),statetype = A
 Trigger1 = EnemyNear(floor(Fvar(37))),StateNo = [5020,5029]
-Trigger1 = fvar(32) != EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/8.0 ;Size.mid.pos.Y±¾Éí¸ºÖµ
+Trigger1 = fvar(32) != EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/8.0 ;Size.mid.pos.Yæœ¬èº«è´Ÿå€¼
 FV = 32
 value = EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/8.0
 ignorehitpause = 1
 
-[state -3, Air Start GetHitAnim Origin];¿ÕÖĞÊÜ»÷³õÊ¼  Ô­µã:½Å  ¶Ô²ß:ÉÏÆ«ÒÆ(°ëÉí¸ßµÄ1/6)
+[state -3, Air Start GetHitAnim Origin];ç©ºä¸­å—å‡»åˆå§‹  åŸç‚¹:è„š  å¯¹ç­–:ä¸Šåç§»(åŠèº«é«˜çš„1/6)
 type = varset
 Triggerall = EnemyNear(floor(Fvar(37))),movetype = H
 Triggerall = EnemyNear(floor(Fvar(37))),statetype = A
 Trigger1 = EnemyNear(floor(Fvar(37))),StateNo = 5030
-Trigger1 = fvar(32) != EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/6.0 ;Size.mid.pos.Y±¾Éí¸ºÖµ
+Trigger1 = fvar(32) != EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/6.0 ;Size.mid.pos.Yæœ¬èº«è´Ÿå€¼
 FV = 32
 value = EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/6.0
 ignorehitpause = 1
 
-[state -3, Air HitBack GetHitAnim Origin];¿ÕÖĞÊÜ»÷ºóÑö  Ô­µã:Õ¾Á¢Ê±µÄ½Å  µ«ÖĞÍ¾ÉíÌå¸¡¿ÕÆ«ÒÆ¼«´ó  ¶Ô²ß:ÉÏÆ«ÒÆ(°ëÉí¸ßµÄ1/4)
+[state -3, Air HitBack GetHitAnim Origin];ç©ºä¸­å—å‡»åä»°  åŸç‚¹:ç«™ç«‹æ—¶çš„è„š  ä½†ä¸­é€”èº«ä½“æµ®ç©ºåç§»æå¤§  å¯¹ç­–:ä¸Šåç§»(åŠèº«é«˜çš„1/4)
 type = varset
 Triggerall = EnemyNear(floor(Fvar(37))),movetype = H
 Triggerall = EnemyNear(floor(Fvar(37))),statetype = A
 Trigger1 = EnemyNear(floor(Fvar(37))),StateNo = 5035
-Trigger1 = fvar(32) != EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/4.0 ;Size.mid.pos.Y±¾Éí¸ºÖµ
+Trigger1 = fvar(32) != EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/4.0 ;Size.mid.pos.Yæœ¬èº«è´Ÿå€¼
 FV = 32
 value = EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/4.0
 ignorehitpause = 1
 
-[state -3, Air Fall/Trip GetHitAnim Origin];¿ÕÖĞÊÜ»÷ÏÂÂä¡¢°í½Å  Ô­µã:Õ¾Á¢Ê±µÄ½Å£¨´ËÊ±ÊÜ»÷¿òÒòÍ¼¶øÒì,²îÒì¾Ş´ó£©  ¶Ô²ß:ÉÏÆ«ÒÆ(°ëÉí¸ßµÄ1/4)
+[state -3, Air Fall/Trip GetHitAnim Origin];ç©ºä¸­å—å‡»ä¸‹è½ã€ç»Šè„š  åŸç‚¹:ç«™ç«‹æ—¶çš„è„šï¼ˆæ­¤æ—¶å—å‡»æ¡†å› å›¾è€Œå¼‚,å·®å¼‚å·¨å¤§ï¼‰  å¯¹ç­–:ä¸Šåç§»(åŠèº«é«˜çš„1/4)
 type = varset
 Triggerall = EnemyNear(floor(Fvar(37))),movetype = H
 Triggerall = EnemyNear(floor(Fvar(37))),statetype = A
 Trigger1 = EnemyNear(floor(Fvar(37))),StateNo = [5050,5079]
-Trigger1 = fvar(32) != EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/4.0  ;Size.mid.pos.Y±¾Éí¸ºÖµ
+Trigger1 = fvar(32) != EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/4.0  ;Size.mid.pos.Yæœ¬èº«è´Ÿå€¼
 FV = 32
 value = EnemyNear(floor(Fvar(37))),const(Size.mid.pos.Y)/4.0
 ignorehitpause = 1
@@ -752,6 +752,7 @@ TriggerAll = roundstate = 2
 Trigger1 = StateNo = 2000
 Trigger2 = StateNo = 2100
 Trigger3 = Stateno = 2400
+Trigger4 = Stateno = 2419
 var(23) = 1
 
 [State 0, VarSet]
@@ -786,7 +787,7 @@ var(31) = 0
 
 
 
-[State 0, ±äÁ¿³õÊ¼»¯]
+[State 0, å˜é‡åˆå§‹åŒ–]
 type = Null
 TriggerAll = roundstate = 1
 Trigger1 = 1||var(7):=0
@@ -803,7 +804,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, »ñÈ¡È­½ÅÃş½±¼ÇÂ¼Ê±¼äÖµ]
+[State 0, è·å–æ‹³è„šæ‘¸å¥–è®°å½•æ—¶é—´å€¼]
 type = Null
 TriggerAll = roundstate >= 2
 Trigger1 = var(46):=Helper(88000),var(3)||1
@@ -815,7 +816,7 @@ ignorehitpause = 1
 ;persistent = 
 
 ;7,21,24,29,32
-[State 0, »ñÈ¡È­½ÅÃş½±¼ÇÂ¼×´Ì¬ºÅ]
+[State 0, è·å–æ‹³è„šæ‘¸å¥–è®°å½•çŠ¶æ€å·]
 type = Null
 TriggerAll = roundstate >= 2
 Trigger1 = var(7):=Helper(88000),var(0)||1
@@ -826,7 +827,7 @@ Trigger1 = var(32):=Helper(88000),var(19)||1
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Åöµ½´óÉß²»´óÌø¶Ô²ß]
+[State 0, ç¢°åˆ°å¤§è›‡ä¸å¤§è·³å¯¹ç­–]
 type = null;VarSet
 TriggerAll = Var(37)=0||!Var(37)
 Trigger1 = EnemyNear(0),Name="Orochi Eagrose Version"||EnemyNear(1),Name="Orochi Eagrose Version"
@@ -880,7 +881,7 @@ TriggerAll = p2dist x < 0 && !time && var(59)
 Trigger1 = movetype = A && StateNo = 700
 Trigger2 = StateNo = [120,155]
 
-[State -3, Á¢¤Á] ;Õ¾·À£¬ÓÃvar(48) = 2À´´úÌæ
+[State -3, ç«‹ã¡] ;ç«™é˜²ï¼Œç”¨var(48) = 2æ¥ä»£æ›¿
 Type = VarSet
 TriggerAll = var(59)
 TriggerAll =!IsHelper
@@ -896,7 +897,7 @@ Trigger5 = EnemyNear(floor(fvar(37))),StateNo = Helper(31000+ID),var(14)
 var(48) = 2
 IgnoreHitPause = 1
 
-[State -3, ¤·¤ã¤¬¤ß] ;¶×·À£¬ÓÃvar(48) = 1À´´úÌæ
+[State -3, ã—ã‚ƒãŒã¿] ;è¹²é˜²ï¼Œç”¨var(48) = 1æ¥ä»£æ›¿
 Type = VarSet
 TriggerAll = var(59) 
 TriggerAll =!IsHelper
@@ -913,14 +914,14 @@ Trigger6 = EnemyNear(floor(fvar(37))),StateNo = Helper(31000+ID),var(30)
 var(48) = 1
 IgnoreHitPause = 1
 
-[State -3, Á¢¤Á]
+[State -3, ç«‹ã¡]
 Type = VarSet
 TriggerAll = var(59)
 TriggerAll =!IsHelper
 TriggerAll = NumEnemy
 TriggerAll = NumHelper(31000+ID)
 TriggerAll = StateType != A
-TriggerAll = EnemyNear(floor(fvar(37))),StateNo != Helper(31000+ID),var(20) ;²»ÄÜÊÇ±»ÆÆ·ÀµÄÕĞÊ½
+TriggerAll = EnemyNear(floor(fvar(37))),StateNo != Helper(31000+ID),var(20) ;ä¸èƒ½æ˜¯è¢«ç ´é˜²çš„æ‹›å¼
 TriggerAll = EnemyNear(floor(fvar(37))),StateNo != Helper(31000+ID),var(21)
 TriggerAll = EnemyNear(floor(fvar(37))),StateNo != Helper(31000+ID),var(22)
 TriggerAll = EnemyNear(floor(fvar(37))),StateNo != Helper(31000+ID),var(23)
@@ -939,7 +940,7 @@ Trigger3 =!EnemyNear(floor(fvar(37))),NumProj
 var(48) = 2
 IgnoreHitPause = 1
 
-[State -3, ¤·¤ã¤¬¤ß]
+[State -3, ã—ã‚ƒãŒã¿]
 Type = VarSet
 TriggerAll = var(59)
 TriggerAll =!IsHelper
@@ -968,7 +969,7 @@ Trigger4 = EnemyNear(floor(fvar(37))),NumProj
 var(48) = 1
 IgnoreHitPause = 1
 
-[State -3, Á¢¤Á]
+[State -3, ç«‹ã¡]
 Type = VarSet
 TriggerAll = var(59) 
 TriggerAll =!IsHelper
@@ -976,7 +977,7 @@ TriggerAll = NumEnemy
 TriggerAll = NumHelper(31000+ID)
 TriggerAll = StateType != A
 TriggerAll = MoveType != H
-Trigger1 = EnemyNear(floor(fvar(37))),StateNo = Helper(31000+ID),var(10) ;ÆÆ·ÀÒÔºó»»Ò»¸ö¶ÎÎ»¼ÇÒäÕĞÊ½
+Trigger1 = EnemyNear(floor(fvar(37))),StateNo = Helper(31000+ID),var(10) ;ç ´é˜²ä»¥åæ¢ä¸€ä¸ªæ®µä½è®°å¿†æ‹›å¼
 Trigger2 = EnemyNear(floor(fvar(37))),StateNo = Helper(31000+ID),var(11)
 Trigger3 = EnemyNear(floor(fvar(37))),StateNo = Helper(31000+ID),var(12)
 Trigger4 = EnemyNear(floor(fvar(37))),StateNo = Helper(31000+ID),var(13)
@@ -984,7 +985,7 @@ Trigger5 = EnemyNear(floor(fvar(37))),StateNo = Helper(31000+ID),var(14)
 var(48) = 2
 IgnoreHitPause = 1
 
-[State -3, ¤·¤ã¤¬¤ß]
+[State -3, ã—ã‚ƒãŒã¿]
 Type = VarSet
 TriggerAll = var(59)
 TriggerAll =!IsHelper
@@ -1003,7 +1004,7 @@ IgnoreHitPause = 1
 
 
 
-[State 0, Èç¹ûµĞ·½²»ÔÚÍ¶¼¼²»¿ÉÖĞµÄ×´Ì¬ºÅÄÚ½«±äÁ¿Çå0]
+[State 0, å¦‚æœæ•Œæ–¹ä¸åœ¨æŠ•æŠ€ä¸å¯ä¸­çš„çŠ¶æ€å·å†…å°†å˜é‡æ¸…0]
 type = VarSet
 TriggerAll = Fvar(38)!=0
 Trigger1 = EnemyNear(floor(fvar(37))),movetype=H||EnemyNear(floor(fvar(37))),StateNo=[5000,5120]
@@ -1019,7 +1020,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State -3, Èç¹ûµĞ·½ÔÚÍ¶¼¼²»¿ÉÖĞµÄ×´Ì¬ºÅÄÚ½«±äÁ¿Ôö¼Ó]
+[State -3, å¦‚æœæ•Œæ–¹åœ¨æŠ•æŠ€ä¸å¯ä¸­çš„çŠ¶æ€å·å†…å°†å˜é‡å¢åŠ ]
 Type = Null
 TriggerAll = var(59)
 TriggerAll = NumHelper(82000)
@@ -1047,7 +1048,7 @@ IgnoreHitPause = 1
 
 
 
-[State -3, ÏàÊÖ¤ÎÌØÊâ¥¹¥Æ©`¥È]
+[State -3, ç›¸æ‰‹ã®ç‰¹æ®Šã‚¹ãƒ†ãƒ¼ãƒˆ]
 Type = Null
 TriggerAll = var(59)
 TriggerAll = NumHelper(83000)
@@ -1086,7 +1087,7 @@ IgnoreHitPause = 1
 
 
 
-[State -3, ÏàÊÖ¤ÎÌØÊâ¥¹¥Æ©`¥È]
+[State -3, ç›¸æ‰‹ã®ç‰¹æ®Šã‚¹ãƒ†ãƒ¼ãƒˆ]
 Type = Null
 TriggerAll = var(59)
 TriggerAll = NumHelper(83000)
@@ -1146,10 +1147,10 @@ ignorehitpause = 1
 
 
 
-[State 0, µĞ·½ÎŞµĞ¼ÇÂ¼]
+[State 0, æ•Œæ–¹æ— æ•Œè®°å½•]
 type = Null
 TriggerAll = var(59)
-TriggerAll = roundstate>=2
+Trigger1 = 1
 ;Trigger1=Helper(84000),var(1)>0
 ;Trigger1=1 ||fvar(0):=Helper(84000),var(1)
 ;Trigger1=Helper(84000),var(2)>0
@@ -1186,22 +1187,22 @@ TriggerAll = roundstate>=2
 ;Trigger1=1 ||fvar(16):=Helper(84000),var(17)
 ;Trigger1=Helper(84000),var(18)>0
 ;Trigger1=1 ||fvar(17):=Helper(84000),var(18)
-Trigger1=Helper(84000),var(19)>0
-Trigger1=1 ||fvar(18):=Helper(84000),var(19)
-Trigger1=Helper(84000),var(20)>0
-Trigger1=1 ||fvar(19):=Helper(84000),var(20)
-Trigger1=Helper(84000),var(21)>0
-Trigger1=1 ||fvar(20):=Helper(84000),var(21)
-Trigger1=Helper(84000),var(22)>0
-Trigger1=1 ||fvar(21):=Helper(84000),var(22)
-Trigger1=Helper(84000),var(23)>0
-Trigger1=1 ||fvar(22):=Helper(84000),var(23)
-Trigger1=Helper(84000),var(24)>0
-Trigger1=1 ||fvar(23):=Helper(84000),var(0)
+;Trigger1=Helper(84000),var(19)>0
+;Trigger1=1 ||fvar(18):=Helper(84000),var(19)
+;Trigger1=Helper(84000),var(20)>0
+;Trigger1=1 ||fvar(19):=Helper(84000),var(20)
+;Trigger1=Helper(84000),var(21)>0
+;Trigger1=1 ||fvar(20):=Helper(84000),var(21)
+;Trigger1=Helper(84000),var(22)>0
+;Trigger1=1 ||fvar(21):=Helper(84000),var(22)
+;Trigger1=Helper(84000),var(23)>0
+;Trigger1=1 ||fvar(22):=Helper(84000),var(23)
+;Trigger1=Helper(84000),var(24)>0
+;Trigger1=1 ||fvar(23):=Helper(84000),var(0)
 ignorehitpause = 1
 
 
-[State 0, µĞ·½ÎŞµĞ¼ÇÂ¼]
+[State 0, æ•Œæ–¹æ— æ•Œè®°å½•]
 type = Null
 TriggerAll = var(59)
 TriggerAll = NumHelper(84000)
@@ -1240,7 +1241,7 @@ ignorehitpause = 1
 
 
 
-[State -3, µĞ·½²»ÔÚ±äÁ¿Ëù¼ÇÂ¼µ½µÄ×´Ì¬ºÅÖÃÎª0]
+[State -3, æ•Œæ–¹ä¸åœ¨å˜é‡æ‰€è®°å½•åˆ°çš„çŠ¶æ€å·ç½®ä¸º0]
 Type = Varset
 TriggerAll = var(59)
 TriggerAll = NumHelper(84000)
@@ -1252,7 +1253,7 @@ value = 0
 ignorehitpause = 1
 
 
-[State 0, µĞ·½ÎŞµĞ¼ÇÂ¼]
+[State 0, æ•Œæ–¹æ— æ•Œè®°å½•]
 type = Null
 TriggerAll = var(59)
 TriggerAll = NumHelper(84000)
@@ -1271,8 +1272,61 @@ Trigger5 = 1||var(34):=var(34)+1
 ignorehitpause = 1
 
 
+[State 0, æ•Œæ–¹æ— æ•Œè®°å½•]
+type = Null
+TriggerAll = var(59)
+TriggerAll = roundstate>=2
+Trigger1=Helper(84000),var(1)>0
+Trigger1=1 ||fvar(0):=Helper(84000),var(1)
+Trigger1=Helper(84000),var(2)>0
+Trigger1=1 ||fvar(1):=Helper(84000),var(2)
+Trigger1=Helper(84000),var(3)>0
+Trigger1=1 ||fvar(2):=Helper(84000),var(3)
+Trigger1=Helper(84000),var(4)>0
+Trigger1=1 ||fvar(3):=Helper(84000),var(4)
+Trigger1=Helper(84000),var(5)>0
+Trigger1=1 ||fvar(4):=Helper(84000),var(5)
+Trigger1=Helper(84000),var(6)>0
+Trigger1=1 ||fvar(5):=Helper(84000),var(6)
+Trigger1=Helper(84000),var(7)>0
+Trigger1=1 ||fvar(6):=Helper(84000),var(7)
+Trigger1=Helper(84000),var(8)>0
+Trigger1=1 ||fvar(7):=Helper(84000),var(8)
+Trigger1=Helper(84000),var(9)>0
+Trigger1=1 ||fvar(8):=Helper(84000),var(9)
+Trigger1=Helper(84000),var(10)>0
+Trigger1=1 ||fvar(9):=Helper(84000),var(10)
+Trigger1=Helper(84000),var(11)>0
+Trigger1=1 ||fvar(10):=Helper(84000),var(11)
+Trigger1=Helper(84000),var(12)>0
+Trigger1=1 ||fvar(11):=Helper(84000),var(12)
+Trigger1=Helper(84000),var(13)>0
+Trigger1=1 ||fvar(12):=Helper(84000),var(13)
+Trigger1=Helper(84000),var(14)>0
+Trigger1=1 ||fvar(13):=Helper(84000),var(14)
+Trigger1=Helper(84000),var(15)>0
+Trigger1=1 ||fvar(14):=Helper(84000),var(15)
+Trigger1=Helper(84000),var(16)>0
+Trigger1=1 ||fvar(15):=Helper(84000),var(16)
+Trigger1=Helper(84000),var(17)>0
+Trigger1=1 ||fvar(16):=Helper(84000),var(17)
+Trigger1=Helper(84000),var(18)>0
+Trigger1=1 ||fvar(17):=Helper(84000),var(18)
+Trigger1=Helper(84000),var(19)>0
+Trigger1=1 ||fvar(18):=Helper(84000),var(19)
+Trigger1=Helper(84000),var(20)>0
+Trigger1=1 ||fvar(19):=Helper(84000),var(20)
+Trigger1=Helper(84000),var(21)>0
+Trigger1=1 ||fvar(20):=Helper(84000),var(21)
+Trigger1=Helper(84000),var(22)>0
+Trigger1=1 ||fvar(21):=Helper(84000),var(22)
+Trigger1=Helper(84000),var(23)>0
+Trigger1=1 ||fvar(22):=Helper(84000),var(23)
+Trigger1=Helper(84000),var(24)>0
+Trigger1=1 ||fvar(23):=Helper(84000),var(0)
+ignorehitpause = 1
 
-[State -3, µĞ·½²»ÔÚ±äÁ¿Ëù¼ÇÂ¼µ½µÄ×´Ì¬ºÅÖÃÎª0]
+[State -3, æ•Œæ–¹ä¸åœ¨å˜é‡æ‰€è®°å½•åˆ°çš„çŠ¶æ€å·ç½®ä¸º0]
 Type = Varset
 TriggerAll = var(59)
 TriggerAll = NumHelper(84000)
@@ -1284,7 +1338,7 @@ value = 0
 ignorehitpause = 1
 
 
-[State 0, µĞ·½ÎŞµĞ¼ÇÂ¼]
+[State 0, æ•Œæ–¹æ— æ•Œè®°å½•]
 type = Null
 TriggerAll = var(59)
 TriggerAll = NumHelper(88000)
@@ -1304,7 +1358,7 @@ ignorehitpause = 1
 
 
 
-[State -3, µĞ·½²»ÔÚ±äÁ¿Ëù¼ÇÂ¼µ½µÄ×´Ì¬ºÅÖÃÎª0]
+[State -3, æ•Œæ–¹ä¸åœ¨å˜é‡æ‰€è®°å½•åˆ°çš„çŠ¶æ€å·ç½®ä¸º0]
 Type = Varset
 TriggerAll = var(59)
 TriggerAll = NumHelper(88000)
@@ -1316,7 +1370,7 @@ value = 0
 ignorehitpause = 1
 
 
-[State -3, Ç°ÉÁ±Ü±»´ò±ê¼ÇÖØÖÃ]
+[State -3, å‰é—ªé¿è¢«æ‰“æ ‡è®°é‡ç½®]
 Type = Varset
 TriggerAll = var(59)
 TriggerAll = NumHelper(88000)
@@ -1328,7 +1382,7 @@ value = 0
 ignorehitpause = 1
 
 
-[State 0, Ç°ÉÁ±Ü±»´ò±ê¼Ç]
+[State 0, å‰é—ªé¿è¢«æ‰“æ ‡è®°]
 type = Null
 TriggerAll = var(59)
 TriggerAll = NumHelper(88000)
@@ -1350,7 +1404,7 @@ ignorehitpause = 1
 
 
 
-[State -3, ºóÉÁ±Ü±»´ò±ê¼ÇÖØÖÃ]
+[State -3, åé—ªé¿è¢«æ‰“æ ‡è®°é‡ç½®]
 Type = Varset
 TriggerAll = var(59)
 TriggerAll = NumHelper(88000)
@@ -1362,7 +1416,7 @@ value = 0
 ignorehitpause = 1
 
 
-[State 0, ºóÉÁ±Ü±»´ò±ê¼Ç]
+[State 0, åé—ªé¿è¢«æ‰“æ ‡è®°]
 type = Null
 TriggerAll = var(59)
 TriggerAll = NumHelper(88000)
@@ -1383,7 +1437,7 @@ Trigger6 = 1||Fvar(34):= Fvar(34)+1
 ignorehitpause = 1
 
 
-[State 0, µĞ·½ÎŞµĞ¼ÇÂ¼]
+[State 0, æ•Œæ–¹æ— æ•Œè®°å½•]
 type = Null
 TriggerAll = var(59)
 TriggerAll = NumHelper(84000)
@@ -1402,7 +1456,7 @@ Trigger5 = 1||var(35):=var(35)+1
 ignorehitpause = 1
 
 
-[State -3, µĞ·½²»ÔÚ±äÁ¿Ëù¼ÇÂ¼µ½µÄ×´Ì¬ºÅÖÃÎª0]
+[State -3, æ•Œæ–¹ä¸åœ¨å˜é‡æ‰€è®°å½•åˆ°çš„çŠ¶æ€å·ç½®ä¸º0]
 Type = Varset
 TriggerAll = var(59)
 TriggerAll = NumHelper(84000)
@@ -1416,14 +1470,14 @@ ignorehitpause = 1
 
 
 ;---------------------------------------------------------------------------
-[State -3, juggle¼ÆËã];È¡×Ô¿ÚË®ÊÏÄ£°å£¬ÒÔÏÂ¼ÆËã·½Ê½¾ùÊÇ²Î¿¼×Ô¿ÚË®ÊÏµÄË¼Â·È¥Ğ´£¬¸ĞĞ»¿ÚË®ÊÏ
+[State -3, juggleè®¡ç®—];å–è‡ªå£æ°´æ°æ¨¡æ¿ï¼Œä»¥ä¸‹è®¡ç®—æ–¹å¼å‡æ˜¯å‚è€ƒè‡ªå£æ°´æ°çš„æ€è·¯å»å†™ï¼Œæ„Ÿè°¢å£æ°´æ°
 type = VarSet  
 TriggerAll = fvar(24) != Const(data.airjuggle)
 Trigger1 = EnemyNear(floor(fvar(37))),Movetype = A
 Trigger2 = EnemyNear(floor(fvar(37))),StateNo < 200
 Trigger3 = (EnemyNear(floor(fvar(37))),StateNo = 5120 && AnimTime = 0) || (EnemyNear(floor(fvar(37))),StateNo = [5200,5220))
 fv = 24
-value = Const(data.airjuggle);--------------µĞ·½·¢Éú×ßÎ»¿É¿Ø,ÊÜÉí³öÕĞµÄÇé¿öjuggleÖØĞÂ¸³Öµ¼ÆËã
+value = Const(data.airjuggle);--------------æ•Œæ–¹å‘ç”Ÿèµ°ä½å¯æ§,å—èº«å‡ºæ‹›çš„æƒ…å†µjuggleé‡æ–°èµ‹å€¼è®¡ç®—
 IgNoreHitPause=1
 
 
@@ -1483,8 +1537,8 @@ TriggerAll = movehit = 1
 TriggerAll = EnemyNear(floor(fvar(37))),statetype = A
 TriggerAll = EnemyNear(floor(fvar(37))),time = 1
 Triggerall = EnemyNear(floor(fvar(37))),gethitvar(fall)
-TriggerAll = fvar(24) >= 8 ;juggleÊ£Îª1µãµÄÊ±ºò£¬³¬¹ı1µãµÄjuggleµÄ¼¼ÄÜÔò»á³öÏÖ´ò²»ÖĞµÄÇé¿ö
-Trigger1 = StateNo = 200;µĞ·½ÔÚ¿ÕÖĞÊÜ»÷Ê±£¬×´Ì¬ºÅÎª200µÄ¼¼ÄÜÏûºÄjuggleÖµÎª8
+TriggerAll = fvar(24) >= 8 ;juggleå‰©ä¸º1ç‚¹çš„æ—¶å€™ï¼Œè¶…è¿‡1ç‚¹çš„juggleçš„æŠ€èƒ½åˆ™ä¼šå‡ºç°æ‰“ä¸ä¸­çš„æƒ…å†µ
+Trigger1 = StateNo = 200;æ•Œæ–¹åœ¨ç©ºä¸­å—å‡»æ—¶ï¼ŒçŠ¶æ€å·ä¸º200çš„æŠ€èƒ½æ¶ˆè€—juggleå€¼ä¸º8
 Trigger2 = StateNo = [215,245]
 Trigger3 = StateNo = 400||StateNo = 410||StateNo = 610
 Trigger4 = StateNo = 1050||StateNo = 1400
@@ -1512,7 +1566,7 @@ ignoreHitPause = 1
 ;persistent = 
 
 
-[State 0, Á¬¶Î»÷ÖĞ¼ÇÂ¼]
+[State 0, è¿æ®µå‡»ä¸­è®°å½•]
 type = Null
 TriggerAll = Var(59)
 Trigger1 = (Stateno = [410,499])&&MoveContact
@@ -1561,7 +1615,7 @@ TriggerAll = EnemyNear(floor(fvar(37))),Statetype != A
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H||EnemyNear(floor(fvar(37))),Stateno = [5000,5999]
 Trigger1 = (Stateno=210&&Movehit)|| (Stateno=410&&Movehit)||(StateNo = 240&&Movehit)
 Trigger1 = Random<=83
-Trigger1 = Power>=1000
+Trigger1 = Power>=2000
 Trigger2 = Power>=2000
 Trigger2 = (Stateno=210&&Movehit)|| (Stateno=410&&Movehit)||(StateNo = 240&&Movehit)
 Trigger2 = Random<=650
@@ -1571,7 +1625,7 @@ Trigger3 = Random<=900
 Trigger4 = (Stateno=210&&Movehit)|| (Stateno=410&&Movehit)||(StateNo = 240&&Movehit)
 Trigger4 = EnemyNear(floor(fvar(37))),Life<EnemyNear(floor(fvar(37))),LifeMax*0.33
 Trigger4 = Random<=800
-Trigger4 = Power>=1000
+Trigger4 = Power>=2000
 value = 950
 ;anim =
 ;ignorehitpause = 
@@ -1593,20 +1647,20 @@ TriggerAll = Var(41)<=0
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H||EnemyNear(floor(fvar(37))),Stateno = [5000,5999]
 Trigger1 = Stateno=251&&Helper(252),Var(0)=1
 Trigger1 = Random<=83
-Trigger1 = Power>=1000
+Trigger1 = Power>=2000
 Trigger2 = Stateno=251&&Helper(252),Var(0)=1
 Trigger2 = Random<=750
 Trigger2 = Power>=2000
 Trigger3 = Stateno=251&&Helper(252),Var(0)=1
 Trigger3 = EnemyNear(floor(fvar(37))),Life<EnemyNear(floor(fvar(37))),LifeMax*0.33
 Trigger3 = Random<=800
-Trigger3 = Power>=1000
+Trigger3 = Power>=2000
 value = 950
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
 
-[State 0, ¶şÆø0Ö¡µ±Éí³¬É±]
+[State 0, äºŒæ°”0å¸§å½“èº«è¶…æ€]
 type = ChangeState
 TriggerAll = !IsHelper
 TriggerAll = var(59) 
@@ -1634,7 +1688,9 @@ value = 2200
 ;persistent = 
 
 
-[State 0, 0Æø·Ç0Ö¡µ±Éí]
+
+
+[State 0, 0æ°”é0å¸§å½“èº«]
 type = ChangeState
 TriggerAll = !IsHelper
 TriggerAll = statetype != A
@@ -1650,7 +1706,7 @@ TriggerAll = EnemyNear(floor(fvar(37))),StateNo >=200
 TriggerAll = EnemyNear(floor(fvar(37))),AnimTime<=-5 || PrevStateNo = 700 || PrevStateNo = 701 
 TriggerAll = EnemyNear(floor(fvar(37))),time>= var(56)
 TriggerAll = P2BodyDist x =  [-10+floor(EnemyNear(floor(fvar(37))),vel X),85+Floor(EnemyNear(floor(fvar(37))),vel X)]
-Trigger1 = random <=var(59)*81
+Trigger1 = random <=var(59)*32
 Trigger1 = ctrl || StateNo  = 100 || (StateNo = 52&&time>=3) || StateNo = [21,22]
 value = 1500
 ;anim =
@@ -1658,7 +1714,7 @@ value = 1500
 ;persistent = 
 
 
-[State -3, ¶Ô¿Õµ±Éí]
+[State -3, å¯¹ç©ºå½“èº«]
 type  = ChangeState
 value = 1500
 triggerall = p2stateno !=[151,155]
@@ -1677,7 +1733,7 @@ triggerall = p2statetype != L
 trigger1 = enemynear(floor(fvar(37))),movetype = A
 trigger2 = enemynear(floor(fvar(37))),ctrl = 0
 
-[State -3, Ç°ÉÁ±Ü¿É¿Ø×´Ì¬×¥ºóÒ¡]
+[State -3, å‰é—ªé¿å¯æ§çŠ¶æ€æŠ“åæ‘‡]
 Type = ChangeState
 ;Value = Cond(p2BodyDist x<=70,701,Cond(EnemyNear(floor(fvar(37))),Vel x>0,700,701))
 Value = 701
@@ -1732,7 +1788,7 @@ Trigger1 = !Var(28)
 Trigger1 = FVar(25)=0
 
 
-[State 0, Ò»Æø°¼]
+[State 0, ä¸€æ°”å‡¹]
 type = ChangeState
 TriggerAll = var(59)
 TriggerAll = power >=1000
@@ -1788,7 +1844,7 @@ ignorehitpause = 1
 
 
 
-[State 0, AIµÈ¼¶´óÓÚ5Ê¹ÓÃ·ÉµÀ¶Ô²ß]
+[State 0, AIç­‰çº§å¤§äº5å¹¶ä¸”å¼€å¼€å…³ä½¿ç”¨é£é“å¯¹ç­–]
 type = ChangeState
 TriggerAll = !IsHelper
 TriggerAll = var(59)>=5
@@ -1813,7 +1869,7 @@ Trigger2 = P2BodyDist x>=80
 Trigger3 = 1
 value = 700
 
-[State 0, Í¬ÉÏ,¶àÁËÒ»¸öInguarddistµÄÌõ¼ş]
+[State 0, åŒä¸Š,å¤šäº†ä¸€ä¸ªInguarddistçš„æ¡ä»¶]
 type = ChangeState
 TriggerAll = !IsHelper
 TriggerAll = var(59)>=5
@@ -1841,7 +1897,7 @@ value = 700
 
 
 
-[State 0, AIĞ¡ÓÚµÈÓÚ4¼¶Ôò»áÅ¼¶û½øĞĞÉÁ±Ü]
+[State 0, AIå°äºç­‰äº4çº§åˆ™ä¼šå¶å°”è¿›è¡Œé—ªé¿]
 type = ChangeState
 TriggerAll = !IsHelper
 TriggerAll = var(59)<5
@@ -1906,7 +1962,7 @@ Trigger2 = Var(20)=1&&EnemyNear(floor(fvar(37))),Movetype!=A
 Trigger2 = ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<110 
 
 
-[State ÇáÉıÁú]
+[State è½»å‡é¾™]
 type = ChangeState
 value = 1200
 TriggerAll = var(59)
@@ -1916,8 +1972,6 @@ TriggerAll = !IsHelper
 TriggerAll = statetype != A
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = var(34)=0
 TriggerAll = var(20)=0
 TriggerAll = var(42) = 1
@@ -1945,7 +1999,7 @@ Trigger3= random< 12*var(59)
 ;Trigger2 = EnemyNear(floor(fvar(37))),AnimTime <= -11
 ;Trigger2 =EnemyNear(floor(fvar(37))),movetype =A
 
-[State AI];ÉıÁú
+[State AI];å‡é¾™
 type = ChangeState
 value = 1200
 TriggerAll = var(59)
@@ -1955,8 +2009,6 @@ TriggerAll = alive
 TriggerAll = statetype != A
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = movetype !=H
 TriggerAll = Var(59)<5
 TriggerAll = var(34)=0
@@ -2009,7 +2061,7 @@ Trigger11 =  EnemyNear(floor(fvar(37))),time >= Cond(Helper(82000),var(22)-9<0,1
 
 
 
-[State -3, ´ó¥¸¥ã¥ó¥× Œïw¤ÓµÀ¾ß]
+[State -3, å¤§ã‚¸ãƒ£ãƒ³ãƒ— å¯¾é£›ã³é“å…·]
 Type = ChangeState
 Value = 36
 TriggerAll = var(59) 
@@ -2022,7 +2074,7 @@ TriggerAll = EnemyNear(floor(fvar(37))),StateType != L
 TriggerAll = EnemyNear(floor(fvar(37))),MoveType != H
 TriggerAll = EnemyNear(floor(fvar(37))),AnimTime <= -38
 TriggerAll = EnemyNear(floor(fvar(37))),StateNo = [800,2000) 
-TriggerAll = EnemyNear(floor(fvar(37))),Facing != Facing ;Ãæ¶ÔÃæ
+TriggerAll = EnemyNear(floor(fvar(37))),Facing != Facing ;é¢å¯¹é¢
 TriggerAll = EnemyNear(floor(fvar(37))),Time >= var(56) || var(59) > 9 
 TriggerAll = Ctrl||StateNo=100||StateNo=[21,22]
 TriggerAll = Fvar(26)<=0
@@ -2043,8 +2095,6 @@ TriggerAll = alive
 TriggerAll = p2statetype !=A
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = Helper(82000),var(23)=0
 TriggerAll = !inguarddist
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
@@ -2055,7 +2105,7 @@ TriggerAll = EnemyNear(floor(fvar(37))),Facing = Facing
 TriggerAll = var(42)=1
 TriggerAll = !EnemyNear(floor(fvar(37))),ctrl&&EnemyNear(floor(fvar(37))),StateNo>=200
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != A
-TriggerAll = PrevStateNo!=[5100,5201] ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
+TriggerAll = PrevStateNo!=[5100,5201] ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
 TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22]) ||(StateNo = [120,140])
 Trigger1 = !var(10)
 Trigger1 = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<=70
@@ -2071,8 +2121,6 @@ TriggerAll = alive
 TriggerAll = p2statetype !=A
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = Helper(82000),var(23)=0
 ;TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
@@ -2080,14 +2128,14 @@ TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56);+3&&EnemyNear(floor(fvar(3
 TriggerAll = random<var(59)*51
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != A
-TriggerAll = PrevStateNo!=[5100,5201] ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
+TriggerAll = PrevStateNo!=[5100,5201] ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
 TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22]) ||(StateNo = [120,140])
 Trigger1 = !var(10)
 Trigger1 = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<=70
 Trigger1 = P2BodyDist y <=abs(45-floor(3*(EnemyNear(floor(fvar(37))),vel y)+(3*(3+1)/2)*fvar(30)))-fvar(32)
 value = Cond(EnemyNear(floor(fvar(37))),pos y>=0&&EnemyNear(floor(fvar(37))),statetype != A,400,200)
 
-[STATE -1, Ïòºó×ß]
+[STATE -1, å‘åèµ°]
 TYPE = CHANGESTATE
 VALUE = Cond(var(53)<=100&&Var(52)>100,700,701) 
 ;TRIGGERALL = STATENO !=1000
@@ -2111,7 +2159,7 @@ TRIGGER2 = P2BodyDist X <=60
 TRIGGER2 = P2STATETYPE =L 
 
 
-[STATE -1, Ïòºó×ß]
+[STATE -1, å‘åèµ°]
 TYPE = CHANGESTATE
 VALUE = 105
 ;TRIGGERALL = STATENO !=1000
@@ -2136,7 +2184,23 @@ TRIGGER2 = P2BodyDist X <=60
 TRIGGER2 = P2STATETYPE =L 
 
 
-
+[State AI]
+type = ChangeState
+value = 1563
+TriggerAll = var(59) 
+TriggerAll = !IsHelper
+TriggerAll = random<var(59)*22
+TriggerAll = alive
+TriggerAll = !var(20)
+TriggerAll = Stateno = 105 && Time >1
+TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x - pos x)>120 
+TriggerAll = roundstate = 2
+TriggerAll = EnemyNear(floor(fvar(37))),time >=var(56) 
+TriggerAll = statetype != A
+TriggerAll = p2movetype!= H 
+TriggerAll =!InGuardDist 
+TriggerAll = ctrl ||  StateNo = 21|| StateNo = 22|| StateNo = 100||(StateNo=[120,140])|| StateNo = 52&&time>=3
+Trigger1 = !inguarddist||backedgedist>=40
 
 
 
@@ -2165,6 +2229,23 @@ Trigger1 = !Enemy,NumProj && (fvar(25) != 0 || var(59) < 10)
 Trigger2 = Abs(EnemyNear(floor(fvar(37))),Pos X - Pos X) = [110,300] 
 Trigger2 = var(28) && (fvar(25) != 0 || var(59) < 10) 
 Trigger2 = !inguarddist||backedgedist<=40
+
+[State 0, æŠ“èƒŒå]
+type = ChangeState
+TriggerAll = var(59)
+TriggerAll = !IsHelper
+TriggerAll = statetype != A
+TriggerAll = alive
+TriggerAll = random<var(59)*81
+TriggerAll = EnemyNear(floor(fvar(37))),stateno = 1751
+TriggerAll = var(42)=1&&facing = EnemyNear(floor(fvar(37))),facing
+TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<=90+floor(3*(EnemyNear(floor(fvar(37))),vel x))
+TriggerAll = p2statetype != L
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != A
+TriggerAll = ctrl || StateNo = 100 ||  (StateNo = [21,22])||(StateNo = [120,140])||(Stateno=52&&Time>=3)
+Trigger1 =  EnemyNear(floor(fvar(37))),Time>=0
+value = 430
+
 
 
 [State 0, ChangeState]
@@ -2233,17 +2314,11 @@ Trigger1 = Abs(EnemyNear(floor(fvar(37))),Time - EnemyNear(floor(fvar(37))),Anim
 Trigger1 = Helper(32500),var(0) = 0 || Helper(32501),var(1) = 0
 Trigger2 = P2BodyDist X < 30||backedgebodydist<50
 Trigger2 = EnemyNear(floor(fvar(37))),movetype = I&&Helper(32500),var(0) = 0
-Trigger3 = EnemyNear(floor(fvar(37))),AnimTime <= -28 
-Trigger3 = p2StateNo = var(39)&&var(39)!=0 
-Trigger3 =Abs(EnemyNear(floor(fvar(37))),pos x-pos x)<60
-Trigger4 = p2StateNo = var(40)&&var(40)!=0
-Trigger4= EnemyNear(floor(fvar(37))),AnimTime <= -28 
-Trigger4 =Abs(EnemyNear(floor(fvar(37))),pos x-pos x)<60
-Trigger5 =  var(20)=1&&Abs(EnemyNear(floor(fvar(37))),pos x-pos x)<50
-Trigger5= EnemyNear(floor(fvar(37))),AnimTime <= -28 
-Trigger5 = EnemyNear(floor(fvar(37))),Facing!=Facing
-Trigger6 = p2MoveType = A 
-Trigger6 = InGuarddist||Abs(EnemyNear(floor(fvar(37))),pos x-pos x)<131
+Trigger3 =  var(20)=1&&Abs(EnemyNear(floor(fvar(37))),pos x-pos x)<50
+Trigger3= EnemyNear(floor(fvar(37))),AnimTime <= -28 
+Trigger3 = EnemyNear(floor(fvar(37))),Facing!=Facing
+Trigger4 = p2MoveType = A 
+Trigger4 = InGuarddist||Abs(EnemyNear(floor(fvar(37))),pos x-pos x)<131
 
 
 [State -3, FRoll]
@@ -2271,13 +2346,8 @@ Trigger1 = Abs(EnemyNear(floor(fvar(37))),Time - EnemyNear(floor(fvar(37))),Anim
 Trigger1 = Helper(32500),var(0) = 0 || Helper(32501),var(1) = 0
 Trigger2 = P2BodyDist X < 30||backedgebodydist<50
 Trigger2 = EnemyNear(floor(fvar(37))),movetype = I&&Helper(32500),var(0) = 0
-Trigger3 = p2StateNo = var(39)&&var(39)!=0 
-Trigger3 =Abs(EnemyNear(floor(fvar(37))),pos x-pos x)<60
-Trigger4 = p2StateNo = var(40)&&var(40)!=0
-Trigger4 =Abs(EnemyNear(floor(fvar(37))),pos x-pos x)<60
-Trigger5 =  var(20)=1&&Abs(EnemyNear(floor(fvar(37))),pos x-pos x)<50
-Trigger5 = EnemyNear(floor(fvar(37))),Facing!=Facing
-
+Trigger3 =  var(20)=1&&Abs(EnemyNear(floor(fvar(37))),pos x-pos x)<50
+Trigger3 = EnemyNear(floor(fvar(37))),Facing!=Facing
 
 
 
@@ -2318,8 +2388,6 @@ TriggerAll = p2statetype !=C
 TriggerAll = p2statetype !=A
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 ;TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<2j00),0,1)
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56)
@@ -2327,9 +2395,9 @@ TriggerAll = EnemyNear(floor(fvar(37))),movetype!= H
 ;TriggerAll = var(20)=0
 TriggerAll = random<var(59)*51
 TriggerAll = EnemyNear(floor(fvar(37))),statetype = S
-TriggerAll = PrevStateNo!=[5100,5201] ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
+TriggerAll = PrevStateNo!=[5100,5201] ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
 TriggerAll = var(42)=1
-TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<63;Î»ÖÃÔ¤ÅĞ£¬³ËÊıÒ»°ãÊÇÇ°Ò¡Ê±¼ä
+TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<63;ä½ç½®é¢„åˆ¤ï¼Œä¹˜æ•°ä¸€èˆ¬æ˜¯å‰æ‘‡æ—¶é—´
 TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22])||StateNo=[120,140] ;||((StateNo = [130,155])&&EnemyNear(floor(fvar(37))),AnimTime>=-5)
 TriggerAll = !var(10)
 TriggerAll = Helper(82000),var(23)=0
@@ -2358,8 +2426,6 @@ TriggerAll = statetype != A
 TriggerAll = alive
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = Helper(82000),var(23)=0
 TriggerAll = random<var(59)*61
 TriggerAll = var(42)=1
@@ -2369,7 +2435,7 @@ TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 ;TriggerAll = var(20)=0
 TriggerAll = EnemyNear(floor(fvar(37))),movetype!= H
 TriggerAll = fvar(24)>=8
-TriggerAll = PrevStateNo!=[5100,5201] ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
+TriggerAll = PrevStateNo!=[5100,5201] ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
 TriggerAll = P2BodyDist x<=45+Floor(3*(EnemyNear(floor(fvar(37))),vel x))
 TriggerAll = P2BodyDist y >=-60-floor(3*(EnemyNear(floor(fvar(37))),vel y)+(3*(3+1)/2)*fvar(30))+fvar(32)
 TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22]) ||(StateNo = [120,140]);&&EnemyNear(floor(fvar(37))),AnimTime>=-5)
@@ -2489,8 +2555,6 @@ TriggerAll = alive
 TriggerAll = p2statetype !=A
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = var(42)=1
 TriggerAll = Helper(82000),var(23)=0
 ;TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
@@ -2499,7 +2563,7 @@ TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56);+3&&EnemyNear(floor(fvar(3
 TriggerAll = random<var(59)*21
 TriggerAll = EnemyNear(floor(fvar(37))),movetype!= H
 TriggerAll = EnemyNear(floor(fvar(37))),statetype = S
-TriggerAll = PrevStateNo!=[5100,5201] ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
+TriggerAll = PrevStateNo!=[5100,5201] ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
 TriggerAll = var(3)=0||EnemyNear(floor(fvar(37))),Facing=Facing
 TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22]) ||(StateNo = [120,140])
 Trigger1 = !var(10)
@@ -2523,8 +2587,6 @@ TriggerAll = alive
 TriggerAll = var(42)=1
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = Helper(82000),var(23)=0
 TriggerAll = var(3)=0||EnemyNear(floor(fvar(37))),Facing=Facing
 TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56);+3&&EnemyNear(floor(fvar(37))),StateNo<200
@@ -2532,7 +2594,7 @@ TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56);+3&&EnemyNear(floor(fvar(3
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 ;TriggerAll =var(20)=0&&Helper(88000),var(23)=0
 TriggerAll = EnemyNear(floor(fvar(37))),movetype!= H
-TriggerAll = PrevStateNo!=[5100,5201] ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
+TriggerAll = PrevStateNo!=[5100,5201] ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
 TriggerAll = fvar(24)>=8
 TriggerAll = P2BodyDist y >=-60-floor(3*(EnemyNear(floor(fvar(37))),vel y)+(3*(3+1)/2)*fvar(30))+fvar(32)
 TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22]) ||(StateNo = [120,140])
@@ -2540,7 +2602,7 @@ Trigger1 = !var(10)
 Trigger1 = !inguarddist
 Trigger1 = var(20)=0
 Trigger1 = random<var(59)*21
-Trigger1 = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<64;Î»ÖÃÔ¤ÅĞ£¬³ËÊıÒ»°ãÊÇÇ°Ò¡Ê±¼ä
+Trigger1 = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<64;ä½ç½®é¢„åˆ¤ï¼Œä¹˜æ•°ä¸€èˆ¬æ˜¯å‰æ‘‡æ—¶é—´
 Trigger2 = EnemyNear(floor(fvar(37))),Facing =Facing
 ;Trigger2 = !inguarddist
 Trigger2 = random<=var(59)*45
@@ -2552,7 +2614,7 @@ value = Cond(EnemyNear(floor(fvar(37))),pos y>=0&&EnemyNear(floor(fvar(37))),sta
 ;value = 200
 
 
-[State -3, DÍ¶]
+[State -3, DæŠ•]
 type  = ChangeState
 value = 800
 TriggerAll = !IsHelper
@@ -2598,46 +2660,42 @@ TriggerAll = statetype != A
 TriggerAll = alive
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = var(20)=0
 ;TriggerAll= !InGuardDist
 TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
-TriggerAll = EnemyNear(floor(fvar(37))),statetype != A ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
-TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56) ;·´Ó¦ËÙ¶È
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != A ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
+TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56) ;ååº”é€Ÿåº¦
 TriggerAll = random < 401
 TriggerAll = Var(41)<=0
-TriggerAll = P2BodyDist x = [0+floor(3*(EnemyNear(floor(fvar(37))),vel x)),43+floor(3*(EnemyNear(floor(fvar(37))),vel x))];Î»ÖÃÔ¤ÅĞ£¬³ËÊıÒ»°ãÊÇÇ°Ò¡Ê±¼ä
+TriggerAll = P2BodyDist x = [0+floor(3*(EnemyNear(floor(fvar(37))),vel x)),43+floor(3*(EnemyNear(floor(fvar(37))),vel x))];ä½ç½®é¢„åˆ¤ï¼Œä¹˜æ•°ä¸€èˆ¬æ˜¯å‰æ‘‡æ—¶é—´
 TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22] ) ||StateNo=[120,140]
 TriggerAll = !var(10)
 Trigger1 = EnemyNear(floor(fvar(37))),StateNo = Helper(88000),var(10)
 Trigger1 = EnemyNear(floor(fvar(37))),time =  Helper(88000),var(13)-4
 Trigger2 = EnemyNear(floor(fvar(37))),StateNo = Helper(88000),var(19)
 Trigger2 = EnemyNear(floor(fvar(37))),time =  Helper(88000),var(22)-4 
-value = Cond(random<501,245,215)
+value = Cond(random<501,400,430)
 
 [State 0, ChangeState]
-type = ChangeState
+type = null;ChangeState
 TriggerAll = !IsHelper
 TriggerAll = var(59) 
 TriggerAll = statetype != A
 TriggerAll = alive
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = var(20)=0
 TriggerAll = Var(41)<=0
 ;TriggerAll= !InGuardDist
 TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
-TriggerAll = EnemyNear(floor(fvar(37))),statetype != A ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
-TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56) ;·´Ó¦ËÙ¶È
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != A ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
+TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56) ;ååº”é€Ÿåº¦
 TriggerAll = Var(41)<=0
 TriggerAll = random < 401
 TriggerAll = P2BodyDist y = [-60-floor(3*(EnemyNear(floor(fvar(37))),vel y)+(3*(3+1)/2)*fvar(30))+fvar(32),0-floor(3*(EnemyNear(floor(fvar(37))),vel y)+(3*(3+1)/2)*fvar(30))+fvar(32)]
-TriggerAll = P2BodyDist x = [0+floor(3*(EnemyNear(floor(fvar(37))),vel x)),46+floor(3*(EnemyNear(floor(fvar(37))),vel x))];Î»ÖÃÔ¤ÅĞ£¬³ËÊıÒ»°ãÊÇÇ°Ò¡Ê±¼ä
+TriggerAll = P2BodyDist x = [0+floor(3*(EnemyNear(floor(fvar(37))),vel x)),46+floor(3*(EnemyNear(floor(fvar(37))),vel x))];ä½ç½®é¢„åˆ¤ï¼Œä¹˜æ•°ä¸€èˆ¬æ˜¯å‰æ‘‡æ—¶é—´
 TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22] ) ||StateNo=[120,140]
 TriggerAll = !var(10)
 Trigger1 = EnemyNear(floor(fvar(37))),StateNo = Helper(88000),var(10)
@@ -2666,7 +2724,7 @@ Trigger1 = ctrl || StateNo = 100||StateNo = [21,22]
 Trigger1 = Helper(82000),var(23)=1
 
 
-[State AI];ÉıÁú
+[State AI];å‡é¾™
 type = ChangeState
 value = 1200
 TriggerAll = var(59)
@@ -2676,8 +2734,6 @@ TriggerAll = !IsHelper
 TriggerAll = statetype != A
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = PrevStateno!=950
 TriggerAll = var(34)=0
 TriggerAll = var(20)=0
@@ -2838,7 +2894,7 @@ Trigger6 = NumHelper(31000+id)
 Trigger6 = Helper(31000+id),inguarddist
 Trigger6 = !EnemyNear(floor(fvar(37))),hitdefattr = SCA, NT, ST, HT
 
-[State -3, ¿ÕÕğµ±Éí]
+[State -3, ç©ºéœ‡å½“èº«]
 Type = ChangeState
 Value = 1500
 TriggerAll = var(59) 
@@ -2866,7 +2922,7 @@ Value = 1500
 TriggerAll = var(59) 
 TriggerAll = !IsHelper
 TriggerAll = RoundState = 2 && EnemyNear(floor(fvar(37))),Alive
-TriggerAll = Random <Var(59)*68
+TriggerAll = Random <Var(59)*36
 TriggerAll = ABS(EnemyNear(floor(fvar(37))),Pos x-pos x)<=130
 TriggerAll = var(59)>5
 TriggerAll = EnemyNear(floor(fvar(37))),Facing!=Facing
@@ -2877,11 +2933,10 @@ TriggerAll = EnemyNear(floor(fvar(37))),HitdefAttr = SCA,AA,AT,AP
 TriggerAll = EnemyNear(floor(fvar(37))),MoveType = A
 TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56)
 Trigger1 = (StateNo = [200,249])&&Time>0
-Trigger2 = StateNo = 800 &&Time>0
-Trigger3 = (Stateno = [400,499])&&Time>0
+Trigger2 = (Stateno = [400,499])&&Time>0
 
 
-[State -3, ¿ÕÕğºóÉÁ±Ü]
+[State -3, ç©ºéœ‡åé—ªé¿]
 Type = ChangeState
 Value = 701
 TriggerAll = var(59) 
@@ -2903,7 +2958,7 @@ Trigger4 = (StateNo = [200,440])&& P2StateNo = Var(12)&&Var(12)> 0
 Trigger5 = StateNo = 800 && Var(36) = 1
 Trigger6 = StateNo = 800 && Var(35) = 1
 
-[State -3, ¿ÕÕğÇ°ÉÁ±Ü]
+[State -3, ç©ºéœ‡å‰é—ªé¿]
 Type = ChangeState
 Value = 700
 TriggerAll = var(59) 
@@ -2926,7 +2981,7 @@ Trigger5 = StateNo = 800 && Var(36) = 1
 Trigger6 = StateNo = 800 && Var(35) = 1
 
 
-[State -3, ¿ÕÕğºóÉÁ±Ü]
+[State -3, ç©ºéœ‡åé—ªé¿]
 Type = ChangeState
 Value = 701
 TriggerAll = var(59) 
@@ -3045,9 +3100,57 @@ Trigger3 = P2BodyDist X < 120&& EnemyNear(floor(fvar(37))),vel x<=0
 Trigger3 = !EnemyNear(floor(fvar(37))),Ctrl
 Trigger3 = P2BodyDist X >0
 
+[State 0, ä¸‰æ°”è¿æ®µ]
+type = ChangeState
+TriggerAll = var(59)
+TriggerAll = !IsHelper
+TriggerAll = roundstate = 2
+TriggerAll = (Var(41)<=100&&power>= 4000) 
+TriggerAll = StateType != L
+TriggerAll = EnemyNear(floor(fvar(37))),Life<Floor(EnemyNear(floor(fvar(37))),LifeMax/3)
+TriggerAll = EnemyNear(floor(fvar(37))),movetype = H 
+Trigger1 = ((stateno = [1000,1350]) && movehit)
+Trigger2 = ((stateno = 2107) && movehit)
+Trigger3 = ((stateno = 2000) && movehit)
+Trigger3 = animelemtime(12)>= 0
+Trigger4 = stateno = 1403
+Trigger4 = time>= 20
+Trigger5 = (Stateno = [1700,1750])&&Movehit
+Trigger6 = Stateno = 2410 && moveHit
+Trigger6 = Time >35
+Trigger7 = Stateno = 2604 && Movehit
+;Trigger3 = StateNo = 1200 && movehit
+value = 4000
+;anim =
+;ignorehitpause = 
+;persistent = 
 
+[State 0, ä¸‰æ°”è¿æ®µ]
+type = ChangeState
+TriggerAll = var(59)
+TriggerAll = !IsHelper
+TriggerAll = roundstate = 2
+TriggerAll = (Var(41)>0&&Var(41)<=100&&Power>=2000&&Power<3000)||Power=[3000,4000)
+TriggerAll = StateType != L
+TriggerAll = EnemyNear(floor(fvar(37))),Life<Floor(EnemyNear(floor(fvar(37))),LifeMax/3)
+TriggerAll = EnemyNear(floor(fvar(37))),movetype = H 
+Trigger1 = ((stateno = [1000,1350]) && movehit)
+Trigger2 = ((stateno = 2107) && movehit)
+Trigger3 = ((stateno = 2000) && movehit)
+Trigger3 = animelemtime(12)>= 0
+Trigger4 = stateno = 1403
+Trigger4 = time>= 20
+Trigger5 = (Stateno = [1700,1750])&&Movehit
+Trigger6 = Stateno = 2410 && moveHit
+Trigger6 = Time >35
+Trigger7 = Stateno = 2604 && Movehit
+;Trigger3 = StateNo = 1200 && movehit
+value = 4000
+;anim =
+;ignorehitpause = 
+;persistent = 
 
-[State ¶ÏÁ¬²¹ÕĞ]
+[State æ–­è¿è¡¥æ‹›]
 type = ChangeState
 value = 1000
 TriggerAll = !IsHelper
@@ -3164,7 +3267,7 @@ value = 251
 
 
 
-[STATE -1, Ïòºó×ß]
+[STATE -1, å‘åèµ°]
 TYPE = CHANGESTATE
 ;TRIGGERALL = STATENO !=1000
 TRIGGERALL = P2MOVETYPE != A
@@ -3189,7 +3292,7 @@ TRIGGER3 = EnemyNear(floor(fvar(37))),HitdefAttr = SCA,NT,ST,HT
 TRIGGER3 = P2BodyDist X <=60||InGuardDist
 Value = Cond(Var(53)<=100&&Var(52)>100,700,701)
 
-[STATE -1, Ïòºó×ß]
+[STATE -1, å‘åèµ°]
 TYPE = CHANGESTATE
 ;TRIGGERALL = STATENO !=1000
 TRIGGERALL = P2MOVETYPE != A
@@ -3259,7 +3362,7 @@ value = Cond(random<666,451,1300)
 ;persistent = 
 
 
-[State AI];ÉıÁú
+[State AI];å‡é¾™
 type = null;ChangeState
 value = 1600
 TriggerAll = var(59)
@@ -3295,8 +3398,6 @@ TriggerAll = alive
 TriggerAll = random<var(59)*21
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = var(20)=0
 TriggerAll=!InGuardDist
 TriggerAll = var(42)=1
@@ -3333,14 +3434,14 @@ TriggerAll = EnemyNear(floor(fvar(37))),PrevStateNo!=5120
 ;TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
 TriggerAll = Helper(82000),var(23)=0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = var(20)=0||EnemyNear(floor(fvar(37))),Facing=Facing
 TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22] );|| (StateNo = [700,701])&&AnimTime=0
 Trigger1 =  EnemyNear(floor(fvar(37))),AnimTime>=-5
 Trigger1 =  !EnemyNear(floor(fvar(37))),ctrl
 value = 430
+
+
 
 [State 0, ChangeState]
 type = ChangeState
@@ -3353,8 +3454,6 @@ TriggerAll = EnemyNear(floor(fvar(37))),movetype != H
 TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56)
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = Helper(82000),var(23)=0
 TriggerAll=!InGuardDist
 TriggerAll = var(42)=1
@@ -3441,7 +3540,7 @@ value = 451
 
 
 
-[State -3, DÍ¶]
+[State -3, DæŠ•]
 type  = ChangeState
 value = 800
 TriggerAll = !IsHelper
@@ -3502,8 +3601,6 @@ TriggerAll = p2statetype !=A
 TriggerAll = Var(41)<=0
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = Var(36) = 0
 TriggerAll = Fvar(38)=0
 TriggerAll = Random<Var(59)*18
@@ -3515,7 +3612,7 @@ TriggerAll = EnemyNear(Floor(Fvar(37))),AnimTime<=-1
 TriggerAll = var(20)=0
 TriggerAll = Facing!=EnemyNear(floor(fvar(37))),Facing
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != A
-TriggerAll = PrevStateNo!=[5100,5201] ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
+TriggerAll = PrevStateNo!=[5100,5201] ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
 TriggerAll = P2BodyDist x = [-10,24]
 TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22])||(StateNo=52&&time>=3) ||StateNo = [120,140]
 Trigger1 = StateNo = 700 && animelem = 2,>=0
@@ -3536,18 +3633,16 @@ TriggerAll = p2statetype !=C
 TriggerAll=!InGuardDist
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 ;TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 TriggerAll = backedgedist > 35
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != C
 TriggerAll = Helper(82000),var(23)=0
 TriggerAll = random<var(59)*21
-TriggerAll = PrevStateNo!=[5100,5201] ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
+TriggerAll = PrevStateNo!=[5100,5201] ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
 TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200)&&EnemyNear(floor(fvar(37))),Facing!=Facing,EnemyNear(floor(fvar(37))),time >=var(56)+3,1)
 TriggerAll = P2BodyDist y >=abs(60 +floor(3*(EnemyNear(floor(fvar(37))),vel y)+(3*(3+1)/2)*fvar(30)))-fvar(32)
-TriggerAll = P2BodyDist x = [0+floor(Cond(2>fvar(31),2-fvar(31),0)*(EnemyNear(floor(fvar(37))),vel x)),75+floor(Cond(2>fvar(31),2-fvar(31),0)*(EnemyNear(floor(fvar(37))),vel x))];Î»ÖÃÔ¤ÅĞ£¬³ËÊıÒ»°ãÊÇÇ°Ò¡Ê±¼ä
+TriggerAll = P2BodyDist x = [0+floor(Cond(2>fvar(31),2-fvar(31),0)*(EnemyNear(floor(fvar(37))),vel x)),75+floor(Cond(2>fvar(31),2-fvar(31),0)*(EnemyNear(floor(fvar(37))),vel x))];ä½ç½®é¢„åˆ¤ï¼Œä¹˜æ•°ä¸€èˆ¬æ˜¯å‰æ‘‡æ—¶é—´
 TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22]) ||((StateNo = [120,140])&&EnemyNear(floor(fvar(37))),AnimTime=-5)
 Trigger1 = !var(10)
 Trigger1 = var(20)=0||EnemyNear(floor(fvar(37))),Facing=Facing
@@ -3571,8 +3666,6 @@ TriggerAll = statetype != A
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = !inguarddist
 TriggerAll = var(42)=1
 TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
@@ -3621,10 +3714,10 @@ TriggerAll = statetype != A
 TriggerAll = alive
 TriggerAll = p2statetype != L
 TriggerAll = enemyNear(floor(fvar(37))),statetype = S
-TriggerAll = PrevStateNo!=[5100,5201] ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
+TriggerAll = PrevStateNo!=[5100,5201] ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
 TriggerAll =  enemyNear(floor(fvar(37))),statetype !=L
-TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56) ;·´Ó¦ËÙ¶È
-TriggerAll = P2BodyDist x = [60+floor(6*(EnemyNear(floor(fvar(37))),vel x)),108+floor(6*(EnemyNear(floor(fvar(37))),vel x))];Î»ÖÃÔ¤ÅĞ£¬³ËÊıÒ»°ãÊÇÇ°Ò¡Ê±¼ä
+TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56) ;ååº”é€Ÿåº¦
+TriggerAll = P2BodyDist x = [60+floor(6*(EnemyNear(floor(fvar(37))),vel x)),108+floor(6*(EnemyNear(floor(fvar(37))),vel x))];ä½ç½®é¢„åˆ¤ï¼Œä¹˜æ•°ä¸€èˆ¬æ˜¯å‰æ‘‡æ—¶é—´
 TriggerAll = ctrl || StateNo = 100 ||  StateNo = [21,22]  
 TriggerAll =random<var(59)*6
 Trigger1 = StateNo = 200 && movecontact
@@ -3705,7 +3798,7 @@ Trigger2 = EnemyNear(floor(fvar(37))),hitdefattr = SCA,HT,NT,ST&&EnemyNear(floor
 Trigger2 = EnemyNear(floor(fvar(37))),time>=0
 
 
-;¥é¥ó
+;ãƒ©ãƒ³
 [State -1, Run Fwd]
 type = ChangeState
 value = 100
@@ -3781,7 +3874,7 @@ Trigger1 = (StateNo = [200,249]) && movecontact
 Trigger2 = (StateNo = [400,451]) && movecontact
 Trigger3 = ((StateNo = [1000,1350]) && movecontact) 
 Trigger3 = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<105
-value = Cond(random<777,2000,2100)
+value = Cond(random<777,2000+(Random%2)*419,2100)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -3883,7 +3976,7 @@ TriggerAll = statetype != A
 TriggerAll = movetype = A
 TriggerAll = EnemyNear(floor(fvar(37))),Time >= var(56)
 TriggerAll = Random<=var(59)*85
-TriggerAll = var(55)=1&&Var(59)<4
+TriggerAll = var(55)=1&&Var(59)<=4
 TriggerAll = Var(34) = 0
 TriggerAll = p2StateNo!=var(11)||var(11)=0
 TriggerAll = p2StateNo!=var(12)||var(12)=0
@@ -3965,7 +4058,7 @@ value = 610
 
 
 
-[State -3] ;¿ÕÖĞÊÜÉí
+[State -3] ;ç©ºä¸­å—èº«
 type = ChangeState
 value = 5201
 TriggerAll = Alive
@@ -4093,21 +4186,19 @@ TriggerAll = statetype != A
 TriggerAll = alive
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = p2StateNo !=var(39) || var(39) = 0
-TriggerAll = p2StateNo !=var(40) || var(40) = 0
 TriggerAll = var(20)=0
 TriggerAll = var(42)=1
 TriggerAll = Var(41)<=0
 TriggerAll=!InGuardDist||EnemyNear(floor(fvar(37))),AnimTime<=-6
 TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
-TriggerAll = EnemyNear(floor(fvar(37))),statetype != A ;µ¹µØÆğÉíÊÜÉí²»¿É´¥·¢
-TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56) ;·´Ó¦ËÙ¶È
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != A ;å€’åœ°èµ·èº«å—èº«ä¸å¯è§¦å‘
+TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56) ;ååº”é€Ÿåº¦
 TriggerAll = random < 401
-TriggerAll = P2BodyDist x = [-10+floor(3*(EnemyNear(floor(fvar(37))),vel x)),43+floor(3*(EnemyNear(floor(fvar(37))),vel x))];Î»ÖÃÔ¤ÅĞ£¬³ËÊıÒ»°ãÊÇÇ°Ò¡Ê±¼ä
+TriggerAll = P2BodyDist x = [-10+floor(3*(EnemyNear(floor(fvar(37))),vel x)),43+floor(3*(EnemyNear(floor(fvar(37))),vel x))];ä½ç½®é¢„åˆ¤ï¼Œä¹˜æ•°ä¸€èˆ¬æ˜¯å‰æ‘‡æ—¶é—´
 TriggerAll = ctrl || StateNo = 100 ||  StateNo = [21,22]  
 Trigger1 = !var(10)
-value = Cond(random<501,245,215)
+value = Cond(random<501,400,430)
 
 
 
@@ -4225,7 +4316,7 @@ TriggerAll = fvar(24)>=8
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 TriggerAll = random <=90||EnemyNear(floor(fvar(37))),Life<Floor(EnemyNear(floor(fvar(37))),LifeMax/5)
 Trigger1 = StateNo = 1050 && movehit
-value = Cond(Random<501,2400,2100)
+value = Cond(Random<501,2400,2419)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -4252,6 +4343,26 @@ value = Cond(random<555,2000,2100)
 ;persistent = 
 
 
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = roundstate = 2
+TriggerAll = !IsHelper
+TriggerAll = var(59)
+TriggerAll = power>=3000
+;TriggerAll = random < 361
+Trigger1= Var(41)<=0
+TriggerAll = fvar(24)>=8
+TriggerAll = statetype != A
+TriggerAll = Var(42)=1
+TriggerAll = P2BodyDist x=[-20,130]
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+TriggerAll = random <=90||EnemyNear(floor(fvar(37))),Life<Floor(EnemyNear(floor(fvar(37))),LifeMax/5)
+Trigger1 = StateNo = 1560 && movehit
+value = 2419
+;anim =
+;ignorehitpause = 
+;persistent = 
+
 
 
 
@@ -4270,10 +4381,86 @@ TriggerAll = P2BodyDist x=[-20,130]
 TriggerAll = fvar(24)>=8
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 Trigger1 = StateNo = 1302 && movehit
-value = Cond(random<555,2000,2100)
+value = Cond(random<555,2000+(Random%2)*419,2100)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
+
+;---------------------- Integer variable list ----------------------
+
+; var(0):= 252, 84000, 32500, 88000
+; var(1):= 1558, 1561, 10901, 31000, 82000, 84000, 32000, 32500, 88000
+; var(2):= 180, 190, 31000, 82000, 84000, 32000, 88000
+; var(3):= -3, 82000, 84000, 88000
+; var(4):= 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 45, 82000, 84000, 88000
+; var(5):= 1000, 1100, 1101, 1200, 1500, 2100, 82000, 84000, 88000, 2600
+; var(6):= -2, 82000, 84000, 88000
+; var(7):= -3, 82000, 84000, 88000
+; var(8):= 43, 82000, 84000, 88000
+; var(9):= 82000, 84000, 88000
+;var(10):= 31000, -3, 82000, 84000, 88000
+;var(11):= -2, 31000, 82000, 84000, 88000
+;var(12):= -2, 31000, 16002, 82000, 84000, 88000
+;var(13):= -2, 31000, 82000, 84000, 88000
+;var(14):= 31000, -3, 82000, 84000, 88000
+;var(15):= -2, -3, 82000, 84000, 88000
+;var(16):= -3, 82000, 84000, 87000, 88000
+;var(17):= -3, 82000, 84000, 87000, 88000
+;var(18):= -3, 82000, 84000, 88000
+;var(19):= -3, 82000, 84000, 88000
+;var(20):= 31000, -3, 82000, 84000, 88000
+;var(21):= 31000, -3, 82000, 84000, 88000
+;var(22):= 201, 253, 401, 601, 1005, 1006, 1007, 1105, 1205, 1305, 1355, 1355, 1505, 1603, 1555, 10900, 2005, 2120, 2121, 2122, 2225, 2306, 2308, 2411, 2412, 2432, 31000, 82000, 84000, 88000
+;var(23):= 31000, -3, 82000, 84000, 88000
+;var(24):= 31000, -3, 82000, 84000, 88000
+;var(25):= -3, 82000, 84000, 88000
+;var(26):= -2, -3, 82000, 84000, 88000
+;var(27):= -3, 82000, 84000, 88000
+;var(28):= -3, 82000, 84000, 88000
+;var(29):= -3, 82000, 84000, 88000
+;var(30):= -3, 82000, 84000, 83000, 32000, 88000
+;var(31):= -3, 82000, 84000, 83000, 88000
+;var(32):= -3, 82000, 83000, 88000
+;var(33):= -2, 82000, 83000, 88000
+;var(34):= -3, 82000, 83000, 88000
+;var(35):= -3, 83000, 88000
+;var(36):= -3, 83000, 88000
+;var(37):= 83000, 88000
+;var(38):= -3, 83000, 88000
+;var(39):= 83000, 88000
+;var(40):= 82000, 83000, 88000
+;var(41):= 950, 1000, 1001, 1100, 1200, 1201, 1300, 1350, 1400, 1550, 1556, 1559, 1560, 1700, -2, 2000, 2100, 2200, 2300, 2400, 2419, 3000, 4000, 82000, 83000, 88000, 2600, 2700
+;var(42):= -3, 82000, 83000, 88000
+;var(43):= -3, 82000, 83000
+;var(44):= 82000, 83000
+;var(45):= -3, 83000
+;var(46):= -3, 83000
+;var(47):= -3, 83000
+;var(48):= -3, 83000
+;var(49):= -3, 83000
+;var(50):= 31000, -3
+;var(51):= 31000, -3
+;var(52):= -3
+;var(53):= -3
+;var(54):= -3
+;var(55):= -3
+;var(56):= -3
+;var(57):= -3
+;var(59):= -3, 80000
+
+;---------------------- Float variable list ----------------------
+
+; fvar(0):= 16000
+; fvar(1):= 16001
+;fvar(24):= -3
+;fvar(26):= 2000, 2300
+;fvar(27):= -3
+;fvar(29):= 2303
+;fvar(33):= 2102, 2103, 2400, 2419, 2427, 2700
+;fvar(34):= -3
+;fvar(35):= 2400, 2420, 2427
+;fvar(37):= -3
+;fvar(38):= -3
 
 
 
@@ -4289,7 +4476,8 @@ TriggerAll = fvar(24)>=8
 TriggerAll = statetype != A
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 Trigger1 = StateNo = 1050 && movehit
-value = Cond(Random<501,2400,2100)
+Trigger2 = Stateno = 1560 && movehit
+value = Cond(Random<666,2419,2100)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -4308,10 +4496,16 @@ TriggerAll = statetype != A
 TriggerAll = fvar(24)>=2
 Trigger1 = StateNo = 1200 && movehit
 Trigger1 = animelem = 9,>=0
+Trigger2 = StateNo = 1560 && movehit
+Trigger2 = animelem = 9,>0
 value = 1100
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
+
+
+
+
 
 
 [State 0, ChangeState]
@@ -4333,6 +4527,23 @@ value = 2300
 ;ignorehitpause = 
 ;persistent = 
 
+
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = var(59)
+TriggerAll = roundstate = 2
+TriggerAll = !IsHelper
+TriggerAll = power>= 2000
+TriggerAll = P2StateType != L
+TriggerAll = EnemyNear(0),alive || EnemyNear(1),alive
+TriggerAll = EnemyNear(floor(fvar(37))),movetype = H
+Trigger1 = Stateno = 2427 && Animelem = 10,>=0
+value = 2300
+;anim =
+;ignorehitpause = 
+;persistent = 
+
+
 [State 0, ChangeState]
 type = ChangeState
 TriggerAll = var(59)
@@ -4349,7 +4560,7 @@ Trigger2 = StateNo = 2107 && (time = [9,10])
 Trigger2 = movehit
 Trigger3 = Stateno = 2410 && Time >35
 Trigger3 = Movehit  
-value = 2300
+value = Cond(ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<62,3000,2300+(Random%2)*300)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -4367,7 +4578,7 @@ TriggerAll = Var(41)<=0
 TriggerAll = statetype != A
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 Trigger1 = StateNo = 1302 && movehit
-value = Cond(random<555,2000,2100)
+value = Cond(random<222,2000,2100)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -4431,6 +4642,8 @@ value = Cond(random<501,215,245)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
+
+
 
 [State 0, ChangeState]
 type = ChangeState
@@ -4517,6 +4730,42 @@ value = 410
 
 [State 0, ChangeState]
 type = ChangeState
+TriggerAll = roundstate = 2
+TriggerAll = !IsHelper
+TriggerAll = var(59)
+TriggerAll = Var(41)<=0
+TriggerAll = statetype != A
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != A
+;TriggerAll = EnemyNear(floor(fvar(37))),statetype = C || EnemyNear(floor(fvar(37))),statetype = A
+Trigger1 = StateNo = 410 && MoveContact
+Trigger2 = StateNo = 210 && MoveContact
+Trigger3 = Stateno = 240 && MoveContact 
+value = Cond(Random%2 ,235,451)
+;anim =
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = roundstate = 2
+TriggerAll = !IsHelper
+TriggerAll = var(59)
+TriggerAll = fvar(24)>=8||Var(41)>0 
+TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x-pos x)=[0,110]
+TriggerAll = statetype != A
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != A
+;TriggerAll = EnemyNear(floor(fvar(37))),statetype = C || EnemyNear(floor(fvar(37))),statetype = A
+Trigger1 = StateNo = 235 && MoveHit
+value = 236
+;anim =
+;ignorehitpause = 
+;persistent = 
+
+[State 0, ChangeState]
+type = ChangeState
 TriggerAll = !IsHelper
 TriggerAll = roundstate = 2
 TriggerAll = var(59)
@@ -4541,13 +4790,10 @@ TriggerAll = !IsHelper
 TriggerAll = var(59)
 TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x-pos x)=[75,132]
 TriggerAll = statetype != A
-TriggerAll = fvar(24)>=6||Var(41)>0 
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 TriggerAll = EnemyNear(floor(fvar(37))),statetype = C || EnemyNear(floor(fvar(37))),statetype = A
-Trigger1 = StateNo = 440 && MOVEHIT
-;Trigger2 = StateNo = 430 && movehit
-TRIGGER2 = STATENO = 200 && MOVEHIT
-Trigger3 = StateNo = 410 && movehit
+Trigger1 = Stateno = 236 && Movehit
+Trigger1 = Var(41)>0
 value = 451
 ;anim =
 ;ignorehitpause = 
@@ -4580,8 +4826,7 @@ TriggerAll = !IsHelper
 TriggerAll = Alive
 TriggerAll = var(59)
 TriggerAll = statetype != A
-TriggerAll =Var(41)>100 
-TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+TriggerAll =Var(41)>100 ||var(41)<=0
 Trigger1 = StateNo = 251 && Helper(252),Var(0)=1
 Trigger1 = Time>30
 value = 451
@@ -4592,7 +4837,7 @@ value = 451
 
 
 ;---------------------------------------------------------------
-;Á¬¶Î1
+;è¿æ®µ1
 
 
 
@@ -4601,7 +4846,7 @@ type = ChangeState
 TriggerAll = var(59)
 TriggerAll = roundstate = 2
 TriggerAll = !IsHelper
-TriggerAll = Var(43)=0
+TriggerAll = var(43)=0
 TriggerAll = Var(41)>0&&Power>=2000
 TriggerAll = StateType != A
 TriggerAll = P2StateType != L
@@ -4623,7 +4868,7 @@ Trigger4 = movehit
 Trigger5 = StateNo = 1750
 Trigger5= Var(41)<120&&Var(41)>0
 Trigger5 = movehit
-value = 2400
+value = 2400+(Random%2)*19
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -4635,7 +4880,7 @@ TriggerAll = roundstate = 2
 TriggerAll = !IsHelper
 TriggerAll = Power>=2000
 TriggerAll = StateType != A
-TriggerAll = Var(43)=0
+TriggerAll = var(43)=0
 TriggerAll = ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<147
 TriggerAll = EnemyNear(0),alive || EnemyNear(1),alive
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H
@@ -4657,8 +4902,7 @@ Trigger5 = StateNo = [1300,1399]
 Trigger5= Var(41)<120&&Var(41)>0
 Trigger5 = movehit
 Trigger5 = P2StateType != L
-
-value = Cond(Random<501,2000,2100)
+value = Cond(Random<333,2000,Cond(Random<501,2419,2100))
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -4713,7 +4957,7 @@ Trigger1 = StateNo = [1000,1399]
 Trigger1 = movehit
 Trigger2 = StateNo = 1750
 Trigger2 = movehit
-value = 2300
+value = Cond(ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<62,3000,2300+(Random%2)*300)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -4745,7 +4989,7 @@ Trigger4 = movehit
 Trigger5 = StateNo = 1750
 Trigger5= Var(41)<120&&Var(41)>0
 Trigger5 = movehit
-value = 2400
+value = 2400+(Random%2)*19
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -4756,7 +5000,7 @@ TriggerAll = var(59)
 TriggerAll = roundstate = 2
 TriggerAll = !IsHelper
 TriggerAll = StateType != A
-TriggerAll = Var(43)=0
+TriggerAll = var(43)=0
 TriggerAll = ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<147
 TriggerAll = EnemyNear(0),alive || EnemyNear(1),alive
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H
@@ -4775,7 +5019,7 @@ Trigger4 =  StateNo = 1750
 Trigger4 = MoveHit
 Trigger4 = P2StateType != L
 Trigger4 = Var(41)<120&&Var(41)>0
-value = Cond(Random<501,2000,2100)
+value = Cond(Random<334,2000,Cond(Random%2,2100,2419))
 ;ignorehitpause = 
 ;persistent = 
 
@@ -4823,7 +5067,7 @@ TriggerAll = roundstate = 2
 TriggerAll = var(59)
 TriggerAll = Var(41)>=120
 TriggerAll = statetype != A
-TriggerAll = Var(43) = 0
+TriggerAll = var(43)=0
 TriggerAll = Var(52)<=100
 TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<=65
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
@@ -4847,7 +5091,7 @@ TriggerAll = var(59)
 TriggerAll = statetype != A
 TriggerAll = Var(41)>=120
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
-TriggerAll = Var(43) = 0
+TriggerAll = var(43)=0
 ;TriggerAll =  P2BodyDist y = [-60-floor(17*(EnemyNear(floor(fvar(37))),vel y)+17*(17+1)/2*fvar(30)),0-floor(17*(EnemyNear(floor(fvar(37))),vel y)+17*(17+1)/2*fvar(30))]
 ;Trigger1 = StateNo = 400 && movecontact
 Trigger1 = StateNo = 440 && movecontact
@@ -4869,7 +5113,7 @@ TriggerAll = roundstate = 2
 TriggerAll = var(59)
 TriggerAll = Var(41)>=120
 TriggerAll = statetype != A
-TriggerAll = Var(43) = 0
+TriggerAll = var(43)=0
 TriggerAll = P2BodyDist y = [-75-floor(17*(EnemyNear(floor(fvar(37))),vel y)+17*(17+1)/2*fvar(30)),0-floor(17*(EnemyNear(floor(fvar(37))),vel y)+17*(17+1)/2*fvar(30))]
 ;TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<=70
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
@@ -4891,7 +5135,7 @@ TriggerAll = roundstate = 2
 TriggerAll = var(59)
 TriggerAll = Var(41)>=120
 TriggerAll = statetype != A
-TriggerAll = Var(43) = 0
+TriggerAll = var(43)=0
 TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x-pos x)>70
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 Trigger1 = StateNo = 1750&&MoveHit
@@ -4915,7 +5159,7 @@ TriggerAll = EnemyNear(floor(fvar(37))),movetype = H
 TriggerAll = ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<141
 Trigger1 = Stateno = 1403&&Time>=20
 Trigger1= Var(41)<120&&Var(41)>0
-value = Cond(Random%2,Cond(Random%2,2100,2400),Cond(Random%2,2000,2100))
+value = Cond(Random%2,Cond(Random%2,2100,2400),Cond(Random%2,2419,2100))
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -4928,7 +5172,7 @@ TriggerAll = roundstate = 2
 TriggerAll = var(59)
 TriggerAll = Var(41)>=120
 TriggerAll = statetype != A
-TriggerAll = Var(43) = 0
+TriggerAll = var(43)=0
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 Trigger1=  (StateNo = [1050,1056]) && movehit
 Trigger1= abs(EnemyNear(floor(fvar(37))),pos x-pos x)>60
@@ -4963,7 +5207,7 @@ value = 451
 ;persistent = 
 
 ;---------------------------------------------------------------
-;Á¬¶Î2
+;è¿æ®µ2
 
 [State 0, ChangeState]
 type = ChangeState
@@ -5013,7 +5257,7 @@ Trigger1 = StateNo = [1000,1499]
 Trigger1 = movehit
 Trigger2 = StateNo =1750
 Trigger2 = movehit
-value = 2300
+value = Cond(Random%2&&ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<62,3000,2300+(Random%2)*300)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -5044,7 +5288,7 @@ Trigger4 = movehit
 Trigger5 = StateNo = 1750
 Trigger5= Var(41)<120&&Var(41)>0
 Trigger5 = movehit
-value = Cond(Random<501&&ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<117,2000,2100)
+value = Cond(Random<501&&ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<117,2000,2100+(Random%2)*319)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -5090,7 +5334,7 @@ TriggerAll = var(59)
 TriggerAll = statetype != A
 TriggerAll =Var(41)>0 
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
-TriggerAll = Var(43) = 0
+TriggerAll = var(43)=0
 ;Trigger1 = StateNo = 400 && movecontact
 Trigger1 = StateNo = 440 && movecontact
 Trigger2 = StateNo = 410 && movecontact
@@ -5128,6 +5372,7 @@ TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 Trigger1=  (StateNo = [1050,1051]) && movehit
 Trigger2=  StateNo = 1750&& movehit
 Trigger3=  StateNo = 451 && movehit
+Trigger4 = Stateno = 236 && movehit
 value = 1300
 ;value = 1400
 ;anim =
@@ -5195,6 +5440,8 @@ value = 1100
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
+
+
 
 [State 0, ChangeState]
 type = ChangeState
@@ -5297,7 +5544,35 @@ value = Cond(random%2&&EnemyNear(floor(fvar(37))),pos y >=-30,1400,1300)
 ;ignorehitpause = 
 ;persistent = 
 
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = !IsHelper
+TriggerAll = roundstate = 2
+TriggerAll = var(59)
+TriggerAll = Var(41)<=0
+TriggerAll = statetype != A
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+Trigger1=  StateNo = 236&& movehit
+;Trigger2=  StateNo = 451 && movehit
+value = 1550
+;anim =
+;ignorehitpause = 
+;persistent = 
 
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = !IsHelper
+TriggerAll = roundstate = 2
+TriggerAll = var(59)
+TriggerAll = statetype != A
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+Trigger1=  (StateNo = 1557) && movecontact
+Trigger1 = AnimElemTime(6)>=0
+;Trigger2=  StateNo = 451 && movehit
+value = 1559
+;anim =
+;ignorehitpause = 
+;persistent = 
 
 [State 0, ChangeState]
 type = ChangeState
@@ -5326,7 +5601,9 @@ TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x-pos x)>65
 TriggerAll = statetype != A
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 Trigger1= StateNo = 200 && moveguarded
-Trigger1 = (StateNo = [410,499])&& moveguarded
+Trigger2 = (StateNo = [410,499])&& moveguarded
+Trigger3 = Stateno = 236 && Movehit
+Trigger3 = Var(41)>0
 value = 1300
 ;anim =
 ;ignorehitpause = 
@@ -5576,7 +5853,7 @@ Trigger1 = P2BodyDist X >= 25
 Trigger2 = !EnemyNear,ctrl&&EnemyNear(floor(fvar(37))),Facing=Facing
 
 
-[State -1, Ïòºó×ß]
+[State -1, å‘åèµ°]
 type = ChangeState
 value = 22
 ;TriggerAll = StateNo !=1000
@@ -5587,10 +5864,10 @@ TriggerAll = !IsHelper
 Triggerall = Statetype != A
 Triggerall = Backedgebodydist >= 15
 TriggerAll = EnemyNear(floor(fvar(37))),movetype!=H
-Triggerall = !inguarddist;·Ç·ÀÓù¾àÀë£¬ÒòÎª·ÀÓù¾àÀëÄÚ°´ºó»á±ä³É·ÀÓù¶ø²»ÊÇÏòºó×ß
+Triggerall = !inguarddist;éé˜²å¾¡è·ç¦»ï¼Œå› ä¸ºé˜²å¾¡è·ç¦»å†…æŒ‰åä¼šå˜æˆé˜²å¾¡è€Œä¸æ˜¯å‘åèµ°
 Triggerall = ctrl || StateNo = 21
 TriggerAll = StateNo!=22
-Trigger1 = P2bodydist X <= 29 && Random > 950 + P2bodydist X / 2;½ü¾àÀëµÍ¼¸ÂÊ´¥·¢
+Trigger1 = P2bodydist X <= 29 && Random > 950 + P2bodydist X / 2;è¿‘è·ç¦»ä½å‡ ç‡è§¦å‘
 Trigger1 = p2statetype!=L
 Trigger2 = var(52)<30&&EnemyNear(floor(fvar(37))),statetype=L
 
@@ -5613,10 +5890,10 @@ TRIGGERALL = FRONTEDGEDIST<=20
 TRIGGER1 = CTRL
 
 
-;„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
-;’nã—§‚¿‰ñ‚è‹ZU‚è 
-;Ctrl Random enemyNear(var(57)),movetype = I@inguarddist  P2bodyDist Y P2bodyDist X
-;„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
+;åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’
+;æŠ§å¿‹æ£«åªå¤å‚åª„æ€³å‚ 
+;Ctrl Random enemyNear(var(57)),movetype = Iä¸‚inguarddist  P2bodyDist Y P2bodyDist X
+;åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’
 
 [State -3,]
 type = changestate
@@ -5636,24 +5913,24 @@ Triggerall=ctrl||StateNo=21||StateNo=22||StateNo=100
 Trigger1 = Random <= var(59)*10
 
 
-;„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
-;‹ó’†ˆÚ“® 
+;åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’
+;å¬»æ‹å æ‘¦ 
 ;Ctrl Random P2bodyDist X
-;„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
+;åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’
 
 
 
-;„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
-;‹ó’†—§‚¿‰ñ‚è‹ZU‚è 
+;åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’
+;å¬»æ‹æ£«åªå¤å‚åª„æ€³å‚ 
 ;Ctrl Random enemyNear(var(57)),movetype = I inguarddist P2bodyDist Y P2bodyDist X
-;„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
+;åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’åŠ’
 
 
 
 
-;ƒQ[ƒ€’†‚Éí‚É‚¢‚Â‚Å‚àŠJn‚µ‚½‚¢ƒXƒe[ƒgA‚±‚±‚Å‚Íu’…’n‰¹v‚Ég—p‚µ‚Ä‚¢‚Ü‚·
-;‰º‚ÌğŒ‚Íu52‚©106‚ÌƒXƒe[ƒg‚ÉˆÚ“®‚µ‚Ä‚PƒtƒŒ[ƒ€–Ú‚Év‚ÆŒ¾‚¤–‚Å‚·B
-;52‚Æ106‚ÍƒoƒbƒNƒXƒeƒbƒv‚ÆƒWƒƒƒ“ƒv‚Ì’…’n‚ÌƒXƒe[ƒg‚Å‚·B
+;åƒä¹•å„‰æ‹åµå¿¢åµå„å®å±å‚•å¥å·’åŸå¨å„åƒ—åƒ¥ä¹•åƒ©ä¸„å™å™å±å¼ä¹½æ‹æŠ§å£’ä¹¿åµå·Šæ¢¡åŸå°å„å‚‘å¡
+;å£“åºå¿¦å¯©å¼ä¹½52å106åºåƒ—åƒ¥ä¹•åƒ©åµå æ‘¦åŸå°ä¾¾åƒ¼å„—ä¹•å„‰æ šåµä¹¿å²å°µå†å¸ å±å¡ä¸…
+;52å²106å¼åƒ¶åƒ¢åƒ‹åƒ—åƒ¥åƒ¢åƒ¾å²åƒ•å„å„åƒ¾åºæ‹æŠ§åºåƒ—åƒ¥ä¹•åƒ©å±å¡ä¸…
 [State -3, Landing Sound]
 type = PlaySnd
 TriggerAll = Time = 1
@@ -5663,14 +5940,14 @@ Trigger3 = StateNo = 103
 value = 40, 0
 
 
-[State -3, 2];ƒWƒƒƒ“ƒv‰¹
+[State -3, 2];åƒ•å„å„åƒ¾å£’
 type = PlaySnd
 TriggerAll = time = 1
 Trigger1 = StateNo = 40 
 Trigger1 = var(15) <= 0
 value = 40, 1
 
-[State -3, 2];ƒWƒƒƒ“ƒv‰¹
+[State -3, 2];åƒ•å„å„åƒ¾å£’
 type = PlaySnd
 TriggerAll = time = 1
 Trigger1 = StateNo = 40 
@@ -5684,25 +5961,25 @@ TriggerAll = Time = 1
 Trigger1 = StateNo = 105 
 value = 105, 0
 
-;ƒ_ƒ[ƒW‚ÌƒGƒtƒFƒNƒg‚ÌÁ‹
+;åƒŸå„Šä¹•åƒ•å¸ªåºåƒ„åƒ¼åƒƒåƒ‹åƒ©åºå¾šå«€
 [State 1]
 type = removeexplod
 Trigger1 = MoveType = H
 ID = 2405
 
-;ƒ_ƒ[ƒW‚ÌƒGƒtƒFƒNƒg‚ÌÁ‹
+;åƒŸå„Šä¹•åƒ•å¸ªåºåƒ„åƒ¼åƒƒåƒ‹åƒ©åºå¾šå«€
 [State 1]
 type = removeexplod
 Trigger1 = MoveType = H
 ID = 1000
 
-[state a];c‘œÁ‹
+[state a];å·†æ†¸å¾šå«€
 type = afterimagetime
 Trigger1 = movetype = H
 time = 0
 
 
-[State 210, Width];‰æ–Ê’[‚Ì‰Ÿ‚µ–ß‚µ”»’è
+[State 210, Width];å¤‹æŸºæŠ‚åºå¢´åŸæ  åŸæ•¾æ•
 type = Width
 Trigger1 = 1
 edge = 5,0
@@ -5710,8 +5987,8 @@ edge = 5,0
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; ƒnƒCƒWƒƒƒ“ƒvˆ—
-[State -3, 5];ƒnƒCƒWƒƒƒ“ƒv”»’è
+; åƒ´åƒ€åƒ•å„å„åƒ¾å¼µæ£Ÿ
+[State -3, 5];åƒ´åƒ€åƒ•å„å„åƒ¾æ•¾æ•
 type = varset
 Trigger1 = StateNo = 10
 Trigger1 = time = 0
@@ -5719,22 +5996,22 @@ Trigger2 = StateNo = 100
 v = 15
 value = 20
 
-[State -3, 5];ƒnƒCƒWƒƒƒ“ƒvÁ‹
+[State -3, 5];åƒ´åƒ€åƒ•å„å„åƒ¾å¾šå«€
 type = varset
 Trigger1 = StateNo = 52
 Trigger1 = time = 0
 v = 15
 value = 0
 
-; ¬ƒWƒƒƒ“ƒvˆ—
-[State -3, 5];¬ƒWƒƒƒ“ƒv”»’è
+; å½«åƒ•å„å„åƒ¾å¼µæ£Ÿ
+[State -3, 5];å½«åƒ•å„å„åƒ¾æ•¾æ•
 type = varset
 Trigger1 = StateNo = 40
 Trigger1 = command != "holdup"
 v = 16
 value = 1
 
-[State -3, 5];¬ƒWƒƒƒ“ƒvÁ‹
+[State -3, 5];å½«åƒ•å„å„åƒ¾å¾šå«€
 type = varset
 Trigger1 = StateNo = 40
 Trigger1 = command = "holdup"
@@ -5760,7 +6037,7 @@ Trigger1 = var(15) >= 1
 x = -5
 ;y = -9
 
-[State -3, 5];¬ƒWƒƒƒ“ƒv
+[State -3, 5];å½«åƒ•å„å„åƒ¾
 type = veladd
 Trigger1 = StateNo = 50
 Trigger1 = time = 1
@@ -5820,7 +6097,7 @@ flag = invisible
 
 [State 9999]
 type = varset
-TriggerAll = EnemyNear, PrevStateNo <= 180      ;µĞ·½×ßÎ»·ÀÓùºó³öÕĞ¼ÇÂ¼£¬µÚÒ»´Î¼ÇÂ¼
+TriggerAll = EnemyNear, PrevStateNo <= 180      ;æ•Œæ–¹èµ°ä½é˜²å¾¡åå‡ºæ‹›è®°å½•ï¼Œç¬¬ä¸€æ¬¡è®°å½•
 TriggerAll = EnemyNear, HitDefAttr = SCA,NA,SA
 ;TriggerAll = Root,StateNo != [120,159]
 TriggerAll = Root,MoveType = H ||Root,StateNo = [120,159]
@@ -5832,7 +6109,7 @@ Value  = (EnemyNear, StateNo)
 IgnoreHitPause = 1
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(1) != 0
 Trigger1 = var(2) = 0
 V= 2                  
@@ -5840,7 +6117,7 @@ Value = (EnemyNear, Time)
 IgnoreHitPause = 1
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(1) != 0
 Trigger1 = var(24) = 0
 V= 24                 
@@ -5851,22 +6128,22 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset
-TriggerAll = EnemyNear, PrevStateNo <= 180      ;µĞ·½×ßÎ»·ÀÓùºó³öÕĞ¼ÇÂ¼£¬µÚÒ»´Î¼ÇÂ¼
+TriggerAll = EnemyNear, PrevStateNo <= 180      ;æ•Œæ–¹èµ°ä½é˜²å¾¡åå‡ºæ‹›è®°å½•ï¼Œç¬¬ä¸€æ¬¡è®°å½•
 TriggerAll = EnemyNear, HitDefAttr = SCA,NA,SA
 ;TriggerAll = Root,StateNo != [120,159]
 TriggerAll = enemyNear,movecontact = 1
 TriggerAll = Root,MoveType = H||Root,StateNo = [120,159]
-TriggerAll = EnemyNear,StateNo!=var(1)       ;µĞÈËµÄ¹¥»÷×´Ì¬²»ÄÜÊÇvar(1)Ëù¼ÇÂ¼µÄ£¬ÊÇÒ»¸öĞÂµÄµĞ·½ÆğÊÖ×´Ì¬ºÅ
+TriggerAll = EnemyNear,StateNo!=var(1)       ;æ•Œäººçš„æ”»å‡»çŠ¶æ€ä¸èƒ½æ˜¯var(1)æ‰€è®°å½•çš„ï¼Œæ˜¯ä¸€ä¸ªæ–°çš„æ•Œæ–¹èµ·æ‰‹çŠ¶æ€å·
 TriggerAll = (EnemyNear, StateNo >=200) && (EnemyNear,MoveType=A )
-TriggerAll = var(1)   ;Ç°Ìávar(1)´æÔÚÊ±¼´¼ÇÂ¼µ½µĞ·½Ê±var(3)¿ªÊ¼¼ÇÂ¼£¬ÏÂÃæµÄÒ»´ÎÀàÍÆ
+TriggerAll = var(1)   ;å‰ævar(1)å­˜åœ¨æ—¶å³è®°å½•åˆ°æ•Œæ–¹æ—¶var(3)å¼€å§‹è®°å½•ï¼Œä¸‹é¢çš„ä¸€æ¬¡ç±»æ¨
 Trigger1 = var(3) = 0
 V = 3   
 Value  = (EnemyNear, StateNo)
 IgnoreHitPause = 1
 
 [State 9999]
-type = varset                              ;±äÁ¿2¼¤»îÊ±£¬±äÁ¿4¿ªÊ¼¼ÇÂ¼Ê±¼ä£¬ÒÔ´ËÀàÍÆ
-TriggerAll = var(2)                        ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                              ;å˜é‡2æ¿€æ´»æ—¶ï¼Œå˜é‡4å¼€å§‹è®°å½•æ—¶é—´ï¼Œä»¥æ­¤ç±»æ¨
+TriggerAll = var(2)                        ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(3) != 0
 Trigger1 = var(4) = 0
 V= 4                  
@@ -5874,7 +6151,7 @@ Value = (EnemyNear, Time)
 IgnoreHitPause = 1
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(3) != 0
 Trigger1 = var(25) = 0
 V= 25                 
@@ -5883,7 +6160,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset
-TriggerAll = EnemyNear, PrevStateNo <= 180      ;µĞ·½×ßÎ»·ÀÓùºó³öÕĞ¼ÇÂ¼£¬µÚÒ»´Î¼ÇÂ¼
+TriggerAll = EnemyNear, PrevStateNo <= 180      ;æ•Œæ–¹èµ°ä½é˜²å¾¡åå‡ºæ‹›è®°å½•ï¼Œç¬¬ä¸€æ¬¡è®°å½•
 TriggerAll = EnemyNear, HitDefAttr = SCA,NA,SA
 ;TriggerAll = Root,StateNo != [120,159]
 TriggerAll = enemyNear,movecontact = 1
@@ -5898,7 +6175,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset  
-TriggerAll = var(4)                              ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+TriggerAll = var(4)                              ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(5) != 0
 Trigger1 = var(6) = 0
 V = 6                  
@@ -5906,7 +6183,7 @@ Value = (EnemyNear, Time)
 IgnoreHitPause = 1
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(5) != 0
 Trigger1 = var(26) = 0
 V= 26                 
@@ -5915,7 +6192,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset
-TriggerAll = EnemyNear, PrevStateNo <= 180      ;µĞ·½×ßÎ»·ÀÓùºó³öÕĞ¼ÇÂ¼£¬µÚÒ»´Î¼ÇÂ¼
+TriggerAll = EnemyNear, PrevStateNo <= 180      ;æ•Œæ–¹èµ°ä½é˜²å¾¡åå‡ºæ‹›è®°å½•ï¼Œç¬¬ä¸€æ¬¡è®°å½•
 TriggerAll = EnemyNear, HitDefAttr = SCA,NA,SA
 ;TriggerAll = Root,StateNo != [120,159]
 TriggerAll = var(5)
@@ -5931,7 +6208,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset 
-TriggerAll = var(6)                               ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+TriggerAll = var(6)                               ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(7) != 0
 Trigger1 = var(8) = 0
 V = 8                  
@@ -5940,7 +6217,7 @@ IgnoreHitPause = 1
 
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(7) != 0
 Trigger1 = var(27) = 0
 V= 27                 
@@ -5949,7 +6226,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset
-TriggerAll = EnemyNear, PrevStateNo <= 180      ;µĞ·½×ßÎ»·ÀÓùºó³öÕĞ¼ÇÂ¼£¬µÚÒ»´Î¼ÇÂ¼
+TriggerAll = EnemyNear, PrevStateNo <= 180      ;æ•Œæ–¹èµ°ä½é˜²å¾¡åå‡ºæ‹›è®°å½•ï¼Œç¬¬ä¸€æ¬¡è®°å½•
 TriggerAll = EnemyNear, HitDefAttr = SCA,NA,SA
 ;TriggerAll = Root,StateNo != [120,159]
 TriggerAll = enemyNear,movecontact = 1
@@ -5964,7 +6241,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset   
-TriggerAll = var(8)                             ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+TriggerAll = var(8)                             ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(9) != 0
 Trigger1 = var(10) = 0
 V = 10                  
@@ -5973,7 +6250,7 @@ IgnoreHitPause = 1
 
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(9) != 0
 Trigger1 = var(24) = 0
 V= 28                 
@@ -5982,7 +6259,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset
-TriggerAll = EnemyNear, PrevStateNo <= 180      ;µĞ·½×ßÎ»·ÀÓùºó³öÕĞ¼ÇÂ¼£¬µÚÒ»´Î¼ÇÂ¼
+TriggerAll = EnemyNear, PrevStateNo <= 180      ;æ•Œæ–¹èµ°ä½é˜²å¾¡åå‡ºæ‹›è®°å½•ï¼Œç¬¬ä¸€æ¬¡è®°å½•
 TriggerAll = EnemyNear, HitDefAttr = SCA,NA,SA
 ;TriggerAll = Root,StateNo != [120,159]
 TriggerAll = enemyNear,movecontact = 1
@@ -5998,7 +6275,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset   
-TriggerAll = var(10)                             ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+TriggerAll = var(10)                             ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(11) != 0
 Trigger1 = var(12) = 0
 V = 12                 
@@ -6006,7 +6283,7 @@ Value = (EnemyNear, Time)
 IgnoreHitPause = 1
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(11) != 0
 Trigger1 = var(29) = 0
 V= 29                 
@@ -6015,7 +6292,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset
-TriggerAll = EnemyNear, PrevStateNo <= 180      ;µĞ·½×ßÎ»·ÀÓùºó³öÕĞ¼ÇÂ¼£¬µÚÒ»´Î¼ÇÂ¼
+TriggerAll = EnemyNear, PrevStateNo <= 180      ;æ•Œæ–¹èµ°ä½é˜²å¾¡åå‡ºæ‹›è®°å½•ï¼Œç¬¬ä¸€æ¬¡è®°å½•
 TriggerAll = EnemyNear, HitDefAttr = SCA,NA,SA
 ;TriggerAll = Root,StateNo != [120,159]
 TriggerAll = enemyNear,movecontact = 1
@@ -6032,7 +6309,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset   
-TriggerAll = var(12)                             ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+TriggerAll = var(12)                             ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(13) != 0
 Trigger1 = var(14) = 0
 V = 14                 
@@ -6041,7 +6318,7 @@ IgnoreHitPause = 1
 
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(13) != 0
 Trigger1 = var(30) = 0
 V= 30                 
@@ -6050,7 +6327,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset
-TriggerAll = EnemyNear, PrevStateNo <= 180      ;µĞ·½×ßÎ»·ÀÓùºó³öÕĞ¼ÇÂ¼£¬µÚÒ»´Î¼ÇÂ¼
+TriggerAll = EnemyNear, PrevStateNo <= 180      ;æ•Œæ–¹èµ°ä½é˜²å¾¡åå‡ºæ‹›è®°å½•ï¼Œç¬¬ä¸€æ¬¡è®°å½•
 TriggerAll = EnemyNear, HitDefAttr = SCA,NA,SA
 ;TriggerAll = Root,StateNo != [120,159]
 TriggerAll = enemyNear,movecontact = 1
@@ -6070,7 +6347,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset   
-TriggerAll = var(14)                             ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+TriggerAll = var(14)                             ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(15) != 0
 Trigger1 = var(16) = 0
 V = 16                 
@@ -6078,7 +6355,7 @@ Value = (EnemyNear, Time)
 IgnoreHitPause = 1
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(15) != 0
 Trigger1 = var(31) = 0
 V= 31                 
@@ -6087,7 +6364,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset
-TriggerAll = EnemyNear, PrevStateNo <= 180      ;µĞ·½×ßÎ»·ÀÓùºó³öÕĞ¼ÇÂ¼£¬µÚÒ»´Î¼ÇÂ¼
+TriggerAll = EnemyNear, PrevStateNo <= 180      ;æ•Œæ–¹èµ°ä½é˜²å¾¡åå‡ºæ‹›è®°å½•ï¼Œç¬¬ä¸€æ¬¡è®°å½•
 TriggerAll = EnemyNear, HitDefAttr = SCA,NA,SA
 ;TriggerAll = Root,StateNo != [120,159]
 TriggerAll = enemyNear,movecontact = 1
@@ -6106,7 +6383,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset   
-TriggerAll = var(16)                             ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+TriggerAll = var(16)                             ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(17) != 0
 Trigger1 = var(18) = 0
 V = 18                
@@ -6114,7 +6391,7 @@ Value = (EnemyNear, Time)
 IgnoreHitPause = 1
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(17) != 0
 Trigger1 = var(32) = 0
 V= 32                 
@@ -6123,7 +6400,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset
-TriggerAll = EnemyNear, PrevStateNo <= 180      ;µĞ·½×ßÎ»·ÀÓùºó³öÕĞ¼ÇÂ¼£¬µÚÒ»´Î¼ÇÂ¼
+TriggerAll = EnemyNear, PrevStateNo <= 180      ;æ•Œæ–¹èµ°ä½é˜²å¾¡åå‡ºæ‹›è®°å½•ï¼Œç¬¬ä¸€æ¬¡è®°å½•
 TriggerAll = EnemyNear, HitDefAttr = SCA,NA,SA
 ;TriggerAll = Root,StateNo != [120,159]
 TriggerAll = enemyNear,movecontact = 1
@@ -6143,7 +6420,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset   
-TriggerAll = var(18)                             ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+TriggerAll = var(18)                             ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(19) != 0
 Trigger1 = var(20) = 0
 V = 20                
@@ -6151,7 +6428,7 @@ Value = (EnemyNear, Time)
 IgnoreHitPause = 1
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(19) != 0
 Trigger1 = var(33) = 0
 V= 33                 
@@ -6160,7 +6437,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset
-TriggerAll = EnemyNear, PrevStateNo <= 180      ;µĞ·½×ßÎ»·ÀÓùºó³öÕĞ¼ÇÂ¼£¬µÚÒ»´Î¼ÇÂ¼
+TriggerAll = EnemyNear, PrevStateNo <= 180      ;æ•Œæ–¹èµ°ä½é˜²å¾¡åå‡ºæ‹›è®°å½•ï¼Œç¬¬ä¸€æ¬¡è®°å½•
 TriggerAll = EnemyNear, HitDefAttr = SCA,NA,SA
 ;TriggerAll = Root,StateNo != [120,159]
 TriggerAll = enemyNear,movecontact = 1
@@ -6182,7 +6459,7 @@ IgnoreHitPause = 1
 
 [State 9999]
 type = varset   
-TriggerAll = var(20)                             ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+TriggerAll = var(20)                             ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(21) != 0
 Trigger1 = var(22) = 0
 V = 22                
@@ -6190,7 +6467,7 @@ Value = (EnemyNear, Time)
 IgnoreHitPause = 1
 
 [State 9999]
-type = varset                                ;¼ÇÂ¼¿ª³¡³öÕĞÊ±¼ä
+type = varset                                ;è®°å½•å¼€åœºå‡ºæ‹›æ—¶é—´
 Trigger1 = var(21) != 0
 Trigger1 = var(34) = 0
 V= 34                 
@@ -6221,7 +6498,7 @@ ignorehitpause = 1
 
 
 
-[State 0, Í¶¼¼²»ÖĞ¼ÇÂ¼]
+[State 0, æŠ•æŠ€ä¸ä¸­è®°å½•]
 type = VarSet
 TriggerAll = Root,StateNo = 800&&Root,Time<2
 TriggerAll = !Root,NumTarget
@@ -6235,7 +6512,7 @@ value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Í¶¼¼²»ÖĞ¼ÇÂ¼]
+[State 0, æŠ•æŠ€ä¸ä¸­è®°å½•]
 type = VarSet
 TriggerAll = Root,StateNo = 800&&Root,Time<2
 TriggerAll = Root,Var(42)=1
@@ -6252,7 +6529,7 @@ value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Í¶¼¼²»ÖĞ¼ÇÂ¼]
+[State 0, æŠ•æŠ€ä¸ä¸­è®°å½•]
 type = VarSet
 TriggerAll = Root,StateNo = 800&&Root,Time<2
 TriggerAll = Root,Var(42)=1
@@ -6271,7 +6548,7 @@ value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Í¶¼¼²»ÖĞ¼ÇÂ¼]
+[State 0, æŠ•æŠ€ä¸ä¸­è®°å½•]
 type = VarSet
 TriggerAll = Root,StateNo = 800&&Root,Time<2
 TriggerAll = Root,Var(42)=1
@@ -6286,14 +6563,14 @@ TriggerAll = EnemyNear(Floor(Root,Fvar(37))),StateNo!=Var(42)
 TriggerAll = Var(42)>0
 TriggerAll = Var(40)>0
 TriggerAll = Var(41)>0
-Trigger1 = Var(43)=0
+Trigger1 = var(43)=0
 v = 43    ;fv = 10
 value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, Í¶¼¼²»ÖĞ¼ÇÂ¼]
+[State 0, æŠ•æŠ€ä¸ä¸­è®°å½•]
 type = VarSet
 TriggerAll = Root,StateNo = 800&&Root,Time<2
 TriggerAll = Root,Var(42)=1
@@ -6341,7 +6618,8 @@ value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 ignorehitpause = 1
 ;persistent = 
 
-[State 33000, ±äÁ¿³õÊ¼»¯]
+
+[State 33000, å˜é‡åˆå§‹åŒ–]
 Type = Null
 TriggerAll = roundstate=0
 TriggerAll = roundno = 1
@@ -6380,7 +6658,7 @@ Trigger1=1||var(30):=0
 Trigger1=1||var(31):=0
 IgnoreHitPause = 1
 
-[State 33000, ±äÁ¿³õÊ¼»¯]
+[State 33000, å˜é‡åˆå§‹åŒ–]
 Type = Null
 TriggerAll = Time = 1
 TriggerAll = roundstate<2&&roundno>1
@@ -6456,7 +6734,7 @@ value = 0
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -6527,7 +6805,7 @@ ignorehitpause = 1
 
 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -6587,7 +6865,7 @@ value = EnemyNear(floor(Root,fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -6650,7 +6928,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -6715,7 +6993,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -6782,7 +7060,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -6851,7 +7129,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -6922,7 +7200,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -6996,7 +7274,7 @@ ignorehitpause = 1
 
 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -7071,7 +7349,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -7148,7 +7426,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -7227,7 +7505,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -7308,7 +7586,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -7390,7 +7668,7 @@ value = EnemyNear(floor(Root,fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ÎŞµĞ»òÕßÉÁ±Ü×´Ì¬¼ÇÂ¼]
+[State 0, æ— æ•Œæˆ–è€…é—ªé¿çŠ¶æ€è®°å½•]
 type = VarSet
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(Root,fvar(37))),statetype != L
@@ -7486,7 +7764,7 @@ ignorehitpause = 1
 
 
 
-[State 0, ÎŞµĞÃ»¸Õ¹ıÕĞ¼ÇÂ¼]
+[State 0, æ— æ•Œæ²¡åˆšè¿‡æ‹›è®°å½•]
 type = VarSet
 TriggerAll = (Root,PrevStateNo = [1200,1202])
 TriggerAll = abs(EnemyNear(floor(Root,fvar(37))),pos x-Root,pos x)<98
@@ -7504,7 +7782,7 @@ value = EnemyNear(floor(Root,fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ÎŞµĞÃ»¸Õ¹ıÕĞ¼ÇÂ¼]
+[State 0, æ— æ•Œæ²¡åˆšè¿‡æ‹›è®°å½•]
 type = VarSet
 TriggerAll = (Root,PrevStateNo = [1200,1202])
 TriggerAll = abs(EnemyNear(floor(Root,fvar(37))),pos x-Root,pos x)<98
@@ -7524,7 +7802,7 @@ value = EnemyNear(floor(Root,fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ÎŞµĞÃ»¸Õ¹ıÕĞ¼ÇÂ¼]
+[State 0, æ— æ•Œæ²¡åˆšè¿‡æ‹›è®°å½•]
 type = VarSet
 TriggerAll = (Root,PrevStateNo = [1200,1202])
 TriggerAll = abs(EnemyNear(floor(Root,fvar(37))),pos x-Root,pos x)<98
@@ -7546,7 +7824,7 @@ value = EnemyNear(floor(Root,fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ÎŞµĞÃ»¸Õ¹ıÕĞ¼ÇÂ¼]
+[State 0, æ— æ•Œæ²¡åˆšè¿‡æ‹›è®°å½•]
 type = VarSet
 TriggerAll = (Root,PrevStateNo = [1200,1202])
 TriggerAll = abs(EnemyNear(floor(Root,fvar(37))),pos x-Root,pos x)<98
@@ -7570,7 +7848,7 @@ value = EnemyNear(floor(Root,fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ÎŞµĞÃ»¸Õ¹ıÕĞ¼ÇÂ¼]
+[State 0, æ— æ•Œæ²¡åˆšè¿‡æ‹›è®°å½•]
 type = VarSet
 TriggerAll = (Root,PrevStateNo = [1200,1202])
 TriggerAll = abs(EnemyNear(floor(Root,fvar(37))),pos x-Root,pos x)<98
@@ -7597,7 +7875,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ÎŞµĞÃ»¸Õ¹ıÕĞ¼ÇÂ¼]
+[State 0, æ— æ•Œæ²¡åˆšè¿‡æ‹›è®°å½•]
 type = VarSet
 TriggerAll = (Root,PrevStateNo = 2000)
 TriggerAll = Root,p2dist x=[-34,103)
@@ -7614,7 +7892,7 @@ value = EnemyNear(floor(Root,fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ÎŞµĞÃ»¸Õ¹ıÕĞ¼ÇÂ¼]
+[State 0, æ— æ•Œæ²¡åˆšè¿‡æ‹›è®°å½•]
 type = VarSet
 TriggerAll = (Root,PrevStateNo = 2000)
 TriggerAll = Root,p2dist x=[-34,103)
@@ -7633,7 +7911,7 @@ value = EnemyNear(floor(Root,fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ÎŞµĞÃ»¸Õ¹ıÕĞ¼ÇÂ¼]
+[State 0, æ— æ•Œæ²¡åˆšè¿‡æ‹›è®°å½•]
 type = VarSet
 TriggerAll = (Root,PrevStateNo = 2000)
 TriggerAll = Root,p2dist x=[-34,103)
@@ -7654,7 +7932,7 @@ value = EnemyNear(floor(Root,fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ÎŞµĞÃ»¸Õ¹ıÕĞ¼ÇÂ¼]
+[State 0, æ— æ•Œæ²¡åˆšè¿‡æ‹›è®°å½•]
 type = VarSet
 TriggerAll = (Root,PrevStateNo = 2000)
 TriggerAll = Root,p2dist x=[-34,103)
@@ -7677,7 +7955,7 @@ value = EnemyNear(floor(Root,fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ÎŞµĞÃ»¸Õ¹ıÕĞ¼ÇÂ¼]
+[State 0, æ— æ•Œæ²¡åˆšè¿‡æ‹›è®°å½•]
 type = VarSet
 TriggerAll = (Root,PrevStateNo = 2000)
 TriggerAll = Root,p2dist x=[-34,103)
@@ -7719,7 +7997,7 @@ ignorehitpause = 1
 
 
 ;----------------------------------------------------------------------
-[State 33000, ³õÊ¼»¯±äÁ¿]
+[State 33000, åˆå§‹åŒ–å˜é‡]
 Type = Null
 TriggerAll = Time = 0
 Trigger1 = 1||var(30) := -1
@@ -7746,7 +8024,7 @@ IgnoreHitPause = 1
 
 
 
-[State 0, ¿ÕÖĞ×¥Ó²Ö±±»´òÆÆ¼ÇÂ¼1]
+[State 0, ç©ºä¸­æŠ“ç¡¬ç›´è¢«æ‰“ç ´è®°å½•1]
 type = VarSet
 TriggerAll = Var(40) = -1
 TriggerAll = var(30) != -1
@@ -7760,7 +8038,7 @@ value = Cond(EnemyNear(Floor(Root,Fvar(37))),StateNo<200,EnemyNear(Floor(Root,Fv
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ¿ÕÖĞ×¥Ó²Ö±±»´òÆÆ¼ÇÂ¼2]
+[State 0, ç©ºä¸­æŠ“ç¡¬ç›´è¢«æ‰“ç ´è®°å½•2]
 type = VarSet
 TriggerAll = Var(40)> 0
 TriggerAll = Var(41) = -1
@@ -7776,7 +8054,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ¿ÕÖĞ×¥Ó²Ö±±»´òÆÆ¼ÇÂ¼3]
+[State 0, ç©ºä¸­æŠ“ç¡¬ç›´è¢«æ‰“ç ´è®°å½•3]
 type = VarSet
 TriggerAll = Var(40)> 0
 TriggerAll = Var(41)> 0
@@ -7794,7 +8072,7 @@ ignorehitpause = 1
 
 
 
-[State 0, ¿ÕÖĞ×¥Ó²Ö±±»´òÆÆ¼ÇÂ¼4]
+[State 0, ç©ºä¸­æŠ“ç¡¬ç›´è¢«æ‰“ç ´è®°å½•4]
 type = VarSet
 TriggerAll = Var(40)> 0
 TriggerAll = Var(41)> 0
@@ -7811,7 +8089,7 @@ value = Cond(EnemyNear(Floor(Root,Fvar(37))),StateNo<200,EnemyNear(Floor(Root,Fv
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ¿ÕÖĞ×¥Ó²Ö±±»´òÆÆ¼ÇÂ¼5]
+[State 0, ç©ºä¸­æŠ“ç¡¬ç›´è¢«æ‰“ç ´è®°å½•5]
 type = VarSet
 TriggerAll = Var(40)> 0
 TriggerAll = Var(41)> 0
@@ -7830,7 +8108,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ¿ÕÖĞ×¥Ó²Ö±±»´òÆÆ¼ÇÂ¼5]
+[State 0, ç©ºä¸­æŠ“ç¡¬ç›´è¢«æ‰“ç ´è®°å½•5]
 type = VarSet
 TriggerAll = Var(40)> 0
 TriggerAll = Var(41)> 0
@@ -7849,7 +8127,7 @@ value = Cond(EnemyNear(Floor(Root,Fvar(37))),StateNo<200,EnemyNear(Floor(Root,Fv
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ¿ÕÖĞ×¥Ó²Ö±±»´òÆÆ¼ÇÂ¼5]
+[State 0, ç©ºä¸­æŠ“ç¡¬ç›´è¢«æ‰“ç ´è®°å½•5]
 type = VarSet
 TriggerAll = Var(40)> 0
 TriggerAll = Var(41)> 0
@@ -7870,7 +8148,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ¿ÕÖĞ×¥Ó²Ö±±»´òÆÆ¼ÇÂ¼5]
+[State 0, ç©ºä¸­æŠ“ç¡¬ç›´è¢«æ‰“ç ´è®°å½•5]
 type = VarSet
 TriggerAll = Var(40)> 0
 TriggerAll = Var(41)> 0
@@ -7892,7 +8170,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ¿ÕÖĞ×¥Ó²Ö±±»´òÆÆ¼ÇÂ¼5]
+[State 0, ç©ºä¸­æŠ“ç¡¬ç›´è¢«æ‰“ç ´è®°å½•5]
 type = VarSet
 TriggerAll = Var(40)> 0
 TriggerAll = Var(41)> 0
@@ -7914,7 +8192,7 @@ value = Cond(EnemyNear(Floor(Root,Fvar(37))),StateNo<200,EnemyNear(Floor(Root,Fv
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ¿ÕÖĞ×¥Ó²Ö±±»´òÆÆ¼ÇÂ¼5]
+[State 0, ç©ºä¸­æŠ“ç¡¬ç›´è¢«æ‰“ç ´è®°å½•5]
 type = VarSet
 TriggerAll = Var(40)> 0 
 TriggerAll = Var(41)> 0
@@ -7954,10 +8232,10 @@ value = 0
 ignorehitpause = 1
 ;persistent = 
 
-;¼ÇÂ¼±»·ÉĞĞµÀ¾ß»÷ÖĞµÄ×´Ì¬ºÅ
+;è®°å½•è¢«é£è¡Œé“å…·å‡»ä¸­çš„çŠ¶æ€å·
 
 ;----------------------------------------------------------------------
-;”³¤Ëïw¤ÓµÀ¾ß¥¹¥Æ©`¥ÈÓ›‘›
+;æ•µã«é£›ã³é“å…·ã‚¹ãƒ†ãƒ¼ãƒˆè¨˜æ†¶
 ;----------------------------------------------------------------------
 [State 33000, VarSet]
 Type = VarSet
@@ -8189,9 +8467,8 @@ Trigger1 = roundstate>2
 ;persistent = 
 
 
-; ”ò‚Ñ“¹‹ïŠ´’mƒwƒ‹ƒp[
 ;---------------------------------------------------------------------------
-[Statedef 32000];·ÉĞĞµÀ¾ß/Helper¼ì²â£¬¼ÆËãµĞ·½HelperÊıÁ¿
+[Statedef 32000]
 anim = 9999
 ctrl = 0
 
@@ -8206,21 +8483,21 @@ type = NotHitBy
 Trigger1 = 1
 value = SCA
 
-[State 32000, ŠÔˆá‚¢‚Å–{‘Ì‚ª—ˆ‚½‚ç—§‚¿‚ÖˆÚs]
+[State 32000, å¨«å ˜å„å±æ®æ‡±å‘æ£ƒå¨å‚œæ£«åªå‚Šå å³´]
 type = SelfState
 Trigger1 =!IsHelper
 value = 0
 
 [State -3, VarSet]
 type = VarSet
-Trigger1 = roundstate = 2       ;r2Ê±
-var(30) = EnemyNear,GetHitVar(hitshaketime)+EnemyNear,GetHitVar(hittime)    ;¼ÇÂ¼µĞÈËµÄ´ò»÷Õğ¶¯ºÍ´ò»÷Ê±¼äµÄ×ÜºÍ
+Trigger1 = roundstate = 2       ;r2æ—¶
+var(30) = EnemyNear,GetHitVar(hitshaketime)+EnemyNear,GetHitVar(hittime)    ;è®°å½•æ•Œäººçš„æ‰“å‡»éœ‡åŠ¨å’Œæ‰“å‡»æ—¶é—´çš„æ€»å’Œ
 IgnoreHitPause = 1
 
 [State -3, VarSet]
 Type = VarSet
-TriggerAll = Var(1) = 0  ;´óÌõ¼şvar(1)Îª¿ÕÊ±
-Trigger1 = EnemyNear,NumHelper > 0 ;µĞÈËµÄHelper>0Ê±´¥·¢
+TriggerAll = Var(1) = 0  ;å¤§æ¡ä»¶var(1)ä¸ºç©ºæ—¶
+Trigger1 = EnemyNear,NumHelper > 0 ;æ•Œäººçš„Helper>0æ—¶è§¦å‘
 Trigger1 = RoundState <= 1 || (EnemyNear,movetype = H && EnemyNear,StateNo!=[120,159])
 var(1) = (EnemyNear,NumHelper - NumEnemy) + 1
 
@@ -8258,12 +8535,12 @@ type = NotHitBy
 Trigger1 = 1
 value = SCA
 
-[State 32500, ŠÔˆá‚¢‚Å–{‘Ì‚ª—ˆ‚½‚ç—§‚¿‚ÖˆÚs]
+[State 32500, å¨«å ˜å„å±æ®æ‡±å‘æ£ƒå¨å‚œæ£«åªå‚Šå å³´]
 type = SelfState
 Trigger1 =!IsHelper
 value = 0
 
-[State 2, 2];ƒXƒg[ƒJ[
+[State 2, 2];åƒ—åƒ©ä¹•åƒ‡ä¹•
 type = BindToRoot
 Trigger1 = IsHelper
 time = -1
@@ -8402,6 +8679,7 @@ value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 ignorehitpause = 1
 ;persistent = 
 
+
 [State 20000, AssertSpecial]
 type = AssertSpecial
 Trigger1 = 1
@@ -8413,7 +8691,7 @@ type = NotHitBy
 Trigger1 = 1
 value = SCA
 
-[State 20000, égß`¤¤¤Ç±¾Ìå¤¬À´¤¿¤éÁ¢¤Á¤ØÒÆĞĞ]
+[State 20000, é–“é•ã„ã§æœ¬ä½“ãŒæ¥ãŸã‚‰ç«‹ã¡ã¸ç§»è¡Œ]
 type = SelfState
 Trigger1 =!IsHelper
 value = 0
@@ -8470,7 +8748,7 @@ type = NotHitBy
 Trigger1 = 1
 value = SCA
 
-[State 20000, égß`¤¤¤Ç±¾Ìå¤¬À´¤¿¤éÁ¢¤Á¤ØÒÆĞĞ]
+[State 20000, é–“é•ã„ã§æœ¬ä½“ãŒæ¥ãŸã‚‰ç«‹ã¡ã¸ç§»è¡Œ]
 type = SelfState
 Trigger1 =!IsHelper
 value = 0
@@ -8526,7 +8804,7 @@ type = PlayerPush
 Trigger1 = 1
 value = 0
 
-[State 31000, ·ÇHelperÇ¿ÖÆ½øÈë0×´Ì¬]
+[State 31000, éHelperå¼ºåˆ¶è¿›å…¥0çŠ¶æ€]
 type = SelfState
 Trigger1 =!IsHelper
 value = 0
@@ -8591,7 +8869,7 @@ ignorehitpause = 1
 
 
 ;-------------------------------------------------
-;È­½ÅÃş½±¼ÇÂ¼
+;æ‹³è„šæ‘¸å¥–è®°å½•
 [Statedef 88000]
 anim = 9999
 ctrl = 0
@@ -8615,7 +8893,7 @@ value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 ignorehitpause = 1
 ;persistent = 
 
-[State 33000, ±äÁ¿³õÊ¼»¯]
+[State 33000, å˜é‡åˆå§‹åŒ–]
 Type = Null
 TriggerAll = roundstate=0
 TriggerAll = roundno = 1
@@ -8656,7 +8934,7 @@ IgnoreHitPause = 1
 
 
 ;7,21,24,29,32
-[State 33000, ±äÁ¿³õÊ¼»¯]
+[State 33000, å˜é‡åˆå§‹åŒ–]
 Type = Null
 TriggerAll = Time = 1
 TriggerAll = roundstate<2&&roundno>1
@@ -8668,7 +8946,7 @@ Trigger1 = 1||var(3) := Root, var(46)
 Trigger1 = 1||var(4) := Root, var(46)
 IgnoreHitPause = 1
 
-[State 33000, ±äÁ¿³õÊ¼»¯]
+[State 33000, å˜é‡åˆå§‹åŒ–]
 Type = Null
 TriggerAll = Time = 1
 TriggerAll = roundstate<2&&roundno>1
@@ -8680,7 +8958,7 @@ Trigger1 = 1||var(8) := Root,var(47)
 Trigger1 = 1||var(9) := Root,var(47)
 IgnoreHitPause = 1
 
-[State 33000, ±äÁ¿³õÊ¼»¯]
+[State 33000, å˜é‡åˆå§‹åŒ–]
 Type = Null
 TriggerAll = Time = 1
 TriggerAll = roundstate<2&&roundno>1
@@ -8692,7 +8970,7 @@ Trigger1 = 1||var(13) := Root,var(49)
 Trigger1 = 1||var(14) := Root,var(49)
 IgnoreHitPause = 1
 
-[State 33000, ±äÁ¿³õÊ¼»¯]
+[State 33000, å˜é‡åˆå§‹åŒ–]
 Type = Null
 TriggerAll = Time = 1
 TriggerAll = roundstate<2&&roundno>1
@@ -8704,7 +8982,7 @@ Trigger1 = 1||var(17) := Root,var(50)
 Trigger1 = 1||var(18) := Root,var(50)
 IgnoreHitPause = 1
 
-[State 33000, ±äÁ¿³õÊ¼»¯]
+[State 33000, å˜é‡åˆå§‹åŒ–]
 Type = Null
 TriggerAll = Time = 1
 TriggerAll = roundstate<2&&roundno>1
@@ -8717,7 +8995,7 @@ Trigger1 = 1||var(22) := Root,var(51)
 IgnoreHitPause = 1
 
 
-[State 0, ¼ÇÂ¼Ò»Ö¡Ç°µÄ×´Ì¬ºÅ]
+[State 0, è®°å½•ä¸€å¸§å‰çš„çŠ¶æ€å·]
 type = VarSet
 TriggerAll = (Root,StateNo = 430)&&Root,movehit
 TriggerAll = Root,time>=0
@@ -8733,7 +9011,7 @@ value =var(1)
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Ò»Ö¡Ç°µÄ×´Ì¬ºÅ²ÎÊı]
+[State 0, ä¸€å¸§å‰çš„çŠ¶æ€å·å‚æ•°]
 type = VarSet
 Trigger1 = 1
 v = 1    ;fv = 10
@@ -8742,7 +9020,7 @@ ignorehitpause = 1
 ;persistent = 
  
 
-[State 0, ¼ÇÂ¼Ò»Ö¡Ç°µÄ×´Ì¬ºÅµÄÊ±¼ä];±»»÷ÖĞµÄµÚÒ»Ö¡Îª5000-5999Ö®¼äµÄ¹«¹²ÊÜ»÷×´Ì¬ºÅ£¬ËùÒÔÒ»Ö¡Ç°ÊÇµĞÈË×Ô¼ºµÄ×´Ì¬ºÅ
+[State 0, è®°å½•ä¸€å¸§å‰çš„çŠ¶æ€å·çš„æ—¶é—´];è¢«å‡»ä¸­çš„ç¬¬ä¸€å¸§ä¸º5000-5999ä¹‹é—´çš„å…¬å…±å—å‡»çŠ¶æ€å·ï¼Œæ‰€ä»¥ä¸€å¸§å‰æ˜¯æ•Œäººè‡ªå·±çš„çŠ¶æ€å·
 type = VarSet
 TriggerAll = (Root,StateNo = 430)&&Root,movehit
 TriggerAll = Root,time>=0
@@ -8758,7 +9036,7 @@ value = var(4)
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Ò»Ö¡Ç°×´Ì¬ºÅ¼ÇÂ¼²ÎÊı]
+[State 0, ä¸€å¸§å‰çŠ¶æ€å·è®°å½•å‚æ•°]
 type = VarSet
 Trigger1 = 1
 v = 4    ;fv = 10 
@@ -8768,7 +9046,7 @@ ignorehitpause = 1
 
 
 
-[State 0, ¼ÇÂ¼Ò»Ö¡Ç°µÄ×´Ì¬ºÅ]
+[State 0, è®°å½•ä¸€å¸§å‰çš„çŠ¶æ€å·]
 type = VarSet
 TriggerAll = (Root,StateNo = 400)&&Root,movehit
 TriggerAll = Root,time>=0
@@ -8797,7 +9075,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ¼ÇÂ¼Ò»Ö¡Ç°µÄ×´Ì¬ºÅµÄÊ±¼ä]
+[State 0, è®°å½•ä¸€å¸§å‰çš„çŠ¶æ€å·çš„æ—¶é—´]
 type = VarSet
 TriggerAll = (Root,StateNo = 400)&&Root,movehit
 TriggerAll = Root,time>=0
@@ -8821,7 +9099,7 @@ value = EnemyNear(floor(Root,fvar(37))),time
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ¼ÇÂ¼Ò»Ö¡Ç°µÄ×´Ì¬ºÅ]
+[State 0, è®°å½•ä¸€å¸§å‰çš„çŠ¶æ€å·]
 type = VarSet
 TriggerAll = (Root,StateNo = 245)&&Root,movehit
 TriggerAll = Root,time>=0
@@ -8849,7 +9127,7 @@ ignorehitpause = 1
 
 
 
-[State 0, È­½ÅÃş½±¼ÇÂ¼]
+[State 0, æ‹³è„šæ‘¸å¥–è®°å½•]
 type = VarSet
 TriggerAll = (Root,StateNo = 245)&&Root,movehit
 TriggerAll = Root,time>=0
@@ -8875,7 +9153,7 @@ ignorehitpause = 1
 
 
 
-[State 0, ¼ÇÂ¼Ò»Ö¡Ç°µÄ×´Ì¬ºÅ]
+[State 0, è®°å½•ä¸€å¸§å‰çš„çŠ¶æ€å·]
 type = VarSet
 TriggerAll = (Root,StateNo = 200)&&Root,movehit
 TriggerAll = Root,time>=0
@@ -8903,7 +9181,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, È­½ÅÃş½±¼ÇÂ¼]
+[State 0, æ‹³è„šæ‘¸å¥–è®°å½•]
 type = VarSet
 TriggerAll = (Root,StateNo = 200)&&Root,movehit
 TriggerAll = Root,time>=0
@@ -8931,7 +9209,7 @@ ignorehitpause = 1
 
 
 
-[State 0, ¼ÇÂ¼Ò»Ö¡Ç°µÄ×´Ì¬ºÅ]
+[State 0, è®°å½•ä¸€å¸§å‰çš„çŠ¶æ€å·]
 type = VarSet
 TriggerAll = (Root,StateNo = 215)&&Root,movehit
 TriggerAll = Root,time>=0
@@ -8960,7 +9238,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, È­½ÅÃş½±¼ÇÂ¼]
+[State 0, æ‹³è„šæ‘¸å¥–è®°å½•]
 type = VarSet
 TriggerAll = (Root,StateNo =215)&&Root,movehit
 TriggerAll = Root,time>=0
@@ -9021,7 +9299,7 @@ value = 0
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Ç°ÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, å‰é—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),MoveType = A
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),HitDefAttr = SCA,AP,AA
@@ -9035,7 +9313,7 @@ value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Ç°ÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, å‰é—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),MoveType = A
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),HitDefAttr = SCA,AP,AA
@@ -9050,7 +9328,7 @@ value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Ç°ÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, å‰é—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),MoveType = A
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),HitDefAttr = SCA,AP,AA
@@ -9066,7 +9344,7 @@ value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Ç°ÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, å‰é—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),MoveType = A
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),HitDefAttr = SCA,AP,AA
@@ -9083,7 +9361,7 @@ value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Ç°ÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, å‰é—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),MoveType = A
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),HitDefAttr = SCA,AP,AA
@@ -9101,7 +9379,7 @@ value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, Ç°ÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, å‰é—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),MoveType = A
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),HitDefAttr = SCA,AP,AA
@@ -9121,7 +9399,7 @@ ignorehitpause = 1
 ;persistent = 
 
 ;**************************************2020/05/11
-[State 0, ¹«¹²Ìõ¼ş³éÈ¡]
+[State 0, å…¬å…±æ¡ä»¶æŠ½å–]
 type = VarSet
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),MoveType = A
 TriggerAll = EnemyNear(Floor(Root,Fvar(37))),HitDefAttr = SCA,AP,AA
@@ -9135,7 +9413,7 @@ value = 1
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ºóÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, åé—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = Var(42) = 1
 Trigger1 = Var(36) = 0
@@ -9145,7 +9423,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ºóÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, åé—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = Var(42) = 1
 TriggerAll = Var(36) > 0&&EnemyNear(Floor(Root,Fvar(37))),StateNo !=Var(36)
@@ -9155,7 +9433,7 @@ value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ºóÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, åé—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = Var(42) = 1
 TriggerAll = Var(36) > 0&&EnemyNear(Floor(Root,Fvar(37))),StateNo !=Var(36)
@@ -9166,7 +9444,7 @@ value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ºóÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, åé—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = Var(42) = 1
 TriggerAll = Var(36) > 0&&EnemyNear(Floor(Root,Fvar(37))),StateNo !=Var(36)
@@ -9178,7 +9456,7 @@ value = EnemyNear(Floor(Root,Fvar(37))),StateNo
 ignorehitpause = 1
 ;persistent = 
 
-[State 0, ºóÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, åé—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = Var(42) = 1
 TriggerAll = Var(36) > 0&&EnemyNear(Floor(Root,Fvar(37))),StateNo !=Var(36)
@@ -9192,7 +9470,7 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, ºóÉÁ±Ü±»´ò¼ÇÂ¼]
+[State 0, åé—ªé¿è¢«æ‰“è®°å½•]
 type = VarSet
 TriggerAll = Var(42) = 1
 TriggerAll = Var(36) > 0&&EnemyNear(Floor(Root,Fvar(37))),StateNo !=Var(36)
