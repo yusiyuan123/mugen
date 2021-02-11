@@ -6381,7 +6381,7 @@ ignorehitpause = 1
 ;-----------------------------------------------------------------------------打击定义，攻击有关helper，抓取等
 [State 240, 2]
 Type = HitDef
-Trigger1 = movecontact = 0
+Trigger1 = Animelem = 5
 attr = , HA
 animType  = Heavy
 damage    = 83 
@@ -6407,6 +6407,7 @@ kill = 0
 snap = p2dist x,0
 nochainID = 1100
 P2StateNo = 13103
+p2facing =1
 
 [State ChangeState]
 type = ChangeState
