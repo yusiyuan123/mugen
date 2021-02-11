@@ -2,7 +2,8 @@
 name = "Rose_Willina" 
 displayname = "Rose_Willina"
 mugenversion = 1.1
-author = ""
+author = "ysy"
+;drawer = "樱逝恋殇"
 Pal.Defaults = 1,2,3,4,5,6
 localcoord =425,240
 
