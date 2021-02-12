@@ -2149,6 +2149,10 @@ type = AssertSpecial
 trigger1 = 1
 flag = noshadow
  
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = Time = 1
+value = S2800,9
 
 
 ;---------------------[攻撃判定]
