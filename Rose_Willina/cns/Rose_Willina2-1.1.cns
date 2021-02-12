@@ -8256,7 +8256,7 @@ Trigger1 = animelem = 117
 attr = A, SA
 animType  = hard
 priority = 5, Hit
-damage    = 150,10
+damage    = 0,10
 getpower = 0,0
 guardflag = HA
 hitflag = HAF
@@ -8286,6 +8286,16 @@ envshake.ampl = 10
 envshake.freq = 80
 envshake.phase = 80
 P2StateNo = 13103
+
+[State 0, TargetLifeAdd]
+type = TargetLifeAdd
+Trigger1 = Animelem = 117
+Trigger1 = Numtarget
+value = -90
+absolute = 1
+;ignorehitpause = 
+;persistent = 
+
 
 [State -2, EnvColor]
 Type = EnvColor
