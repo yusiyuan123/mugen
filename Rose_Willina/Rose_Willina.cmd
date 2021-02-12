@@ -302,6 +302,12 @@ command = ~D,DB,B,D,DF,F ,b
 time = 35
 
 [Command]
+name = "qqq"
+command = ~D,DB,B,D,DF,F ,z
+time = 35
+
+
+[Command]
 name = "²ÐÏñ¡¤Ì¤Ç°Õ¶"
 command = ~B,D,F, x
 
@@ -584,6 +590,30 @@ Trigger5 = stateno = 1403
 Trigger5 = time>= 20
 Trigger6 = (Stateno = [1700,1750])&&MoveContact
 
+
+[State -1, Strong Kung Fu Palm]
+Type = ChangeState
+value = 2700
+TriggerAll=var(59)=0
+TriggerAll = command = "qqq"
+TriggerAll = power >= 3000||Var(41)>0 && power >= 2000
+TriggerAll = stateType != A
+Trigger1 = ((stateno = [200,460]) && movecontact)
+Trigger2 = ctrl
+Trigger3= stateno = 251 && animelem = 8,>=0 && animelem = 11,<=0
+Trigger4 = ((stateno = [1000,1350]) && movecontact)
+Trigger5 = stateno = 1403
+Trigger5 = time>= 20
+Trigger6 = (Stateno = [1700,1750])&&MoveContact
+Trigger7 = ((stateno = 2107) && movehit)
+Trigger8 = ((stateno = 2000) && movehit)
+Trigger8 = animelemtime(12)>= 0
+Trigger9 = stateno = 1403
+Trigger9 = time>= 20
+Trigger10 = Stateno = 2410 && moveHit
+Trigger10 = Time >35
+Trigger11 = Stateno = 2604 && movehit
+Trigger11 = Animelem = 9,>=0
 
 
 

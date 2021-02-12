@@ -5422,6 +5422,23 @@ Type = destroyself
 Trigger1 = animtime = 0
 Trigger2 = Root,moveType = H
 
+;----------------------------------------------------------------------------------
+[Statedef 2433]
+Type    = A
+moveType= H
+physics = N
+velset = 0,0
+
+[State 0, ChangeAnim]
+Type = ChangeAnim2
+Trigger1 = time=0
+value = 810
+
+[State 0,selfState]
+Type=changeState
+Trigger1=animtime=0
+value=1411
+
 ;-----------------------------------------------------------------------------------------------
 [Statedef 60680]
 Type    = A

@@ -1870,7 +1870,34 @@ juggle  = 0
 poweradd= 0
 velset = 0,0
 sprpriority = 1
+anim = 2605
 ctrl = 0
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+;value2 = S,NA
+time = 1
+;ignorehitpause = 
+;persistent = 
+
+;---------------------[�G�t�F�N�g]
+[State 50, 4];�c��
+Type = AfterImage
+Trigger1 = time = 0
+time = 1
+trans = add1
+timegap = 2
+framegap = 2
+length = 6
+palbright = 6,6,6
+palcontrast = 225,225,225
+palpostbright = 0,0,0
+paladd = 0,0,0
+palmul = 1,1,1
+ignorehitpause = 0
+
 
 [State 0, PosSet]
 type = PosSet
@@ -1881,7 +1908,7 @@ y = 0
 
 [State 0, ChangeState]
 type = ChangeState
-trigger1 = Time = 0
+trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
 ;anim =
@@ -1913,8 +1940,20 @@ ignorehitpause = 1
 [State 0, AssertSpecial]
 type = AssertSpecial
 trigger1 = 1
+flag = nobardisplay 
+ignorehitpause = 1
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
 flag = noshadow
 
+[State 0, Width]
+type = Width
+trigger1 = Time = 0
+value = 40,0
+;ignorehitpause = 
+;persistent = 
 
 
 [State 0, VarSet]
@@ -1969,7 +2008,7 @@ value = 3000, 3
 [State 1000, 5]
 Type = Explod
 Trigger1 = animelem = 12
-anim = 15008
+anim = 2716
 sprpriority = -1
 posType = p1
 pos = -12,-46
@@ -1977,26 +2016,10 @@ scale = .7,.7
 bindtime = 1
 supermove = 1
 under = 0
-ownpal = 1
-trans = add
-scale = const240p(1),const240p(1)
-
-
-[State 1000, 5]
-Type = Explod
-Trigger1 =animelem = 12
-anim = 2701
-sprpriority = -1
-posType = p1
-pos = -12,-46
-scale = 1,1
-bindtime = 1
-supermove = 1
-under = 0
 ontop = 1
 ownpal = 1
-trans = add
 scale = const240p(1),const240p(1)
+
 
 
 [State 0, VarSet]
@@ -2017,12 +2040,12 @@ add = 256,256,256
 color = 1
 ignorehitpause = 1
 
-
 [State 0, BGPalFX]
 type = BGPalFX
-trigger1 = 1
+trigger1 = Time>0
 time = 1
-add = -255,-255,-255
+;add = Time*8.0,Time*8.0,Time*8.0
+add = Cond(-255+(Time - 45)*8.0>0,0,-255+(Time - 45)*8.0),Cond(-255+(Time - 45)*8.0>0,0,-255+(Time - 45)*8.0),Cond(-255+(Time - 45)*8.0>0,0,-255+(Time - 45)*8.0)
 ;mul = 256,256,256
 ;sinadd = 0,0,0,10
 ;invertall = 0
@@ -2030,9 +2053,10 @@ add = -255,-255,-255
 ignorehitpause = 1
 ;persistent = 
 
+
 [State 0, NotHitBy]
 Type = NotHitBy
-Trigger1 = Anim = 1551
+Trigger1 = 1
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 ;value2 = S,NA
 time = 1
@@ -2040,19 +2064,12 @@ ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, TargetBind]
-Type = TargetBind
-Trigger1 = NumTarget
-time = 1
-pos = 80,0
-ignorehitpause = 1
-;persistent = 
 
 [State 0, Trans]
 type = Trans
-trigger1 = Time > 70
+trigger1 = Time > 75
 trans = addalpha ;none, add, addalpha, add1, sub
-alpha = 256-Time*8.0,Time * 8.0
+alpha = 256-(Time-75)*3.0,(Time-75)*6.0
 ;ignorehitpause = 
 ;persistent = 
 
@@ -2061,8 +2078,8 @@ alpha = 256-Time*8.0,Time * 8.0
 ;---------------------[効果音]
 [State 200, 1];
 Type = PlaySnd
-Trigger1 = animelem = 12
-value = 3333, 0
+Trigger1 = animelem = 12,=3
+value = 2200, 2
 
 [State 0, PosSet]
 Type = PosSet
@@ -2094,21 +2111,30 @@ Ctrl = 0
 Anim = 2703
 
 
-[State 0, VelSet]
-Type = VelSet
-Trigger1 = Time >1
-x = 29.2
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = nobardisplay 
+ignorehitpause = 1
+
+[State 0, PosAdd]
+type = PosAdd
+triggerall = numtarget
+trigger1 = time = 1
+x = floor(facing*(target,pos x - pos x))
 y = 0
 ;ignorehitpause = 
 ;persistent = 
 
-[State 0, VelAdd]
-Type = VelAdd
-Trigger1 = Time >1
-x = 6.0
+[State 0, PosAdd]
+type = PosAdd
+triggerall = !numtarget
+trigger1 = time = 1
+x = floor(facing*(enemynear,pos x - pos x))
 y = 0
 ;ignorehitpause = 
 ;persistent = 
+
 
 [State 0, PosSet]
 type = PosSet
@@ -2122,19 +2148,7 @@ y = 0
 type = AssertSpecial
 trigger1 = 1
 flag = noshadow
-
-
-[State 0, BGPalFX]
-type = BGPalFX
-trigger1 = 1
-time = 1
-add = -255,-255,-255
-;mul = 256,256,256
-;sinadd = 0,0,0,10
-;invertall = 0
-;color = 256
-ignorehitpause = 1
-;persistent = 
+ 
 
 
 ;---------------------[攻撃判定]
@@ -2149,10 +2163,10 @@ pausetime = 0,0
 getpower = 51,51
 guardflag = MA
 sparkno = -1
-sparkxy = -10,-70
+sparkxy = -10,-65
 hitsound   =-1
-guardsound = -1
-guard.sparkno = -1
+guardsound = s122,0
+guard.sparkno = s7012
 ground.Type = low
 ground.slidetime = 35
 ground.hittime  = 46
@@ -2169,6 +2183,25 @@ envshake.ampl = 10
 envshake.freq = 80
 envshake.phase = 80
 P2StateNo = 2708
+P2facing = 1
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = movehit = 1
+x = 0
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0, NotHitBy]
+Type = NotHitBy
+Trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+;value2 = S,NA
+time = 1
+ignorehitpause = 1
+;persistent = 
+
 
 [State 0, ChangeState]
 type = ChangeState
@@ -2177,6 +2210,12 @@ Trigger1 = Numtarget
 value = 2702
 ;anim =
 ;ignorehitpause = 
+;persistent = 
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
 ;persistent = 
 
 
@@ -2198,17 +2237,51 @@ value = 2704
 Type = S     
 PhySics = N
 MoveType = A
-Sprpriority = 100
+Sprpriority = 120
 Velset = 0,0
 Poweradd= 0
 Ctrl = 0
 Anim = 2707
 
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+;value2 = S,NA
+time = 1
+;ignorehitpause = 
+;persistent = 
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = 1
+flag = nobardisplay 
+ignorehitpause = 1
+
+[State 0, TargetLifeAdd]
+type = TargetLifeAdd
+trigger1 = Time = 0
+value = (-Enemynear,Lifemax*0.52)*(1-(fvar(28)/7))
+ID = -1
+kill = 1
+absolute = 1
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = Time = 0
+x = 0
+ignorehitpause = 1
+;persistent = 
+
+
 [State 0, PalFX]
 type = PalFX
-trigger1 = 1
+trigger1 = Time>0
 time = 1
-add = -Time*12.0,-Time*12.0,-Time*12.0
+add =  Cond(Time<195,-Time*6.0,Cond(-255+(Time-195)*6.0<0,-255+(Time-195)*6.0,0)), Cond(Time<195,-Time*6.0,Cond(-255+(Time-195)*6<0,-255+(Time-195)*6,0)), Cond(Time<195,-Time*6.0,Cond(-255+(Time-195)*6<0,-255+(Time-195)*6,0))
 mul = 256,256,256
 ;sinadd = 0,0,0,10
 invertall = 0
@@ -2216,48 +2289,120 @@ color = 256
 ;ignorehitpause = 
 ;persistent = 
 
+[State 210, 2]
+Type = HitDef
+Trigger1 = Time = 0
+attr = ,HT
+animType  = hard
+damage    = 0,0
+priority = 5, Hit
+pausetime = 2,4
+getpower = 51,51
+guardflag = MA
+ground.Type = low
+P2StateNo = 2709
+P2facing = 1
+p1sprpriority = 999 
+
+
+[State 1000, 上面遮挡图]
+Type = Explod
+Trigger1 = Time = 150
+anim = 2713
+space = screen
+pos = 0, 0
+facing = 1 
+bindtime = 1
+supermove = 1
+id = 5269
+under = 0
+ownpal = 1
+ontop = 1
+Sprpriority = 120
+scale = const240p(1),const240p(1)
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = Time = 150
+value = S11150,1
+channel =4
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 =Time = 150
+time = 25
+freq = 75
+ampl = -16
+phase = 80
+
+
+
 [State 1000, 5]
 Type = Explod
-Trigger1 = Time = 58
+Trigger1 = Time = 119
 anim = 2706
-sprpriority = 13
+ontop = 1
 posType = p1
-pos = 0,-55
+pos = 0,-47
 bindtime = 1
 supermove = 1
 under = 0
 ownpal = 1
-scale = const240p(1),const240p(1)
+scale = const240p(.7),const240p(.7)
+xangle = 60
 
 
 [State 0, PlaySnd]
 type = PlaySnd
-trigger1 = TIME = 58
+trigger1 = TIME = 119
 value = 510,2
 
 
-[State 1000, 本体遮挡图]
+[State 1000, 上面遮挡图]
 Type = Explod
-Trigger1 = Time = 61
-anim = 2702
-posType = p1
+Trigger1 = Time = 121
+anim = 2711
+space = stage
+pos = (enemynear, Pos X) + CameraPos X-(facing*(enemynear,const(size.ground.front))), (enemynear, Pos Y)
+facing = -enemynear, facing 
 pos = 0,0
 bindtime = 1
 supermove = 1
+id = 5267
 under = 0
 ownpal = 1
-Sprpriority = 3
+ontop = 0
+Sprpriority = 100
 scale = const240p(1),const240p(1)
 
-[State 1000, helper遮挡图]
+[State 1000, 上面遮挡图]
 Type = Explod
-Trigger1 = Time = 61
-anim = 2702
-posType = p1
+Trigger1 = Time = 121
+anim = 2715
+space = stage
+pos = (enemynear, Pos X) + CameraPos X-(facing*(enemynear,const(size.ground.front))), (enemynear, Pos Y)
+facing = -enemynear, facing 
 pos = 0,0
 bindtime = 1
 supermove = 1
+id = 5267
 under = 0
+ownpal = 1
+ontop = 0
+Sprpriority = 1
+scale = const240p(1),const240p(1)
+
+[State 1000, 下面遮挡图]
+Type = Explod
+Trigger1 = Time = 121
+anim = 2702
+space = stage
+pos = Pos X + CameraPos X, Pos Y
+facing = facing 
+bindtime = 1
+supermove = 1
+under = 0
+id = 5268
 ownpal = 1
 Sprpriority = 64
 scale = const240p(1),const240p(1)
@@ -2265,22 +2410,31 @@ scale = const240p(1),const240p(1)
 
 [State 1000, 5]
 Type = Explod
-Trigger1 = Time = 76
-anim = 16001
-sprpriority = 1
-posType = p1
-pos = target,pos x,-46
+Trigger1 = Time = 94
+anim = 16008
+space = stage
+pos = (enemynear, Pos X) + CameraPos X+(facing*20), (enemynear, Pos Y)-40
+facing = -enemynear, facing 
 scale = .5,.5
 bindtime = 1
-supermove = 1
+ontop = 1
+Sprpriority = 200
 under = 0
 ownpal = 1
-trans = add
 
+[State 0, EnvShake]
+Type = EnvShake
+Trigger1 = Time = 94
+time = 10
+freq = 80
+ampl = -10
+phase = 80
+;ignorehitpause = 
+;persistent = 
 
 [State 0, PlaySnd]
 type = PlaySnd
-trigger1 = TIME = 76
+trigger1 = TIME = 94
 value = S22305,4
 
 
@@ -2296,7 +2450,7 @@ value = 0
 
 [State 0, VelAdd]
 type = VelAdd
-trigger1 = time = (0,5]
+trigger1 = time = (0,4]
 x = 15
 y = 0
 ;ignorehitpause = 
@@ -2304,14 +2458,23 @@ y = 0
 
 [State 0, VelMul]
 type = VelMul
-trigger1 = time = (0,5]
+trigger1 = time = (0,4]
 x = 0.90
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = time >5
+trigger1 = time >4
 x = 0
 y = 0
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0, 释放抓到的helper的target]
+type = TargetDrop
+trigger1 = Time >230
+excludeID = -1
+keepone = 1
 ;ignorehitpause = 
 ;persistent = 
 
@@ -2322,16 +2485,34 @@ trigger1 = 1
 flag = noshadow
 
 
+
 [State 0, BGPalFX]
 type = BGPalFX
-trigger1 = 1
+trigger1 = Time>15
 time = 1
-add = -255+Time*12.0,-255+Time*12.0,-255+Time*12.0
+add = 0+(Time-15)*6.0,0+(Time-15)*6.0,0+(Time-15)*6.0
 ;mul = 256,256,256
 ;sinadd = 0,0,0,10
 ;invertall = 0
 ;color = 256
 ignorehitpause = 1
+;persistent = 
+
+[State 0, ScreenBound]
+type = ScreenBound
+trigger1 = Time>1
+value = 1
+movecamera = 0,0
+;ignorehitpause = 
+;persistent = 
+
+[State 0, Width]
+type = Width
+trigger1 = 1
+edge = 45,0
+player = 0,0
+;value = 0,0
+;ignorehitpause = 
 ;persistent = 
 
 
@@ -2357,18 +2538,48 @@ Sprpriority = 2
 Velset = 0,0
 Poweradd= 0
 Ctrl = 0
-Anim = 2704
+Anim = 2712
 
 [State 0, AssertSpecial]
 type = AssertSpecial
 trigger1 = 1
 flag = noshadow
 
+[State 0, VelAdd]
+type = VelAdd
+trigger1 = time = (0,4]
+x = 15
+y = 0
+;ignorehitpause = 
+;persistent = 
+
+[State 0, VelMul]
+type = VelMul
+trigger1 = time = (0,4]
+x = 0.90
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = time >4
+x = 0
+y = 0
+;ignorehitpause = 
+;persistent = 
+
+[State 0, PlayerPush]
+type = PlayerPush
+trigger1 = 1
+value = 0
+;ignorehitpause = 
+;persistent = 
+
+
+
 [State 0, BGPalFX]
 type = BGPalFX
 trigger1 = Time > 1
 time = 1
-add = Cond(-255+Time*6.0<0,-255+Time*6.0,0),Cond(-255+Time*6.0<0,-255+Time*6.0,0),Cond(-255+Time*6.0<0,-255+Time*6.0,0)
+add = Cond(255-Time*6.0>0,255-Time*6.0,0),Cond(255-Time*6.0>0,255-Time*6.0,0),Cond(255-Time*6.0>0,255-Time*6.0,0)
 mul = 256,256,256
 ;sinadd = 0,0,0,10
 ;invertall = 0
@@ -2379,7 +2590,7 @@ ignorehitpause = 1
 
 [State 0, NotHitBy]
 type = NotHitBy
-trigger1 = Animelem = 1
+trigger1 = Time<17
 value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 ;value2 = S,NA
 time = 1
@@ -2414,17 +2625,36 @@ physics = N
 velset = 0,0
 sprpriority = 2
 
+
 [State 0, PalFX]
 type = PalFX
 trigger1 = 1
 time = 1
-add =  -Time*12.0,-Time*12.0,-Time*12.0
+add =  Cond(Time<205,-Time*6.0,Cond(-255+(Time-205)*6.0<0,-255+(Time-205)*6.0,0)), Cond(Time<205,-Time*6.0,Cond(-255+(Time-205)*6<0,-255+(Time-205)*6,0)), Cond(Time<205,-Time*6.0,Cond(-255+(Time-205)*6<0,-255+(Time-205)*6,0))
 mul = 256,256,256
 ;sinadd = 0,0,0,10
-invertall = 0
+invertall =0
 color = 256
 ;ignorehitpause = 
 ;persistent = 
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+;value2 = S,NA
+time = 1
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = Time<110
+x = 0
+ignorehitpause = 1
+;persistent = 
+
 
 [State 0, AssertSpecial]
 type = AssertSpecial
@@ -2453,12 +2683,34 @@ flag = noshadow
 ;flag = unguardable
 
 
+[State 0, VelSet]
+type = VelSet
+TriggerAll = !Ishelper
+trigger1 = Time = [120,132]
+x = 9.3
+y = 0
+;ignorehitpause = 
+;persistent = 
+
+[State 0, VelSet]
+type = VelSet
+TriggerAll = !Ishelper
+trigger1 = Time =133
+x = 0
+y = 0
+;ignorehitpause = 
+;persistent = 
+
+
+
 [State 演出受击helper];
 Type =Helper
+TriggerAll = !Ishelper
+TriggerAll = !Numhelper(666+ID)
 Trigger1 = Time = 0
-id = 666
+id = 666+ID
 name = "aaaa2wsd"
-sprpriority = 66
+sprpriority = 8
 pos = 0,0
 posType = p1
 Stateno = 2709
@@ -2477,30 +2729,6 @@ Trigger1 = 1
 value = 1
 movecamera = 1,0
 
-[State 0, PosSet]
-type = PosSet
-trigger1 = Time = 0
-x = -70*facing
-ignorehitpause = 1
-;persistent = 
-
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = Time = [60,63]
-x = 8.0
-y = 0
-;ignorehitpause = 
-;persistent = 
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = Time =64
-x = 0
-y = 0
-;ignorehitpause = 
-;persistent = 
-
 
 [State 0, PosSet]
 type = PosSet
@@ -2510,18 +2738,28 @@ ignorehitpause = 1
 ;persistent = 
 
 
+[State 0, NotHitBy]
+Type = NotHitBy
+Trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+;value2 = S,NA
+time = 1
+ignorehitpause = 1
+;persistent = 
+
+
 [State 0, SelfState]
 type = ChangeState
 TriggerAll = !Ishelper
-trigger1 = Time = 150
-value = 2429
+trigger1 = Animtime = 0
+value = 2433
 ;ignorehitpause = 0
 ;persistent = 1
 
 [State 0, DestroySelf]
 type = DestroySelf
 TriggerAll = Ishelper
-trigger1 = Time = 150
+trigger1 = Time = 0
 ;ignorehitpause = 
 ;persistent = 
 
@@ -2535,18 +2773,33 @@ physics = N
 velset = 0,0
 sprpriority =66
 
-
 [State 0, PalFX]
 type = PalFX
 trigger1 = 1
 time = 1
-add =  -Time*12.0,-Time*12.0,-Time*12.0
+add =  Cond(Time<205,-Time*6.0,Cond(-255+(Time-205)*6.0<0,-255+(Time-205)*6.0,0)), Cond(Time<205,-Time*6.0,Cond(-255+(Time-205)*6<0,-255+(Time-205)*6,0)), Cond(Time<205,-Time*6.0,Cond(-255+(Time-205)*6<0,-255+(Time-205)*6,0))
 mul = 256,256,256
 ;sinadd = 0,0,0,10
 invertall = 0
 color = 256
 ;ignorehitpause = 
 ;persistent = 
+
+
+[State 0, NotHitBy]
+type = NotHitBy
+trigger1 = 1
+value = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+;value2 = S,NA
+time = 1
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+trigger1 = Time<5
+flag = invisible
 
 [State 0, AssertSpecial]
 type = AssertSpecial
@@ -2581,28 +2834,11 @@ value = 2708
 
 [State 0, BindToRoot]
 type = BindToRoot
-trigger1 = Time<60
+TriggerAll = Ishelper
+trigger1 = Time = [0,10]
 time = 1
-facing = 0
+facing = 1
 pos = 0,0
-;ignorehitpause = 
-;persistent = 
-
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = Time = [60,63]
-x = -7.0
-y = 0
-;ignorehitpause = 
-;persistent = 
-
-
-[State 0, VelSet]
-type = VelSet
-trigger1 = Time =64
-x = 0
-y = 0
 ;ignorehitpause = 
 ;persistent = 
 
@@ -2617,9 +2853,19 @@ ignorehitpause = 1
 
 [State 0, DestroySelf]
 type = DestroySelf
-trigger1 = Time = 150
+trigger1 = Time = 228
 ;ignorehitpause = 
 ;persistent = 
+
+[State 0, SelfState]
+type = SelfState
+TriggerAll = !Ishelper
+trigger1 =Animtime = 0
+value =0
+;anim =
+ctrl =1
+;ignorehitpause = 0
+;persistent = 1
 
 
 

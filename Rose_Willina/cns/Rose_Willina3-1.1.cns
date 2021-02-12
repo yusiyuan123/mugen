@@ -3100,14 +3100,17 @@ Trigger3 = P2BodyDist X < 120&& EnemyNear(floor(fvar(37))),vel x<=0
 Trigger3 = !EnemyNear(floor(fvar(37))),Ctrl
 Trigger3 = P2BodyDist X >0
 
+
+
 [State 0, 三气连段]
 type = ChangeState
-TriggerAll = var(59)
+TriggerAll = var(59)>4
 TriggerAll = !IsHelper
 TriggerAll = roundstate = 2
-TriggerAll = (Var(41)<=100&&power>= 4000) 
+TriggerAll = (Var(41)<=100&&power>= 3000) 
 TriggerAll = StateType != L
 TriggerAll = StateType!=A
+TriggerAll = Var(42) = 1
 TriggerAll = EnemyNear(floor(fvar(37))),Life<Floor(EnemyNear(floor(fvar(37))),LifeMax/3)
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H 
 Trigger1 = ((stateno = [1000,1350]) && movehit)
@@ -3120,21 +3123,22 @@ Trigger5 = (Stateno = [1700,1750])&&Movehit
 Trigger6 = Stateno = 2410 && moveHit
 Trigger6 = Time >35
 Trigger7 = Stateno = 2604 && Movehit
+Trigger7 = Animelem = 9,>=0
 ;Trigger3 = StateNo = 1200 && movehit
-value = 4000
+value = Cond(Random<667,2700,4000)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
 
 [State 0, 三气连段]
 type = ChangeState
-TriggerAll = var(59)
+TriggerAll = var(59)>4
 TriggerAll = !IsHelper
 TriggerAll = roundstate = 2
-TriggerAll = (Var(41)>0&&Var(41)<=100&&Power>=2000&&Power<3000)||Power=[3000,4000)
+TriggerAll = (Var(41)>0&&Var(41)<=100&&Power>=2000)
 TriggerAll = StateType != L
 TriggerAll = StateType!=A
-TriggerAll = EnemyNear(floor(fvar(37))),Life<Floor(EnemyNear(floor(fvar(37))),LifeMax/3)
+TriggerAll = Var(42) = 1
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H 
 Trigger1 = ((stateno = [1000,1350]) && movehit)
 Trigger2 = ((stateno = 2107) && movehit)
@@ -3146,8 +3150,9 @@ Trigger5 = (Stateno = [1700,1750])&&Movehit
 Trigger6 = Stateno = 2410 && moveHit
 Trigger6 = Time >35
 Trigger7 = Stateno = 2604 && Movehit
+Trigger7 = Animelem = 9,>=0
 ;Trigger3 = StateNo = 1200 && movehit
-value = 4000
+value = Cond(Random<667,2700,4000)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -3191,6 +3196,7 @@ TriggerAll = !NumHelper(252)
 TriggerAll = statetype != A
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(fvar(37))),time>=0
+TriggerAll = EnemyNear(floor(fvar(37))),Stateno!=1411
 TriggerAll = ctrl || StateNo = 100 ||  StateNo = 52 && time >3 || StateNo = [21,22]
 Trigger1 = random<86*var(59)
 value = 251
@@ -3212,6 +3218,7 @@ TriggerAll = !NumHelper(252)
 TriggerAll = statetype != A
 TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(fvar(37))),time>=0
+TriggerAll = EnemyNear(floor(fvar(37))),Stateno!=1411
 TriggerAll = ctrl || StateNo = 100 ||  StateNo = 52 && time >3 || StateNo = [21,22]
 Trigger1 = random<86*var(59)
 value = 251
@@ -3236,6 +3243,7 @@ TriggerAll = roundstate = 2
 TriggerAll = EnemyNear(floor(fvar(37))),time>=0
 TriggerAll = ctrl || StateNo = 100 ||  StateNo = 52 && time >3 || StateNo = [21,22]
 TriggerAll = random<75*var(59)
+TriggerAll = EnemyNear(floor(fvar(37))),Stateno!=1411
 Trigger1 = EnemyNear(floor(fvar(37))),StateNo =[1409,1410]
 Trigger2 = EnemyNear(floor(fvar(37))),StateNo =1410
 value = 251
@@ -3253,6 +3261,7 @@ TriggerAll = EnemyNear(floor(fvar(37))),statetype = L
 TriggerAll = EnemyNear(floor(fvar(37))),StateNo!=[5110,5129]
 TriggerAll = alive
 TriggerAll = !var(14) && !var(19)
+TriggerAll = EnemyNear(floor(fvar(37))),Stateno!=1411
 TriggerAll = Var(41)<= 0
 TriggerAll = var(31) 
 TriggerAll = !NumHelper(252)
@@ -4306,6 +4315,69 @@ value = 3000
 ;persistent = 
 
 
+
+[State 0, 满气连段]
+type = ChangeState
+TriggerAll = var(59)>4
+TriggerAll = roundstate = 2
+TriggerAll = !IsHelper
+TriggerAll = (power>= 4000&&Var(41)>0)||(Var(41)<=0&&Power >= 5000)
+TriggerAll = StateType != A
+TriggerAll = P2StateType != L
+TriggerAll = EnemyNear(0),alive || EnemyNear(1),alive
+TriggerAll = EnemyNear(floor(fvar(37))),movetype = H
+Trigger1 = StateNo = 2000 && movehit
+Trigger1 = time = [45,46]
+Trigger2 = StateNo = 2107 && (time = [9,10])
+Trigger2 = movehit
+Trigger3 = Stateno = 2410 && Time >35
+Trigger3 = Movehit  
+value = 2600
+;anim =
+;ignorehitpause = 
+;persistent = 
+
+
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = !IsHelper
+TriggerAll = roundstate = 2
+TriggerAll = var(59)
+TriggerAll = (Var(41)<=0&&power>=4000)||(Var(41)>0&&Power>=3000)
+TriggerAll = statetype != A
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+TriggerAll = random <=90||EnemyNear(floor(fvar(37))),Life<Floor(EnemyNear(floor(fvar(37))),LifeMax/5)
+Trigger1 = StateNo = 1050 && movehit
+value = Cond(Random<501,2400,2100)
+;anim =
+;ignorehitpause = 
+;persistent = 
+
+
+
+[State 0, 四气连段]
+type = ChangeState
+TriggerAll = var(59)>4
+TriggerAll = roundstate = 2
+TriggerAll = !IsHelper
+TriggerAll = (power>= 3000&&Var(41)>0)||(Var(41)<=0&&Power >= 4000)
+TriggerAll = StateType != A
+TriggerAll = P2StateType != L
+TriggerAll = EnemyNear(0),alive || EnemyNear(1),alive
+TriggerAll = EnemyNear(floor(fvar(37))),movetype = H
+Trigger1 = StateNo = 2000 && movehit
+Trigger1 = time = [45,46]
+Trigger2 = StateNo = 2107 && (time = [9,10])
+Trigger2 = movehit
+Trigger3 = Stateno = 2410 && Time >35
+Trigger3 = Movehit  
+value = Cond(Random<667,2700,4000)
+;anim =
+;ignorehitpause = 
+;persistent = 
+
+
+
 [State 0, ChangeState]
 type = ChangeState
 TriggerAll = !IsHelper
@@ -4387,83 +4459,6 @@ value = Cond(random<555,2000+(Random%2)*419,2100)
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
-
-;---------------------- Integer variable list ----------------------
-
-; var(0):= 252, 84000, 32500, 88000
-; var(1):= 1558, 1561, 10901, 31000, 82000, 84000, 32000, 32500, 88000
-; var(2):= 180, 190, 31000, 82000, 84000, 32000, 88000
-; var(3):= -3, 82000, 84000, 88000
-; var(4):= 30, 31, 32, 33, 35, 36, 37, 38, 39, 41, 45, 82000, 84000, 88000
-; var(5):= 1000, 1100, 1101, 1200, 1500, 2100, 82000, 84000, 88000, 2600
-; var(6):= -2, 82000, 84000, 88000
-; var(7):= -3, 82000, 84000, 88000
-; var(8):= 43, 82000, 84000, 88000
-; var(9):= 82000, 84000, 88000
-;var(10):= 31000, -3, 82000, 84000, 88000
-;var(11):= -2, 31000, 82000, 84000, 88000
-;var(12):= -2, 31000, 16002, 82000, 84000, 88000
-;var(13):= -2, 31000, 82000, 84000, 88000
-;var(14):= 31000, -3, 82000, 84000, 88000
-;var(15):= -2, -3, 82000, 84000, 88000
-;var(16):= -3, 82000, 84000, 87000, 88000
-;var(17):= -3, 82000, 84000, 87000, 88000
-;var(18):= -3, 82000, 84000, 88000
-;var(19):= -3, 82000, 84000, 88000
-;var(20):= 31000, -3, 82000, 84000, 88000
-;var(21):= 31000, -3, 82000, 84000, 88000
-;var(22):= 201, 253, 401, 601, 1005, 1006, 1007, 1105, 1205, 1305, 1355, 1355, 1505, 1603, 1555, 10900, 2005, 2120, 2121, 2122, 2225, 2306, 2308, 2411, 2412, 2432, 31000, 82000, 84000, 88000
-;var(23):= 31000, -3, 82000, 84000, 88000
-;var(24):= 31000, -3, 82000, 84000, 88000
-;var(25):= -3, 82000, 84000, 88000
-;var(26):= -2, -3, 82000, 84000, 88000
-;var(27):= -3, 82000, 84000, 88000
-;var(28):= -3, 82000, 84000, 88000
-;var(29):= -3, 82000, 84000, 88000
-;var(30):= -3, 82000, 84000, 83000, 32000, 88000
-;var(31):= -3, 82000, 84000, 83000, 88000
-;var(32):= -3, 82000, 83000, 88000
-;var(33):= -2, 82000, 83000, 88000
-;var(34):= -3, 82000, 83000, 88000
-;var(35):= -3, 83000, 88000
-;var(36):= -3, 83000, 88000
-;var(37):= 83000, 88000
-;var(38):= -3, 83000, 88000
-;var(39):= 83000, 88000
-;var(40):= 82000, 83000, 88000
-;var(41):= 950, 1000, 1001, 1100, 1200, 1201, 1300, 1350, 1400, 1550, 1556, 1559, 1560, 1700, -2, 2000, 2100, 2200, 2300, 2400, 2419, 3000, 4000, 82000, 83000, 88000, 2600, 2700
-;var(42):= -3, 82000, 83000, 88000
-;var(43):= -3, 82000, 83000
-;var(44):= 82000, 83000
-;var(45):= -3, 83000
-;var(46):= -3, 83000
-;var(47):= -3, 83000
-;var(48):= -3, 83000
-;var(49):= -3, 83000
-;var(50):= 31000, -3
-;var(51):= 31000, -3
-;var(52):= -3
-;var(53):= -3
-;var(54):= -3
-;var(55):= -3
-;var(56):= -3
-;var(57):= -3
-;var(59):= -3, 80000
-
-;---------------------- Float variable list ----------------------
-
-; fvar(0):= 16000
-; fvar(1):= 16001
-;fvar(24):= -3
-;fvar(26):= 2000, 2300
-;fvar(27):= -3
-;fvar(29):= 2303
-;fvar(33):= 2102, 2103, 2400, 2419, 2427, 2700
-;fvar(34):= -3
-;fvar(35):= 2400, 2420, 2427
-;fvar(37):= -3
-;fvar(38):= -3
-
 
 
 [State 0, ChangeState]
