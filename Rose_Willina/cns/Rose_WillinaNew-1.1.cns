@@ -2360,7 +2360,7 @@ value = 510,2
 
 [State 1000, 上面遮挡图]
 Type = Explod
-Trigger1 = Time = 121
+Trigger1 = Time = 118
 anim = 2711
 space = stage
 pos = (enemynear, Pos X) + CameraPos X-(facing*(enemynear,const(size.ground.front))), (enemynear, Pos Y)
@@ -2377,7 +2377,7 @@ scale = const240p(1),const240p(1)
 
 [State 1000, 上面遮挡图]
 Type = Explod
-Trigger1 = Time = 121
+Trigger1 = Time = 118
 anim = 2715
 space = stage
 pos = (enemynear, Pos X) + CameraPos X-(facing*(enemynear,const(size.ground.front))), (enemynear, Pos Y)
@@ -2650,7 +2650,7 @@ time = 1
 
 [State 0, PosSet]
 type = PosSet
-trigger1 = Time<110
+trigger1 = Time<120
 x = 0
 ignorehitpause = 1
 ;persistent = 
