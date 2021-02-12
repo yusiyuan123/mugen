@@ -2067,9 +2067,9 @@ ignorehitpause = 1
 
 [State 0, Trans]
 type = Trans
-trigger1 = Time > 75
+trigger1 = Time > 60
 trans = addalpha ;none, add, addalpha, add1, sub
-alpha = 256-(Time-75)*3.0,(Time-75)*6.0
+alpha = 256-(Time-60)*4.5,(Time-60)*6.0
 ;ignorehitpause = 
 ;persistent = 
 
