@@ -2267,7 +2267,7 @@ type = TargetLifeAdd
 trigger1 = Time = 0
 value = (-Enemynear,Lifemax*0.52)*(1-(fvar(28)/7))
 ID = -1
-kill = 1
+kill = 0
 absolute = 1
 ;ignorehitpause = 
 ;persistent = 
@@ -2629,6 +2629,13 @@ physics = N
 velset = 0,0
 sprpriority = 2
 
+
+[State 0, LifeAdd]
+type = LifeSet
+TriggerAll = Alive
+triggerAll = Life <=1
+Trigger1 = Time = 160
+value = -1
 
 [State 0, PalFX]
 type = PalFX
