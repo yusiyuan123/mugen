@@ -8055,7 +8055,7 @@ P2Stateno = 1751
 type = changestate
 TriggerAll = Time = 0
 Trigger1 = Var(59)>5
-Trigger2 = Var(59) = 5 &&Var(57)
+Trigger2 = Var(59) = 5 &&Var(37) = 1
 value = 1500+(Random%11+11)
 
 
@@ -13347,8 +13347,8 @@ movecamera = 0,0
 [State -2, DisplayToClipboard]
 Type = DisplayToClipboard
 Trigger1 = 1
-text = "var(43)=%d,var(20)=%d ,F28=%f"
-params = var(43),var(20),Fvar(28)
+text = "var(43)=%d,var(20)=%d ,Var(57)|128=%d,Var(57)|64=%d"
+params = var(43),var(20),Var(57)|128,Var(57)|64
 ignorehitpause = 1
 ;persistent = 
 
