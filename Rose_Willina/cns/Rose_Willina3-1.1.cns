@@ -3152,7 +3152,7 @@ Trigger3 = ((stateno = 2000) && movehit)
 Trigger3 = animelemtime(12)>= 0
 Trigger4 = stateno = 1403
 Trigger4 = time>= 20
-Trigger5 = (Stateno = [1700,1750])&&Movehit
+Trigger5 = (Stateno = 1750)&&Movehit
 Trigger6 = Stateno = 2410 && moveHit
 Trigger6 = Time >35
 Trigger7 = Stateno = 2604 && Movehit
@@ -3179,7 +3179,7 @@ Trigger3 = ((stateno = 2000) && movehit)
 Trigger3 = animelemtime(12)>= 0
 Trigger4 = stateno = 1403
 Trigger4 = time>= 20
-Trigger5 = (Stateno = [1700,1750])&&Movehit
+Trigger5 = (Stateno = 1750)&&Movehit
 Trigger6 = Stateno = 2410 && moveHit
 Trigger6 = Time >35
 Trigger7 = Stateno = 2604 && Movehit
