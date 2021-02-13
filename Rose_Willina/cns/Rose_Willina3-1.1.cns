@@ -15,10 +15,18 @@ ignorehitpause = 1
 type = VarSet
 trigger1 = 1      ;1为开,0为关闭
 v = 57    ;fv = 10
-value = Var(57)|128
+value = Var(57)&2
 ignorehitpause = 1
 ;persistent = 
 
+
+[State 0, 孤儿打法开关,针对5级AI使用,6级默认开启]
+type = VarSet
+trigger1 = 1      ;1为开,0为关闭
+v = 57    ;fv = 10
+value = Var(57)&16
+ignorehitpause = 1
+;persistent = 
 
 ;AI ON-OFF
 [State -3, AI ON-OFF]

@@ -8053,10 +8053,1118 @@ P2Stateno = 1751
 ;---------------------[立ちステートに戻る]
 [state a]
 type = changestate
+TriggerAll = Time = 0
+Trigger1 = Var(59)>5
+Trigger2 = Var(59) = 5 &&(Var(57)&16)
+value = 1500+10*(Random%12)
+
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
 trigger1 = animtime = 0
 value = 0
 ctrl = 1
 
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; K
+[Statedef 1511]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 61
+velset = 0,0
+anim = 1500
+sprpriority = 1
+ctrl = 0
+
+;---------------------[追加攻撃]
+[state a];初期化
+type = varset
+trigger1 = time = 0
+v = 5
+value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)
+Trigger1 = time = 0
+v = 5
+value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
+
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = animelem = 7
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = Normal
+keyctrl = 0 
+ownpal = 1
+
+[state a];???
+type = nothitby
+trigger1 = 1
+value = SCA
+value2 = SCA
+
+;---------------------[当身判定]
+[State 1700, 0];
+type = ReversalDef
+TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
+trigger1 = animelem = 6,>=0
+reversal.attr = SCA, AA,AP,AT
+hitflag = MAFD
+priority = 6, Miss
+pausetime = 5,25
+sparkno = s7002
+hitsound = S410,0
+p2facing = 1
+p1stateno = 1510
+P2Stateno = 1751
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; K
+[Statedef 1512]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 61
+velset = 0,0
+anim = 1500
+sprpriority = 1
+ctrl = 0
+
+;---------------------[追加攻撃]
+[state a];初期化
+type = varset
+trigger1 = time = 0
+v = 5
+value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)
+Trigger1 = time = 0
+v = 5
+value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
+
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = animelem = 7
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = Normal
+keyctrl = 0 
+ownpal = 1
+
+[state a];???
+type = nothitby
+trigger1 = 1
+value = SCA
+value2 = SCA
+
+;---------------------[当身判定]
+[State 1700, 0];
+type = ReversalDef
+TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
+trigger1 = animelem = 6,>=0
+reversal.attr = SCA, AA,AP,AT
+hitflag = MAFD
+priority = 6, Miss
+pausetime = 5,25
+sparkno = s7002
+hitsound = S410,0
+p2facing = 1
+p1stateno = 1510
+P2Stateno = 1751
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; K
+[Statedef 1513]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 61
+velset = 0,0
+anim = 1500
+sprpriority = 1
+ctrl = 0
+
+;---------------------[追加攻撃]
+[state a];初期化
+type = varset
+trigger1 = time = 0
+v = 5
+value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)
+Trigger1 = time = 0
+v = 5
+value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
+
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = animelem = 7
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = Normal
+keyctrl = 0 
+ownpal = 1
+
+[state a];???
+type = nothitby
+trigger1 = 1
+value = SCA
+value2 = SCA
+
+;---------------------[当身判定]
+[State 1700, 0];
+type = ReversalDef
+TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
+trigger1 = animelem = 6,>=0
+reversal.attr = SCA, AA,AP,AT
+hitflag = MAFD
+priority = 6, Miss
+pausetime = 5,25
+sparkno = s7002
+hitsound = S410,0
+p2facing = 1
+p1stateno = 1510
+P2Stateno = 1751
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; K
+[Statedef 1514]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 61
+velset = 0,0
+anim = 1500
+sprpriority = 1
+ctrl = 0
+
+;---------------------[追加攻撃]
+[state a];初期化
+type = varset
+trigger1 = time = 0
+v = 5
+value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)
+Trigger1 = time = 0
+v = 5
+value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
+
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = animelem = 7
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = Normal
+keyctrl = 0 
+ownpal = 1
+
+[state a];???
+type = nothitby
+trigger1 = 1
+value = SCA
+value2 = SCA
+
+;---------------------[当身判定]
+[State 1700, 0];
+type = ReversalDef
+TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
+trigger1 = animelem = 6,>=0
+reversal.attr = SCA, AA,AP,AT
+hitflag = MAFD
+priority = 6, Miss
+pausetime = 5,25
+sparkno = s7002
+hitsound = S410,0
+p2facing = 1
+p1stateno = 1510
+P2Stateno = 1751
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; K
+[Statedef 1515]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 61
+velset = 0,0
+anim = 1500
+sprpriority = 1
+ctrl = 0
+
+;---------------------[追加攻撃]
+[state a];初期化
+type = varset
+trigger1 = time = 0
+v = 5
+value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)
+Trigger1 = time = 0
+v = 5
+value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
+
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = animelem = 7
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = Normal
+keyctrl = 0 
+ownpal = 1
+
+[state a];???
+type = nothitby
+trigger1 = 1
+value = SCA
+value2 = SCA
+
+;---------------------[当身判定]
+[State 1700, 0];
+type = ReversalDef
+TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
+trigger1 = animelem = 6,>=0
+reversal.attr = SCA, AA,AP,AT
+hitflag = MAFD
+priority = 6, Miss
+pausetime = 5,25
+sparkno = s7002
+hitsound = S410,0
+p2facing = 1
+p1stateno = 1510
+P2Stateno = 1751
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; K
+[Statedef 1516]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 61
+velset = 0,0
+anim = 1500
+sprpriority = 1
+ctrl = 0
+
+;---------------------[追加攻撃]
+[state a];初期化
+type = varset
+trigger1 = time = 0
+v = 5
+value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)
+Trigger1 = time = 0
+v = 5
+value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
+
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = animelem = 7
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = Normal
+keyctrl = 0 
+ownpal = 1
+
+[state a];???
+type = nothitby
+trigger1 = 1
+value = SCA
+value2 = SCA
+
+;---------------------[当身判定]
+[State 1700, 0];
+type = ReversalDef
+TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
+trigger1 = animelem = 6,>=0
+reversal.attr = SCA, AA,AP,AT
+hitflag = MAFD
+priority = 6, Miss
+pausetime = 5,25
+sparkno = s7002
+hitsound = S410,0
+p2facing = 1
+p1stateno = 1510
+P2Stateno = 1751
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; K
+[Statedef 1517]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 61
+velset = 0,0
+anim = 1500
+sprpriority = 1
+ctrl = 0
+
+;---------------------[追加攻撃]
+[state a];初期化
+type = varset
+trigger1 = time = 0
+v = 5
+value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)
+Trigger1 = time = 0
+v = 5
+value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
+
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = animelem = 7
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = Normal
+keyctrl = 0 
+ownpal = 1
+
+[state a];???
+type = nothitby
+trigger1 = 1
+value = SCA
+value2 = SCA
+
+;---------------------[当身判定]
+[State 1700, 0];
+type = ReversalDef
+TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
+trigger1 = animelem = 6,>=0
+reversal.attr = SCA, AA,AP,AT
+hitflag = MAFD
+priority = 6, Miss
+pausetime = 5,25
+sparkno = s7002
+hitsound = S410,0
+p2facing = 1
+p1stateno = 1510
+P2Stateno = 1751
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; K
+[Statedef 1518]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 61
+velset = 0,0
+anim = 1500
+sprpriority = 1
+ctrl = 0
+
+;---------------------[追加攻撃]
+[state a];初期化
+type = varset
+trigger1 = time = 0
+v = 5
+value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)
+Trigger1 = time = 0
+v = 5
+value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
+
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = animelem = 7
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = Normal
+keyctrl = 0 
+ownpal = 1
+
+[state a];???
+type = nothitby
+trigger1 = 1
+value = SCA
+value2 = SCA
+
+;---------------------[当身判定]
+[State 1700, 0];
+type = ReversalDef
+TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
+trigger1 = animelem = 6,>=0
+reversal.attr = SCA, AA,AP,AT
+hitflag = MAFD
+priority = 6, Miss
+pausetime = 5,25
+sparkno = s7002
+hitsound = S410,0
+p2facing = 1
+p1stateno = 1510
+P2Stateno = 1751
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; K
+[Statedef 1519]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 61
+velset = 0,0
+anim = 1500
+sprpriority = 1
+ctrl = 0
+
+;---------------------[追加攻撃]
+[state a];初期化
+type = varset
+trigger1 = time = 0
+v = 5
+value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)
+Trigger1 = time = 0
+v = 5
+value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
+
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = animelem = 7
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = Normal
+keyctrl = 0 
+ownpal = 1
+
+[state a];???
+type = nothitby
+trigger1 = 1
+value = SCA
+value2 = SCA
+
+;---------------------[当身判定]
+[State 1700, 0];
+type = ReversalDef
+TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
+trigger1 = animelem = 6,>=0
+reversal.attr = SCA, AA,AP,AT
+hitflag = MAFD
+priority = 6, Miss
+pausetime = 5,25
+sparkno = s7002
+hitsound = S410,0
+p2facing = 1
+p1stateno = 1510
+P2Stateno = 1751
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; K
+[Statedef 1520]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 61
+velset = 0,0
+anim = 1500
+sprpriority = 1
+ctrl = 0
+
+;---------------------[追加攻撃]
+[state a];初期化
+type = varset
+trigger1 = time = 0
+v = 5
+value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)
+Trigger1 = time = 0
+v = 5
+value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
+
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = animelem = 7
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = Normal
+keyctrl = 0 
+ownpal = 1
+
+[state a];???
+type = nothitby
+trigger1 = 1
+value = SCA
+value2 = SCA
+
+;---------------------[当身判定]
+[State 1700, 0];
+type = ReversalDef
+TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
+trigger1 = animelem = 6,>=0
+reversal.attr = SCA, AA,AP,AT
+hitflag = MAFD
+priority = 6, Miss
+pausetime = 5,25
+sparkno = s7002
+hitsound = S410,0
+p2facing = 1
+p1stateno = 1510
+P2Stateno = 1751
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; K
+[Statedef 1521]
+type    = S
+movetype= A
+physics = N
+juggle  = 0
+poweradd= 61
+velset = 0,0
+anim = 1500
+sprpriority = 1
+ctrl = 0
+
+;---------------------[追加攻撃]
+[state a];初期化
+type = varset
+trigger1 = time = 0
+v = 5
+value = 0
+
+[state Helper]
+type = Helper
+TriggerAll = !NumHelper(4007)
+TriggerAll = Var(59)>5
+Trigger1 = Time = 0
+id = 4007
+name = "H_helper"
+pos = 0,0
+postype = p1
+stateno = 4007
+helpertype = Player
+keyctrl = 0
+ignorehitpause = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+TriggerAll = time = 0
+Trigger1  = command = "a"|| (!command = "a"&&!command="b")
+v = 5
+value = 0
+
+[state a]
+type = varset
+TriggerAll=var(59)=0
+triggerall = time = 0
+trigger1 = command = "b"
+v = 5
+value = 1
+
+[state a]
+type = varset
+TriggerAll=var(59)
+Trigger1 = time = 0
+v = 5
+value = Cond(EnemyNear(Floor(Fvar(37))),Statetype != A,1,0)
+
+
+;---------------------[ヘルパー]
+[state a];
+type = Helper
+trigger1 = animelem = 7
+id = 1500
+name = "ka-do"
+sprpriority = 2
+pos = 0,0
+postype = p1
+stateno = 1505
+helpertype = Normal
+keyctrl = 0 
+ownpal = 1
+
+[state a];???
+type = nothitby
+trigger1 = 1
+value = SCA
+value2 = SCA
+
+;---------------------[当身判定]
+[State 1700, 0];
+type = ReversalDef
+TriggerAll = !Target,ishelper||!Enemynear(Floor(Fvar(37))),Ishelper
+trigger1 = animelem = 6,>=0
+reversal.attr = SCA, AA,AP,AT
+hitflag = MAFD
+priority = 6, Miss
+pausetime = 5,25
+sparkno = s7002
+hitsound = S410,0
+p2facing = 1
+p1stateno = 1510
+P2Stateno = 1751
+
+;---------------------[立ちステートに戻る]
+[state a]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
 
 
 ;---------------------------------------------------------------------------
