@@ -4504,7 +4504,7 @@ Type = Explod
 Trigger1 = FrontEdgeDist <= 90
 anim = 2427
 ID = 2427
-pos = p2bodydist x+50,-85
+pos = p2bodydist x+64,-85
 posType = p1
 scale = 1,1
 bindtime = 1
