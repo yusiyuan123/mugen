@@ -8056,7 +8056,7 @@ type = changestate
 TriggerAll = Time = 0
 Trigger1 = Var(59)>5
 Trigger2 = Var(59) = 5 &&(Var(57)&16)
-value = 1500+11*(Random%12)
+value = 1500+11*(Random%11)
 
 
 ;---------------------[立ちステートに戻る]
