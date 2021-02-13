@@ -5086,7 +5086,25 @@ value = 1200
 ;ignorehitpause = 
 ;persistent = 
 
-
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = var(59)
+TriggerAll = roundstate = 2
+TriggerAll = !IsHelper
+TriggerAll = StateType != A
+TriggerAll = EnemyNear(0),alive || EnemyNear(1),alive
+TriggerAll = EnemyNear(floor(fvar(37))),Time>=0
+TriggerAll = EnemyNear(floor(fvar(37))),movetype = H
+TriggerAll = Power>=1000
+TriggerAll = Enemynear(Floor(Fvar(37))),life<lifemax/7
+TriggerAll = ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<141
+TriggerAll = Var(41)<=0
+Trigger1 = (Stateno = [1000,1299])&&movehit
+Trigger2 = Stateno = 1560 && movehit
+value = Cond(Random%2,Cond(Random%2,2100,2400),Cond(Random%2,2419,2100))
+;anim =
+;ignorehitpause = 
+;persistent = 
 
 
 [State 0, ChangeState]
