@@ -1798,7 +1798,7 @@ Trigger1 = FVar(25)=0
 
 [State 0, 一气凹]
 type = ChangeState
-TriggerAll = var(59)
+TriggerAll = var(59)<5
 TriggerAll = power >=1000
 TriggerAll = roundstate = 2
 TriggerAll = !IsHelper
