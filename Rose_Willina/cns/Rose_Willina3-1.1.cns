@@ -2544,7 +2544,37 @@ Trigger4 = !EnemyNear(floor(fvar(37))),hitdefattr = SCA, NT, ST, HT
 Trigger5 =  var(20)=1&&(inguarddist||P2BodyDist x<101)
 Trigger5 = p2movetype = A
 
-
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = !IsHelper
+TriggerAll = var(59) 
+TriggerAll = statetype != A
+TriggerAll = alive
+TriggerAll = p2statetype !=A
+TriggerAll = p2StateNo !=var(11) || var(11) = 0
+TriggerAll = p2StateNo !=var(12) || var(12) = 0
+TriggerAll = var(42)=1
+TriggerAll = Helper(82000),var(23)=0
+;TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56);+3&&EnemyNear(floor(fvar(37))),StateNo<200
+TriggerAll = random<var(59)*21
+TriggerAll = EnemyNear(floor(fvar(37))),movetype!= A
+TriggerAll = EnemyNear(floor(fvar(37))),statetype = S
+TriggerAll = PrevStateNo!=[5100,5201] ;倒地起身受身不可触发
+TriggerAll = var(3)=0||EnemyNear(floor(fvar(37))),Facing=Facing
+TriggerAll = ctrl || StateNo = 100 || ( StateNo = [21,22]) ||(StateNo = [120,140])
+Trigger1 = !var(10)
+Trigger1 = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<64
+Trigger1 = !inguarddist
+Trigger1 = var(20)=0
+Trigger2 = EnemyNear(floor(fvar(37))),Facing=Facing
+Trigger2 = !inguarddist
+Trigger2 = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<70
+Trigger3 = EnemyNear(floor(fvar(37))),StateNo = 5201
+Trigger3 = EnemyNear(floor(fvar(37))),AnimTime <=-6
+Trigger3 = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<70
+value = 430
 
 [State 0, ChangeState]
 type = ChangeState
@@ -2626,7 +2656,7 @@ TriggerAll = Var(41)<=0
 TriggerAll = statetype!= A
 TriggerAll = !var(10)
 TriggerAll = EnemyNear(Floor(Fvar(37))),AnimTime<=-1
-TriggerAll = Random < var(59)*21
+TriggerAll = Random < var(59)*33
 TriggerAll = var(20)=0
 TriggerAll = Fvar(38)=0
 TriggerAll = Var(36) = 0
@@ -2771,27 +2801,27 @@ TriggerAll = p2StateNo !=var(12) || var(12) = 0
 TriggerAll = var(20)=0&&var(35)=0&&var(34)=0
 TriggerAll = ctrl || StateNo = 100 ||  StateNo = [21,22] 
 Trigger1 =  EnemyNear(floor(fvar(37))),StateNo =Helper(82000), var(1)
-Trigger1 =  EnemyNear(floor(fvar(37))),AnimTime <=Helper(82000),var(24)+4
+Trigger1 =  EnemyNear(floor(fvar(37))),AnimTime <=Helper(82000),var(24)+2
 Trigger2 =  EnemyNear(floor(fvar(37))),StateNo = Helper(82000),var(3)
-Trigger2 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(25)+4
+Trigger2 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(25)+2
 Trigger3 =  EnemyNear(floor(fvar(37))),StateNo = Helper(82000),var(5)
-Trigger3 =  EnemyNear(floor(fvar(37))),AnimTime<= Helper(82000),var(26)+4
+Trigger3 =  EnemyNear(floor(fvar(37))),AnimTime<= Helper(82000),var(26)+2
 Trigger4 =  EnemyNear(floor(fvar(37))),StateNo = Helper(82000),var(7)
-Trigger4 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(27)+4
+Trigger4 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(27)+2
 Trigger5 =  EnemyNear(floor(fvar(37))),StateNo = Helper(82000),var(9)
-Trigger5 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(28)+4
+Trigger5 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(28)+2
 Trigger6 =  EnemyNear(floor(fvar(37))),StateNo =Helper(82000), var(11)
-Trigger6 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(29)+4
+Trigger6 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(29)+2
 Trigger7 =  EnemyNear(floor(fvar(37))),StateNo = Helper(82000),var(13)
-Trigger7 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(30)+4
+Trigger7 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(30)+2
 Trigger8 =  EnemyNear(floor(fvar(37))),StateNo = Helper(82000),var(15)
-Trigger8 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(31)+4
+Trigger8 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(31)+2
 Trigger9 =  EnemyNear(floor(fvar(37))),StateNo = Helper(82000),var(17)
-Trigger9 =  EnemyNear(floor(fvar(37))),AnimTime <=  Helper(82000),var(32)+4
+Trigger9 =  EnemyNear(floor(fvar(37))),AnimTime <=  Helper(82000),var(32)+2
 Trigger10 =  EnemyNear(floor(fvar(37))),StateNo =Helper(82000), var(19)
-Trigger10 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(33)+4
+Trigger10 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(33)+2
 Trigger11 =  EnemyNear(floor(fvar(37))),StateNo = Helper(82000),var(21)
-Trigger11 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(34)+4
+Trigger11 =  EnemyNear(floor(fvar(37))),AnimTime <= Helper(82000),var(34)+2
 value = Cond(EnemyNear(floor(fvar(37))),pos y>=0&&EnemyNear(floor(fvar(37))),statetype != A,400,200)
 
 
@@ -2942,7 +2972,7 @@ Value = 701
 TriggerAll = var(59) 
 TriggerAll = !IsHelper
 TriggerAll = RoundState = 2 && EnemyNear(floor(fvar(37))),life > 0 
-TriggerAll = Random = [300 ,700]
+TriggerAll = Random = [300 ,900]
 TriggerAll = var(59)>4
 TriggerAll = P2Bodydist x <=70
 TriggerAll = EnemyNear(floor(fvar(37))),Facing!=Facing
@@ -2964,7 +2994,7 @@ Value = 700
 TriggerAll = var(59) 
 TriggerAll = !IsHelper
 TriggerAll = RoundState = 2 && EnemyNear(floor(fvar(37))),life > 0 
-TriggerAll = Random = [300 ,700] 
+TriggerAll = Random = [300 ,900] 
 TriggerAll = P2Bodydist x >70
 TriggerAll = var(59)>4
 TriggerAll = EnemyNear(floor(fvar(37))),Facing!=Facing
@@ -2972,11 +3002,14 @@ TriggerAll = StateType != A
 TriggerAll = EnemyNear(floor(fvar(37))),MoveType != H
 TriggerAll = EnemyNear(floor(fvar(37))),StateNo>199 
 TriggerAll = EnemyNear(floor(fvar(37))),MoveType = A
-TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56)
+Trigger1 = EnemyNear(floor(fvar(37))),time>=var(56)
 Trigger1 = (StateNo = [200,440])&&var(36) = 1
+Trigger2 = EnemyNear(floor(fvar(37))),time>=var(56)
 Trigger2 = (StateNo = [200,440])&&var(35) = 1
-Trigger3 = (StateNo = [200,440])&& P2StateNo = Var(11)&&Var(11)> 0
-Trigger4 = (StateNo = [200,440])&& P2StateNo = Var(12)&&Var(12)> 0
+Trigger3 = (StateNo = [200,440])&& P2StateNo = Var(11)&&Var(11)!= 0
+Trigger3 = Time>0
+Trigger4 = Time>0
+Trigger4 = (StateNo = [200,440])&& P2StateNo = Var(12)&&Var(12)!= 0
 Trigger5 = StateNo = 800 && Var(36) = 1
 Trigger6 = StateNo = 800 && Var(35) = 1
 
@@ -3563,7 +3596,7 @@ TriggerAll = Var(41)<=0
 TriggerAll = statetype!= A
 TriggerAll = !var(10)
 TriggerAll = EnemyNear(Floor(Fvar(37))),AnimTime<=-1
-TriggerAll = Random < var(59)*21
+TriggerAll = Random < var(59)*33
 TriggerAll = var(20)=0
 TriggerAll = Fvar(38)=0
 TriggerAll = Var(36) = 0
@@ -3614,7 +3647,7 @@ TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
 TriggerAll = Var(36) = 0
 TriggerAll = Fvar(38)=0
-TriggerAll = Random<Var(59)*18
+TriggerAll = Random<Var(59)*33
 ;TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 TriggerAll = EnemyNear(floor(fvar(37))),time>=var(56)
