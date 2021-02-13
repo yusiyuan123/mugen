@@ -14,7 +14,7 @@ PhySics = N
 MoveType = A
 Sprpriority = 2
 Velset = 0,0
-Poweradd= Cond(Var(41)>0,-1000,-2000)
+Poweradd= Cond(Var(41)<=0,-2000,-1000)
 Ctrl = 0
 Anim = 2100
 

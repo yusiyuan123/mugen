@@ -11944,7 +11944,7 @@ value = 0
 [State -2, MAX条存在相当于一气气条]
 Type = powerset
 Triggerall = var(41) > 0
-Trigger1 = Stateno != [3000,4999]
+Trigger1 = Stateno != [2600,4999]
 Trigger1 = Stateno != [11000,12999]
 value = var(33)
 ignorehitpause = 1
