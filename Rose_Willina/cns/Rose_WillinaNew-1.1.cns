@@ -2697,9 +2697,9 @@ flag = noshadow
 
 
 [State 0, VelSet]
-type = VelSet
+type = Veladd
 TriggerAll = !Ishelper
-trigger1 = Time = [120,126]
+trigger1 = Time = [120,122]
 x = 8.7
 y = 0
 ;ignorehitpause = 
@@ -2708,7 +2708,7 @@ y = 0
 [State 0, VelSet]
 type = VelSet
 TriggerAll = !Ishelper
-trigger1 = Time =127
+trigger1 = Time =123
 x = 0
 y = 0
 ;ignorehitpause = 
@@ -2842,9 +2842,9 @@ flag = noshadow
 
 
 [State 0, VelSet]
-type = VelSet
+type = Veladd
 TriggerAll = Ishelper
-trigger1 = Time = [120,126]
+trigger1 = Time = [120,122]
 x = -8.8
 y = 0
 ;ignorehitpause = 
@@ -2853,7 +2853,7 @@ y = 0
 [State 0, VelSet]
 type = VelSet
 TriggerAll = Ishelper
-trigger1 = Time =127
+trigger1 = Time =123
 x = 0
 y = 0
 ;ignorehitpause = 
