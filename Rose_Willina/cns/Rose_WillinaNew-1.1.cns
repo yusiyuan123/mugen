@@ -2419,7 +2419,7 @@ Type = Explod
 Trigger1 = Time = 94
 anim = 16008
 space = stage
-pos = (enemynear, Pos X) + CameraPos X+(facing*20), (enemynear, Pos Y)-40
+pos = (enemynear, Pos X) + CameraPos X+(facing*12), (enemynear, Pos Y)-40
 facing = -enemynear, facing 
 scale = .5,.5
 bindtime = 1
