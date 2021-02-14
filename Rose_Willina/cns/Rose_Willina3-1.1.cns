@@ -24,7 +24,7 @@ ignorehitpause = 1
 type = VarSet
 trigger1 = 1      
 v = 37    ;fv = 10
-value = 1 ;1为开,0为关闭
+value = 0 ;1为开,0为关闭
 ignorehitpause = 1
 ;persistent = 
 
@@ -87,7 +87,7 @@ Trigger51 = Command = "AI50"
 Trigger52 = NumHelper(80000)
 Trigger53 = Helper(80000),var(59)
 Trigger54 = !IsHelper
-var(59) = 6 ;    ;AI Level;Range 1 - 6 ,Assigned to 0 is off          
+var(59) = 5 ;    ;AI Level;Range 1 - 6 ,Assigned to 0 is off          
 IgNoreHitPause = 1
 
 

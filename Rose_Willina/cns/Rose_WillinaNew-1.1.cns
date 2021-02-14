@@ -2276,7 +2276,7 @@ absolute = 1
 [State 0, PosSet]
 type = PosSet
 trigger1 = Time = 0
-x = 0
+x = Parent,pos x
 ignorehitpause = 1
 ;persistent = 
 
@@ -2361,13 +2361,13 @@ type = PlaySnd
 trigger1 = TIME = 119
 value = 510,2
 
-
+;,+(facing*(enemynear,const(size.ground.front)))
 [State 1000, 上面遮挡图]
 Type = Explod
 Trigger1 = Time = 118
 anim = 2711
 space = stage
-pos = (enemynear, Pos X) + CameraPos X-(facing*(enemynear,const(size.ground.front))), (enemynear, Pos Y)
+pos = (enemynear, Pos X) + CameraPos X, (enemynear, Pos Y)
 facing = -enemynear, facing 
 pos = 0,0
 bindtime = 1
@@ -2379,12 +2379,14 @@ ontop = 0
 Sprpriority = 100
 scale = const240p(1),const240p(1)
 
+;-(facing*(enemynear,const(size.ground.front)))
+
 [State 1000, 上面遮挡图]
 Type = Explod
 Trigger1 = Time = 118
 anim = 2715
 space = stage
-pos = (enemynear, Pos X) + CameraPos X-(facing*(enemynear,const(size.ground.front))), (enemynear, Pos Y)
+pos = (enemynear, Pos X) + CameraPos X, (enemynear, Pos Y)
 facing = -enemynear, facing 
 pos = 0,0
 bindtime = 1
@@ -2491,7 +2493,7 @@ flag = noshadow
 
 
 [State 0, BGPalFX]
-type = BGPalFX
+type =BGPalFX
 trigger1 = Time>15
 time = 1
 add = 0+(Time-15)*6.0,0+(Time-15)*6.0,0+(Time-15)*6.0
@@ -2662,7 +2664,7 @@ time = 1
 [State 0, PosSet]
 type = PosSet
 trigger1 = Time<120
-x = 0
+x = 70*facing
 ignorehitpause = 1
 ;persistent = 
 
@@ -2697,8 +2699,8 @@ flag = noshadow
 [State 0, VelSet]
 type = VelSet
 TriggerAll = !Ishelper
-trigger1 = Time = [120,132]
-x = 9.3
+trigger1 = Time = [120,126]
+x = 8.7
 y = 0
 ;ignorehitpause = 
 ;persistent = 
@@ -2706,7 +2708,7 @@ y = 0
 [State 0, VelSet]
 type = VelSet
 TriggerAll = !Ishelper
-trigger1 = Time =133
+trigger1 = Time =127
 x = 0
 y = 0
 ;ignorehitpause = 
@@ -2838,6 +2840,25 @@ flag = noshadow
 ;flag = timerfreeze
 ;flag = unguardable
 
+
+[State 0, VelSet]
+type = VelSet
+TriggerAll = Ishelper
+trigger1 = Time = [120,126]
+x = -8.8
+y = 0
+;ignorehitpause = 
+;persistent = 
+
+[State 0, VelSet]
+type = VelSet
+TriggerAll = Ishelper
+trigger1 = Time =127
+x = 0
+y = 0
+;ignorehitpause = 
+;persistent = 
+
 [State 820, 1]
 Type = ChangeAnim2
 Trigger1 = Time = 0
@@ -2846,7 +2867,7 @@ value = 2708
 [State 0, BindToRoot]
 type = BindToRoot
 TriggerAll = Ishelper
-trigger1 = Time = [0,10]
+trigger1 = Time = [0,20]
 time = 1
 facing = 1
 pos = 0,0
