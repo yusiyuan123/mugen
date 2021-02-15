@@ -3222,7 +3222,7 @@ TriggerAll = PrevStateno!=950
 TriggerAll = random<=var(59)*75
 TriggerAll = !Var(41)||Var(41)<800
 TriggerAll = !Var(23)
-TriggerAll = P2Stateno!=[1409,1410]
+TriggerAll = P2Stateno!=[1408,1410]
 TriggerAll = P2Stateno!=805
 TriggerAll = Var(41)<=0
 TriggerAll = var(42)=1
@@ -3729,7 +3729,7 @@ TriggerAll = statetype != A
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
-TriggerAll = P2Stateno!=[1409,1410]
+TriggerAll = P2Stateno!=[1408,1410]
 TriggerAll = !inguarddist
 TriggerAll = var(42)=1
 TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
