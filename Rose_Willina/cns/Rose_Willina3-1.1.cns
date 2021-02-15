@@ -4855,7 +4855,7 @@ TriggerAll = !IsHelper
 TriggerAll = var(59)
 TriggerAll = statetype != A
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
-TriggerAll = P2bodydist y<=75
+TriggerAll = P2bodydist y>=-80
 TriggerAll = Var(31) = 0
 Trigger1 = Stateno = 451 && Movehit
 Trigger1 = Var(41)<=0
