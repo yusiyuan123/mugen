@@ -4897,7 +4897,7 @@ Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
 Trigger2 = StateNo !=[1400,1403]
-Trigger3 = StateNo = 1403&&Time >19
+Trigger3 = StateNo = 1403&&Time >20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4 = StateNo = [1300,1350]
 Trigger4= Var(41)<120&&Var(41)>0
@@ -4929,7 +4929,7 @@ Trigger2= P2StateType != L
 Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
-Trigger3 = StateNo = 1403&&Time >19
+Trigger3 = StateNo = 1403&&Time >20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4 =  StateNo =1750
 Trigger4 = MoveHit
@@ -4962,7 +4962,7 @@ Trigger1= Var(41)<120&&Var(41)>0
 Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
-Trigger3 = StateNo = 1403&&Time >19
+Trigger3 = StateNo = 1403&&Time >20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4= Var(41)<120&&Var(41)>0
 Trigger4 =  StateNo = 1750
@@ -5018,7 +5018,7 @@ Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
 Trigger2 = StateNo !=[1400,1403]
-Trigger3 = StateNo = 1403&&Time >19
+Trigger3 = StateNo = 1403&&Time >20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4 = StateNo = [1300,1399]
 Trigger4= Var(41)<120&&Var(41)>0
@@ -5045,12 +5045,12 @@ TriggerAll =  P2BodyDist y = [-80-floor(16*(EnemyNear(floor(fvar(37))),vel y)+16
 Trigger1 = (StateNo = [200,499] )&& movehit
 Trigger1= Var(41)<120&&Var(41)>0
 Trigger1 = P2StateType != L
-Trigger2 = StateNo = [1000,1499]
+Trigger2 = StateNo = [1000,1399]
 Trigger2 = (StateNo != [1200,1202] )
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = P2StateType != L
 Trigger2 = movehit
-Trigger3 = StateNo = 1403&&Time >19
+Trigger3 = StateNo = 1403&&Time >20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4 =  StateNo = 1750
 Trigger4 = MoveHit
@@ -5283,9 +5283,9 @@ Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
 Trigger2 = StateNo !=[1400,1403]
-Trigger3 = StateNo = 1403&&Time >19
+Trigger3 = StateNo = 1403&&Time >20
 Trigger3= Var(41)<120&&Var(41)>0
-Trigger4 = StateNo = [1300,1499]
+Trigger4 = StateNo = [1300,1399]
 Trigger4= Var(41)<120&&Var(41)>0
 Trigger4 = movehit
 Trigger5 = StateNo = 1750
@@ -5308,10 +5308,12 @@ TriggerAll = P2StateType != L
 TriggerAll = ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<150
 TriggerAll = EnemyNear(0),alive || EnemyNear(1),alive
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H
-Trigger1 = StateNo = [1000,1499]
+Trigger1 = StateNo = [1000,1399]
 Trigger1 = movehit
 Trigger2 = StateNo =1750
 Trigger2 = movehit
+Trigger1 = StateNo = 1403&&Time>=20
+Trigger1 = movehit
 value = Cond(Random%2&&ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<62,3000,2300+(Random%2)*300)
 ;anim =
 ;ignorehitpause = 
@@ -5335,9 +5337,9 @@ Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
 Trigger2 = StateNo !=[1400,1403]
-Trigger3 = StateNo = 1403&&Time >19
+Trigger3 = StateNo = 1403&&Time >20
 Trigger3= Var(41)<120&&Var(41)>0
-Trigger4 = StateNo = [1300,1499]
+Trigger4 = StateNo = [1300,1399]
 Trigger4= Var(41)<120&&Var(41)>0
 Trigger4 = movehit
 Trigger5 = StateNo = 1750
@@ -5369,7 +5371,7 @@ Trigger2 = movehit
 Trigger2 = StateNo !=[1400,1403]
 Trigger3 = StateNo = 1403&&Time >19
 Trigger3= Var(41)<120&&Var(41)>0
-Trigger4 = StateNo = [1300,1499]
+Trigger4 = StateNo = [1300,1399]
 Trigger4= Var(41)<120&&Var(41)>0
 Trigger4 = movehit
 Trigger5 = StateNo = 1750
