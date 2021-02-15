@@ -92,7 +92,7 @@ IgNoreHitPause = 1
 
 
 [State 0, 测试连段用]
-type = VarSet
+type = null;VarSet
 trigger1 = 1
 v = 43    ;fv = 10
 value = 0
