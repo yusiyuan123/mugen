@@ -91,6 +91,15 @@ var(59) = 5 ;    ;AI Level;Range 1 - 6 ,Assigned to 0 is off
 IgNoreHitPause = 1
 
 
+[State 0, 测试连段用]
+type = null;VarSet
+trigger1 = 1
+v = 43    ;fv = 10
+value = 0
+ignorehitpause = 1 
+;persistent = 
+
+
 ;受击语音
 [State -3]
 type = PlaySnd
@@ -1595,6 +1604,8 @@ v = 43
 range = 0,1
 ignorehitpause = 1 
 ;persistent = 
+
+
 
 
 [State 0, VarSet]
@@ -4897,7 +4908,7 @@ Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
 Trigger2 = StateNo !=[1400,1403]
-Trigger3 = StateNo = 1403&&Time >20
+Trigger3 = StateNo = 1403&&Time >=20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4 = StateNo = [1300,1350]
 Trigger4= Var(41)<120&&Var(41)>0
@@ -4929,7 +4940,7 @@ Trigger2= P2StateType != L
 Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
-Trigger3 = StateNo = 1403&&Time >20
+Trigger3 = StateNo = 1403&&Time >=20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4 =  StateNo =1750
 Trigger4 = MoveHit
@@ -4962,7 +4973,7 @@ Trigger1= Var(41)<120&&Var(41)>0
 Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
-Trigger3 = StateNo = 1403&&Time >20
+Trigger3 = StateNo = 1403&&Time >=20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4= Var(41)<120&&Var(41)>0
 Trigger4 =  StateNo = 1750
@@ -5018,7 +5029,7 @@ Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
 Trigger2 = StateNo !=[1400,1403]
-Trigger3 = StateNo = 1403&&Time >20
+Trigger3 = StateNo = 1403&&Time >=20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4 = StateNo = [1300,1399]
 Trigger4= Var(41)<120&&Var(41)>0
@@ -5050,7 +5061,7 @@ Trigger2 = (StateNo != [1200,1202] )
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = P2StateType != L
 Trigger2 = movehit
-Trigger3 = StateNo = 1403&&Time >20
+Trigger3 = StateNo = 1403&&Time >=20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4 =  StateNo = 1750
 Trigger4 = MoveHit
@@ -5283,7 +5294,7 @@ Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
 Trigger2 = StateNo !=[1400,1403]
-Trigger3 = StateNo = 1403&&Time >20
+Trigger3 = StateNo = 1403&&Time >=20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4 = StateNo = [1300,1399]
 Trigger4= Var(41)<120&&Var(41)>0
@@ -5337,7 +5348,7 @@ Trigger2 = StateNo = [1000,1051]
 Trigger2= Var(41)<120&&Var(41)>0
 Trigger2 = movehit
 Trigger2 = StateNo !=[1400,1403]
-Trigger3 = StateNo = 1403&&Time >20
+Trigger3 = StateNo = 1403&&Time >=20
 Trigger3= Var(41)<120&&Var(41)>0
 Trigger4 = StateNo = [1300,1399]
 Trigger4= Var(41)<120&&Var(41)>0
