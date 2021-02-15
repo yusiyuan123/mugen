@@ -92,7 +92,7 @@ IgNoreHitPause = 1
 
 
 [State 0, 测试连段用]
-type = null;VarSet
+type = VarSet
 trigger1 = 1
 v = 43    ;fv = 10
 value = 0
@@ -3729,6 +3729,7 @@ TriggerAll = statetype != A
 TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
 TriggerAll = p2StateNo !=var(11) || var(11) = 0
 TriggerAll = p2StateNo !=var(12) || var(12) = 0
+TriggerAll = P2Stateno!=[1409,1410]
 TriggerAll = !inguarddist
 TriggerAll = var(42)=1
 TriggerAll = Cond((EnemyNear(floor(fvar(37))),power>=1000&&EnemyNear(floor(fvar(37))),StateNo<200),0,1)
@@ -4843,6 +4844,22 @@ TriggerAll = EnemyNear(floor(fvar(37))),statetype = C || EnemyNear(floor(fvar(37
 Trigger1 = Stateno = 236 && Movehit
 Trigger1 = Var(41)>0
 value = 451
+;anim =
+;ignorehitpause = 
+;persistent = 
+
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = roundstate = 2
+TriggerAll = !IsHelper
+TriggerAll = var(59)
+TriggerAll = statetype != A
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+TriggerAll = P2bodydist y<=75
+TriggerAll = Var(31) = 0
+Trigger1 = Stateno = 451 && Movehit
+Trigger1 = Var(41)<=0
+value = 1400
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
