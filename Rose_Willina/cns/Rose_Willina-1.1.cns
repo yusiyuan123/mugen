@@ -13347,15 +13347,15 @@ movecamera = 0,0
 [State -2, DisplayToClipboard]
 Type = DisplayToClipboard
 Trigger1 = 1
-text = "var(43)=%d,var(20)=%d ,Var(57)|128=%d,Var(57)|64=%d"
-params = var(43),var(20),Var(57)|128,Var(57)|64
+text = "var(43)=%d,var(20)=%d ,ailevel=%d"
+params = var(43),var(20), Var(59)
 ignorehitpause = 1
 ;persistent = 
 
 
 
 [State -2, AppendToClipboard]
-Type = AppendToClipboard
+Type = null;AppendToClipboard
 Trigger1 = 1
 text = "3= %d ,8= %d"
 params =helper(88000),var(3),helper(88000),var(8)

@@ -2,6 +2,13 @@
 
 [Statedef -3]
 ;----------------------------------------------------------
+[State -3, 常规ai开关]
+type = VarSet  ;1.x之后的AI开关，手操不用调
+triggerAll = AILevel >0
+Trigger1 = 1
+var(59) = 5      ;等级1-6可调节
+ignorehitpause = 1
+
 ;AI为4级(包括4级)以下少量空震出招
 [State 0, VarSet]
 type = VarSet
@@ -28,67 +35,6 @@ value = 0 ;1为开,0为关闭
 ignorehitpause = 1
 ;persistent = 
 
-;AI ON-OFF
-[State -3, AI ON-OFF]
-type = VarSet 
-TriggerAll = !var(59)
-TriggerAll = RoundState = [1,2]
-Trigger1 = Command = "AI0"
-Trigger2 = Command = "AI1"
-Trigger3 = Command = "AI2"
-Trigger4 = Command = "AI3"
-Trigger5 = Command = "AI4"
-Trigger6 = Command = "AI5"
-Trigger7 = Command = "AI6"
-Trigger8 = Command = "AI7"
-Trigger9 = Command = "AI8"
-Trigger10 = Command = "AI9"
-Trigger11 = Command = "AI10"
-Trigger12 = Command = "AI11"
-Trigger13 = Command = "AI12"
-Trigger14 = Command = "AI13"
-Trigger15 = Command = "AI14"
-Trigger16 = Command = "AI15"
-Trigger17 = Command = "AI16"
-Trigger18 = Command = "AI17"
-Trigger19 = Command = "AI18"
-Trigger20 = Command = "AI19"
-Trigger21 = Command = "AI20"
-Trigger22 = Command = "AI21"
-Trigger23 = Command = "AI22"
-Trigger24 = Command = "AI23"
-Trigger25 = Command = "AI24"
-Trigger26 = Command = "AI25"
-Trigger27 = Command = "AI26"
-Trigger28 = Command = "AI27"
-Trigger29 = Command = "AI28"
-Trigger30 = Command = "AI29"
-Trigger31 = Command = "AI30"
-Trigger32 = Command = "AI31"
-Trigger33 = Command = "AI32"
-Trigger34 = Command = "AI33"
-Trigger35 = Command = "AI34"
-Trigger36 = Command = "AI35"
-Trigger37 = Command = "AI36"
-Trigger38 = Command = "AI37"
-Trigger39 = Command = "AI38"
-Trigger40 = Command = "AI39"
-Trigger41 = Command = "AI40"
-Trigger42 = Command = "AI41"
-Trigger43 = Command = "AI42"
-Trigger44 = Command = "AI43"
-Trigger45 = Command = "AI44"
-Trigger46 = Command = "AI45"
-Trigger47 = Command = "AI46"
-Trigger48 = Command = "AI47"
-Trigger49 = Command = "AI48"
-Trigger50 = Command = "AI49"
-Trigger51 = Command = "AI50"
-Trigger52 = NumHelper(80000)
-Trigger53 = Helper(80000),var(59)
-Trigger54 = !IsHelper
-var(59) = 5 ;    ;AI Level;Range 1 - 6 ,Assigned to 0 is off          
-IgNoreHitPause = 1
 
 
 [State 0, 测试连段用]
@@ -230,33 +176,6 @@ value = 2
 ignorehitpause = 1
 ;persistent = 
 
-
-
-
-[State -3]
-type = Helper
-Trigger1 = !NumHelper(80000)
-Trigger1 = RoundState = [1,2];Time = 0
-Trigger1 = alive
-Trigger1 = var(59)=0
-Trigger1 = (PrevStateNo = [191,194])||PrevStateNo = 5900
-Trigger1 = ctrl && StateNo = 0
-Helpertype = normal
-name = "AI ON-OFF"
-StateNo = 80000
-ID = 80000
-pos = 99999999,99999999
-keyctrl = 1
-pausemovetime = 2147483647
-supermovetime = 2147483647
-persistent = 0
-
-
-[State -3]
-type = changestate
-Trigger1= IsHelper(80000)
-Trigger1= StateNo!= 80000
-value = 80000
 
 
 [State -3, 飛び道具確認ヘルパー]
