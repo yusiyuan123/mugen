@@ -2175,7 +2175,8 @@ TriggerAll = !IsHelper
 TriggerAll = statetype != A
 TriggerAll = alive
 TriggerAll = random<var(59)*81
-TriggerAll = EnemyNear(floor(fvar(37))),stateno = 1751
+TriggerAll = p2StateNo !=var(11) || var(11) = 0
+TriggerAll = p2StateNo !=var(12) || var(12) = 0
 TriggerAll = var(42)=1&&facing = EnemyNear(floor(fvar(37))),facing
 TriggerAll = abs(EnemyNear(floor(fvar(37))),pos x-pos x)<=90+floor(3*(EnemyNear(floor(fvar(37))),vel x))
 TriggerAll = p2statetype != L
