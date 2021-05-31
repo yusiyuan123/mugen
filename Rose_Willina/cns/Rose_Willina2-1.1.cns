@@ -6169,7 +6169,7 @@ Trigger2 = Time >=11
 [State 0, DestroySelf]
 Type = DestroySelf
 TriggerAll = TeamSide = 2
-Trigger1 = -56*0.6+Fvar(1)<=0
+Trigger1 = -56*0.6+Fvar(1)>=0
 Trigger2 = Time >=11
 ;ignorehitpause = 
 ;persistent = 
