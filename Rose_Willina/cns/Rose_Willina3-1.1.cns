@@ -38,10 +38,10 @@ ignorehitpause = 1
 
 
 [State 0, 测试连段用]
-type = null;VarSet
+type = VarSet
 trigger1 = 1
 v = 43    ;fv = 10
-value = 0
+value = 2
 ignorehitpause = 1 
 ;persistent = 
 
@@ -1133,7 +1133,7 @@ Trigger1 = 1
 ;Trigger1=1 ||fvar(21):=Helper(84000),var(22)
 ;Trigger1=Helper(84000),var(23)>0
 ;Trigger1=1 ||fvar(22):=Helper(84000),var(23)
-;Trigger1=Helper(84000),var(24)>0
+;Trigger1=Helper(84000),var(0)>0
 ;Trigger1=1 ||fvar(23):=Helper(84000),var(0)
 ignorehitpause = 1
 
@@ -1520,7 +1520,7 @@ TriggerAll = Var(41)<=0
 TriggerAll = RoundState = 2
 trigger1 = GameTime%2 = 0
 v = 43
-range = 0,1
+range = 0,2
 ignorehitpause = 1 
 ;persistent = 
 
@@ -3097,7 +3097,7 @@ Trigger6 = Time >35
 Trigger7 = Stateno = 2604 && Movehit
 Trigger7 = Animelem = 9,>=0
 ;Trigger3 = StateNo = 1200 && movehit
-value = Cond(Random<667,2700,4000)
+value = Cond(Random<667,2700,Cond(Var(43) = 1, 2700, 4000))
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -3124,7 +3124,7 @@ Trigger6 = Time >35
 Trigger7 = Stateno = 2604 && Movehit
 Trigger7 = Animelem = 9,>=0
 ;Trigger3 = StateNo = 1200 && movehit
-value = Cond(Random<667,2700,4000)
+value = Cond(Random<667,2700,Cond(Var(43) = 1, 2700, 4000))
 ;anim =
 ;ignorehitpause = 
 ;persistent = 
@@ -4831,7 +4831,7 @@ type = ChangeState
 TriggerAll = var(59)
 TriggerAll = roundstate = 2
 TriggerAll = !IsHelper
-TriggerAll = var(43)=0
+TriggerAll = var(43)=0 || var(43) = 2
 TriggerAll = Var(41)>0&&Power>=2000
 TriggerAll = StateType != A
 TriggerAll = P2StateType != L
@@ -4865,7 +4865,7 @@ TriggerAll = roundstate = 2
 TriggerAll = !IsHelper
 TriggerAll = Power>=2000
 TriggerAll = StateType != A
-TriggerAll = var(43)=0
+TriggerAll = var(43)=0 || var(43) = 2
 TriggerAll = ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<147
 TriggerAll = EnemyNear(0),alive || EnemyNear(1),alive
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H
@@ -4953,7 +4953,7 @@ type = ChangeState
 TriggerAll = var(59)
 TriggerAll = roundstate = 2
 TriggerAll = !IsHelper
-TriggerAll = Var(43)=1
+TriggerAll = Var(43)=1 || var(43) = 2
 TriggerAll = StateType != A
 TriggerAll = P2StateType != L
 TriggerAll = EnemyNear(0),alive || EnemyNear(1),alive
@@ -4985,7 +4985,7 @@ TriggerAll = var(59)
 TriggerAll = roundstate = 2
 TriggerAll = !IsHelper
 TriggerAll = StateType != A
-TriggerAll = var(43)=0
+TriggerAll = var(43)=0 || var(43) = 2
 TriggerAll = ABS(EnemyNear(floor(fvar(37))),Pos x-Pos x)<147
 TriggerAll = EnemyNear(0),alive || EnemyNear(1),alive
 TriggerAll = EnemyNear(floor(fvar(37))),movetype = H
@@ -5511,6 +5511,63 @@ value = 1700
 ;value = 1400
 ;anim =
 ;ignorehitpause = 
+;persistent = 
+
+;------------------------------------------------------------------------------
+;连段3
+
+;连段3-------------------------------------------------
+
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = !IsHelper
+TriggerAll = roundstate = 2
+TriggerAll = var(59)
+TriggerAll = statetype != A
+TriggerAll = Var(41)>=120
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+TriggerAll = Var(43) = 2
+;TriggerAll =  P2BodyDist y = [-60-floor(17*(EnemyNear(floor(fvar(37))),vel y)+17*(17+1)/2*fvar(30)),0-floor(17*(EnemyNear(floor(fvar(37))),vel y)+17*(17+1)/2*fvar(30))]
+Trigger1 = (StateNo = [200,440]) && movehit
+value = 451
+;anim =
+;ignorehitpause =  
+;persistent = 
+
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = !IsHelper
+TriggerAll = roundstate = 2
+TriggerAll = var(59)
+TriggerAll = statetype != A
+TriggerAll = Var(41)>=120
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+TriggerAll = Var(43) = 2
+TriggerAll = Var(42) = 1
+;TriggerAll =  P2BodyDist y = [-60-floor(17*(EnemyNear(floor(fvar(37))),vel y)+17*(17+1)/2*fvar(30)),0-floor(17*(EnemyNear(floor(fvar(37))),vel y)+17*(17+1)/2*fvar(30))]
+Trigger1 = (StateNo = 451) && movehit
+value = 1700
+;anim =
+;ignorehitpause =  
+;persistent = 
+
+[State 0, ChangeState]
+type = ChangeState
+TriggerAll = !IsHelper
+TriggerAll = roundstate = 2
+TriggerAll = var(59)
+TriggerAll = statetype != A
+TriggerAll = Var(41)>=120
+TriggerAll = EnemyNear(floor(fvar(37))),statetype != L
+TriggerAll = Var(43) = 2
+;TriggerAll =  P2BodyDist y = [-60-floor(17*(EnemyNear(floor(fvar(37))),vel y)+17*(17+1)/2*fvar(30)),0-floor(17*(EnemyNear(floor(fvar(37))),vel y)+17*(17+1)/2*fvar(30))]
+Trigger1 = (StateNo = 1750) && movehit
+Trigger1 = Animelem = 5,>=0
+Trigger2 = (StateNo = 1350)&&Movehit 
+Trigger2 = AnimelemTime(8)>0
+value = 1400
+;anim =
+;ignorehitpause =  
 ;persistent = 
 
 

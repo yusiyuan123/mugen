@@ -211,31 +211,34 @@ PauseMoveTime = 9999
 persistent = 0
 
 
-
-[State 0, 2000״̬�ŵ���д]
-Type = VarSet
-Triggerall = 1
-Trigger1 = time = [0,30]
-fv = 26
-value = 1.41
+[State 0, 2000ﾗｴﾌｬｺﾅｵﾄﾌﾘﾐｴ]
+type = VarSet
+trigger1 = time = 0
+fv = 33
+value = 1
 ignorehitpause = 1
 ;persistent = 
 
 
-[State 0, VarAdd]
-Type = VarAdd
-Trigger1 = time >= 33
-fv = 26
-value = -0.16
+
+[State 0, 2000ﾗｴﾌｬｺﾅｵﾄﾌﾘﾐｴ]
+type = VarAdd
+trigger1 = Time>31
+fv = 33
+value = Cond(Time<=35,0.060,-0.060)
 ignorehitpause = 1
 ;persistent = 
+
+
 
 
 [State -1, ZOOM]
 Type = Zoom
-Trigger1 = time = [0,130]
-Scale = fvar(26)
+Trigger1 = 1
+Scale = Fvar(33)
 Pos = pos x,pos y
+ignorehitpause = 1
+
 
 
 
@@ -1068,12 +1071,30 @@ Trigger1 = 1
 value = 805
 
 
+[State 0, 2000ﾗｴﾌｬｺﾅｵﾄﾌﾘﾐｴ]
+type = VarSet
+trigger1 = time = 0
+fv = 33
+value = 1
+ignorehitpause = 1
+;persistent = 
+
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = Time <=10
+fv = 33
+value = 0.032
+ignorehitpause = 1
+;persistent = 
+
 
 [State -1, ZOOM]
 Type = Zoom
 Trigger1 = 1
-Scale = 1.30
-Pos = pos x+facing*(abs(enemynear(floor(fvar(37))),pos x-pos x)),pos y
+Scale = Cond(fvar(33)>=1.32,1.32,fvar(33))
+Pos = pos x,pos y
+ignorehitpause = 1
 
 [State 810, Grab Sound];�͂�
 Type = PlaySnd
@@ -1168,11 +1189,32 @@ supermovetime = 9999
 
 
 
+[State 0, 2000ﾗｴﾌｬｺﾅｵﾄﾌﾘﾐｴ]
+type = VarSet
+trigger1 = time = 1
+fv = 33
+value = 1
+ignorehitpause = 1
+;persistent = 
+
+
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = time > 1
+fv = 33
+value = (Cos((Time/(16 * Facing))*Pi))*0.042
+ignorehitpause = 1
+;persistent = 
+
+
 [State -1, ZOOM]
 Type = Zoom
 Trigger1 = 1
-Scale = 1.30
-Pos = pos x+facing*(abs(enemynear(floor(fvar(37))),pos x-pos x)),pos y
+Scale = fvar(33)
+Pos = pos x,pos y-10
+ignorehitpause = 1
+
+
 
 [State 2000, 6];�`�F�b�N���C�g
 Type = PlaySnd
@@ -6677,6 +6719,44 @@ value = 5100,5
 type = PlaySnd
 Trigger1 = ANIMELEM = 4
 value = 5100,6
+ignorehitpause = 1
+
+
+[State 0, 2000ﾗｴﾌｬｺﾅｵﾄﾌﾘﾐｴ]
+type = VarSet
+trigger1 = time = 0
+fv = 33
+value = 1
+ignorehitpause = 1
+;persistent = 
+
+
+[State 0, 2000ﾗｴﾌｬｺﾅｵﾄﾌﾘﾐｴ]
+type = VarAdd
+trigger1 = Time =  [52, 69]
+fv = 33
+value = Cond(Time<=58,0.060,0)
+ignorehitpause = 1
+;persistent = 
+
+
+[State 0, 2000ﾗｴﾌｬｺﾅｵﾄﾌﾘﾐｴ]
+type = VarAdd
+trigger1 = Time > 69
+fv = 33
+value = -0.060
+ignorehitpause = 1
+;persistent = 
+
+
+
+
+[State -1, ZOOM]
+Type = Zoom
+Trigger1 = 1
+Scale = Fvar(33)
+Pos = pos x,pos y
+
 ;-----------------------------------------------------------------------------功能区
 [State BGPalFX]
 type = BGPalFX

@@ -42,7 +42,7 @@
   ;体力ゲージの初期値
 life = 1000
   ;攻撃力（これ以上に設定すると強くなる）
-attack = 90
+attack = 55
   ;防御力（これ以上に設定すると強くなる）
 defence = 100
   ;コンボをくらっている時にあがる防御力
@@ -7570,6 +7570,39 @@ poweradd= 0
 velset = 0,0
 anim = 1402
 ctrl = 0
+
+
+
+[State 0, 2000ﾗｴﾌｬｺﾅｵﾄﾌﾘﾐｴ]
+type = VarSet
+TriggerAll = Var(41)>0
+trigger1 = time = 0
+fv = 33
+value = 1
+ignorehitpause = 1
+;persistent = 
+
+
+
+[State 0, 2000ﾗｴﾌｬｺﾅｵﾄﾌﾘﾐｴ]
+type = VarAdd
+TriggerAll = Var(41)>0
+trigger1 = Time>0
+fv = 33
+value = Cond(Time <= 8,0.082,-0.060)
+ignorehitpause = 1
+;persistent = 
+
+
+
+
+[State -1, ZOOM]
+Type = Zoom
+TriggerAll = Var(41)>0
+Trigger1 = 1
+Scale = Fvar(33)
+Pos = pos x,pos y
+ignorehitpause = 1
 
 [State 50, 4];残像消去
 Type = AfterImage
