@@ -5667,10 +5667,10 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != A && (Root,StateType = C || var(50) = 2)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != A && (Root,StateType = C || var(50) = 2)
 Trigger1 = var(10) = 0
 V = 10
-Value  = (EnemyNear(Root,var(58)),StateNo)
+Value  = (EnemyNear(Root,Floor(Fvar(37))),StateNo)
 IgnoreHitPause = 1
 
 [State 31000, ���i�L��]
@@ -5678,12 +5678,12 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != A && (Root,StateType = C || var(50) = 2)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(10)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != A && (Root,StateType = C || var(50) = 2)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(10)
 Trigger1 = var(10) > 0
 Trigger1 = var(11) = 0
 V = 11
-Value  = (EnemyNear(Root,var(58)),StateNo)
+Value  = (EnemyNear(Root,Floor(Fvar(37))),StateNo)
 IgnoreHitPause = 1
 
 [State 31000, ���i�L��]
@@ -5691,13 +5691,13 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != A && (Root,StateType = C || var(50) = 2)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(10)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(11)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != A && (Root,StateType = C || var(50) = 2)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(10)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(11)
 Trigger1 = var(11) > 0
 Trigger1 = var(12) = 0
 V = 12
-Value  = (EnemyNear(Root,var(58)),StateNo)
+Value  = (EnemyNear(Root,Floor(Fvar(37))),StateNo)
 IgnoreHitPause = 1
 
 [State 31000, ���i�L��]
@@ -5705,14 +5705,14 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != A && (Root,StateType = C || var(50) = 2)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(10)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(11)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(12)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != A && (Root,StateType = C || var(50) = 2)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(10)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(11)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(12)
 Trigger1 = var(12) > 0
 Trigger1 = var(13) = 0
 V = 13
-Value  = (EnemyNear(Root,var(58)),StateNo)
+Value  = (EnemyNear(Root,Floor(Fvar(37))),StateNo)
 IgnoreHitPause = 1
 
 [State 31000, ���i�L��]
@@ -5720,15 +5720,15 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != A && (Root,StateType = C || var(50) = 2)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(10)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(11)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(12)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(13)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != A && (Root,StateType = C || var(50) = 2)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(10)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(11)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(12)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(13)
 Trigger1 = var(13) > 0
 Trigger1 = var(14) = 0
 V = 14
-Value  = (EnemyNear(Root,var(58)),StateNo)
+Value  = (EnemyNear(Root,Floor(Fvar(37))),StateNo)
 IgnoreHitPause = 1
 
 ;---------------------------------------------------------------------------
@@ -5737,10 +5737,10 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != C && (Root,StateType = S || var(50) = 1)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != C && (Root,StateType = S || var(50) = 1)
 Trigger1 = var(20) = 0
 V = 20
-Value  = (EnemyNear(Root,var(58)),StateNo)
+Value  = (EnemyNear(Root,Floor(Fvar(37))),StateNo)
 IgnoreHitPause = 1
 
 [State 31000, ���i�L��]
@@ -5748,12 +5748,12 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != C && (Root,StateType = S || var(50) = 1)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(20)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != C && (Root,StateType = S || var(50) = 1)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(20)
 Trigger1 = var(20) > 0
 Trigger1 = var(21) = 0
 V = 21
-Value  = (EnemyNear(Root,var(58)),StateNo)
+Value  = (EnemyNear(Root,Floor(Fvar(37))),StateNo)
 IgnoreHitPause = 1
 
 [State 31000, ���i�L��]
@@ -5761,13 +5761,13 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != C && (Root,StateType = S || var(50) = 1)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(20)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(21)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != C && (Root,StateType = S || var(50) = 1)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(20)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(21)
 Trigger1 = var(21) > 0
 Trigger1 = var(22) = 0
 V = 22
-Value  = (EnemyNear(Root,var(58)),StateNo)
+Value  = (EnemyNear(Root,Floor(Fvar(37))),StateNo)
 IgnoreHitPause = 1
 
 [State 31000, ���i�L��]
@@ -5775,14 +5775,14 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != C && (Root,StateType = S || var(50) = 1)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(20)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(21)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(22)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != C && (Root,StateType = S || var(50) = 1)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(20)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(21)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(22)
 Trigger1 = var(22) > 0
 Trigger1 = var(23) = 0
 V = 23
-Value  = (EnemyNear(Root,var(58)),StateNo)
+Value  = (EnemyNear(Root,Floor(Fvar(37))),StateNo)
 IgnoreHitPause = 1
 
 [State 31000, ���i�L��]
@@ -5790,15 +5790,15 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != C && (Root,StateType = S || var(50) = 1)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(20)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(21)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(22)
-TriggerAll = EnemyNear(Root,var(58)),StateNo != var(23)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != C && (Root,StateType = S || var(50) = 1)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(20)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(21)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(22)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo != var(23)
 Trigger1 = var(23) > 0
 Trigger1 = var(24) = 0
 V = 24
-Value  = (EnemyNear(Root,var(58)),StateNo)
+Value  = (EnemyNear(Root,Floor(Fvar(37))),StateNo)
 IgnoreHitPause = 1
 
 ;---------------------------------------------------------------------------
@@ -5807,8 +5807,8 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != A && (Root,StateType = S || var(50) = 1)
-TriggerAll = EnemyNear(Root,var(58)),StateNo = var(10)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != A && (Root,StateType = S || var(50) = 1)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo = var(10)
 Trigger1 = var(10) > 0
 V = 10
 Value  = 0
@@ -5819,8 +5819,8 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != A && (Root,StateType = S || var(50) = 1)
-TriggerAll = EnemyNear(Root,var(58)),StateNo = var(11)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != A && (Root,StateType = S || var(50) = 1)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo = var(11)
 Trigger1 = var(11) > 0
 V = 11
 Value  = 0
@@ -5831,8 +5831,8 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != A && (Root,StateType = S || var(50) = 1)
-TriggerAll = EnemyNear(Root,var(58)),StateNo = var(12)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != A && (Root,StateType = S || var(50) = 1)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo = var(12)
 Trigger1 = var(12) > 0
 V = 12
 Value  = 0
@@ -5843,8 +5843,8 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != A && (Root,StateType = S || var(50) = 1)
-TriggerAll = EnemyNear(Root,var(58)),StateNo = var(13)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != A && (Root,StateType = S || var(50) = 1)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo = var(13)
 Trigger1 = var(13) > 0
 V = 13
 Value  = 0
@@ -5855,8 +5855,8 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != A && (Root,StateType = S || var(50) = 1)
-TriggerAll = EnemyNear(Root,var(58)),StateNo = var(14)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != A && (Root,StateType = S || var(50) = 1)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo = var(14)
 Trigger1 = var(14) > 0
 V = 14
 Value  = 0
@@ -5868,8 +5868,8 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != C && (Root,StateType = C || var(50) = 2)
-TriggerAll = EnemyNear(Root,var(58)),StateNo = var(20)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != C && (Root,StateType = C || var(50) = 2)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo = var(20)
 Trigger1 = var(20) > 0
 V = 20
 Value  = 0
@@ -5880,8 +5880,8 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != C && (Root,StateType = C || var(50) = 2)
-TriggerAll = EnemyNear(Root,var(58)),StateNo = var(21)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != C && (Root,StateType = C || var(50) = 2)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo = var(21)
 Trigger1 = var(21) > 0
 V = 21
 Value  = 0
@@ -5892,8 +5892,8 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != C && (Root,StateType = C || var(50) = 2)
-TriggerAll = EnemyNear(Root,var(58)),StateNo = var(22)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != C && (Root,StateType = C || var(50) = 2)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo = var(22)
 Trigger1 = var(22) > 0
 V = 22
 Value  = 0
@@ -5904,8 +5904,8 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != C && (Root,StateType = C || var(50) = 2)
-TriggerAll = EnemyNear(Root,var(58)),StateNo = var(23)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != C && (Root,StateType = C || var(50) = 2)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo = var(23)
 Trigger1 = var(23) > 0
 V = 23
 Value  = 0
@@ -5916,8 +5916,8 @@ Type = VarSet
 TriggerAll = Root,var(59)
 TriggerAll = Root,MoveType = H && Root,StateNo != 5700 && Root,Time <= 1
 TriggerAll =(Root,StateNo != [120,155]) && (Root,PrevStateNo = [120,155]) || Root,StateNo >= 200 && var(51) = 1
-TriggerAll = EnemyNear(Root,var(58)),StateType != C && (Root,StateType = C || var(50) = 2)
-TriggerAll = EnemyNear(Root,var(58)),StateNo = var(24)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateType != C && (Root,StateType = C || var(50) = 2)
+TriggerAll = EnemyNear(Root,Floor(Fvar(37))),StateNo = var(24)
 Trigger1 = var(24) > 0
 V = 24
 Value  = 0
